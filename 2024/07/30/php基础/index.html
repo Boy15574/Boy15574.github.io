@@ -1,0 +1,799 @@
+
+  <!DOCTYPE html>
+  <html lang="zh-CN"  >
+  <head>
+  <meta name="referrer"content="no-referrer"/>
+  <meta charset="utf-8">
+  
+
+  
+
+  
+
+  
+  <script>window.icon_font = '4552607_09mhdxci6yrk';window.clipboard_tips = {"success":"复制成功(*^▽^*)","fail":"复制失败 (ﾟ⊿ﾟ)ﾂ"};</script>
+  
+  
+  <title>
+    
+    Morthos
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7CNoto%20Serif%20SC:400,400italic,700,700italic%7CUbuntu%20Mono:400,400italic,700,700italic&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7CNoto%20Serif%20SC:400,400italic,700,700italic%7CUbuntu%20Mono:400,400italic,700,700italic&display=swap" media="print" onload="this.media&#x3D;&#39;all&#39;">
+  
+    <link rel="preload" href="//at.alicdn.com/t/c/font_4552607_09mhdxci6yrk.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  
+  
+<link rel="stylesheet" href="/css/loader.css">
+
+  <meta name="description" content="PHP 脚本以  结束PHP注释类似C语言：“&#x2F;&#x2F;”单行注释 “&#x2F;* …*&#x2F;”多行注释PHP脚本可以放在文档任何地方 PHP数据类型 标量数据类型**bollaen(布尔型)**：只有两个值，真（true）假（false）**string(字符串型)**：是连续的字符序列，由数字，字母和符号组成，字符串中每字符只占一个字节，3种定义字符串的方式：单引号(‘)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Morthos">
+<meta property="og:url" content="http://example.com/2024/07/30/php%E5%9F%BA%E7%A1%80/index.html">
+<meta property="og:site_name" content="Morthos">
+<meta property="og:description" content="PHP 脚本以  结束PHP注释类似C语言：“&#x2F;&#x2F;”单行注释 “&#x2F;* …*&#x2F;”多行注释PHP脚本可以放在文档任何地方 PHP数据类型 标量数据类型**bollaen(布尔型)**：只有两个值，真（true）假（false）**string(字符串型)**：是连续的字符序列，由数字，字母和符号组成，字符串中每字符只占一个字节，3种定义字符串的方式：单引号(‘)">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/25360659/1638273293695-0a20904f-80d1-4f7f-8753-7e0088b1e40f.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_28,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23faf9f7&from=url&id=WR83f&originHeight=716&originWidth=990&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/25360659/1638274347314-bb06eaac-99e6-4025-8742-eb635a6fda67.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_10,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23fefdfd&from=url&id=RGPDg&originHeight=499&originWidth=351&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/25360659/1638274424565-fcc029ca-de97-47fe-9632-4b6651e5a834.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_14,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23fefefd&from=url&id=NVZpF&originHeight=498&originWidth=483&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/25360659/1638442063383-86675e57-adf5-41de-a385-749cd88c32db.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_16,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23f6f4f2&from=url&id=wDkMb&originHeight=320&originWidth=547&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/25360659/1638442074480-4e311534-3090-4dde-b7f8-7f3d9a311f3f.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_19,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23f6f4f2&from=url&id=zmRHq&originHeight=547&originWidth=681&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/25360659/1638442083109-3a0b0cfa-68b0-4352-9fbb-9a59e502ff2a.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_19,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23f6f4f2&from=url&id=aNVig&originHeight=561&originWidth=683&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/25360659/1638442092035-f74ae13b-877e-48b2-9783-d9173a4870ea.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_19,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23f5f1ef&from=url&id=dujdc&originHeight=372&originWidth=681&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/25360659/1638442100399-a6105fdf-d09e-474c-8fbb-3bdad514071f.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_19,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23f4f2ef&from=url&id=Yjivh&originHeight=682&originWidth=677&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/25360659/1638442111901-1010762a-2654-4bc1-9312-603ad4cb2dde.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_19,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23f6f4f2&from=url&id=bDhgR&originHeight=507&originWidth=683&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/25360659/1638445604042-3debd4ab-cd32-4105-8ec0-b1fe6404acc1.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_20,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%232a2a23&from=url&id=GIRIS&originHeight=429&originWidth=685&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/25360659/1638445712122-54300ce1-c134-4d60-9879-717357a0e60c.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_19,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%232b2b24&from=url&id=kxlq4&originHeight=441&originWidth=668&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/jpeg/25360659/1638446024064-06a8b87d-996f-4673-a02a-b840fef3b4d5.jpeg?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_29,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23f6f6f6&from=url&id=VZn9L&originHeight=486&originWidth=1029&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/jpeg/25360659/1638788611530-cdd5d3e3-97af-4f95-8b24-cb1fccd9349c.jpeg?x-oss-process=image/resize,w_1275,limit_0/interlace,1/watermark,type_d3F5LW1pY3JvaGVp,size_36,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23bfbab3&from=url&id=uzVVw&originHeight=374&originWidth=1275&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/25360659/1639303196969-fca98f0e-cab0-4d77-b6ae-423ba6a84c7b.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_34,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23fcfbfa&from=url&id=jGCqw&originHeight=480&originWidth=1183&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/25360659/1639303255649-3afcd9f9-1117-414e-8ae7-9b47ebd4b7ec.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_23,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23f6f5f4&from=url&id=YKbI2&originHeight=286&originWidth=802&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/png/25360659/1641807814075-feab8777-34e7-465a-8276-325962045024.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_33,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23fcfbfa&from=url&id=hLJVl&originHeight=262&originWidth=1161&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/bmp/25360659/1641807881011-2bf95442-46e7-4cb9-ac50-1695f99e19fd.bmp?x-oss-process=image/resize,w_426,limit_0/watermark,type_d3F5LW1pY3JvaGVp,size_12,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23efedec&from=url&id=tLWAc&originHeight=44&originWidth=426&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/png/25360659/1641809848153-af206f87-3c84-4d39-9bd6-819f5dd090e1.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_21,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23fcfaf9&from=url&id=MKBoW&originHeight=379&originWidth=730&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/png/25360659/1641809824831-8131a62b-b462-43c8-9ca7-d9c3f1efec5f.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_13,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23edeae7&from=url&id=ac7OB&originHeight=159&originWidth=295&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/png/25360659/1641980329783-1eb80396-61a4-4bfa-bbb8-841535a89d11.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_13,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23fcfaf8&from=url&id=ifYjC&originHeight=200&originWidth=459&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/png/25360659/1641980348045-a001d732-01e6-49b9-8960-68f3d37c1edb.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_21,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23f0eeec&from=url&id=xALes&originHeight=65&originWidth=723&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/png/25360659/1642208269026-efb98ed4-e599-428f-84c5-a17f0ee3481b.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_18,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23fbf8f6&from=url&id=F89th&originHeight=218&originWidth=638&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/png/25360659/1642208286089-b6aadfb2-e7e9-41ea-9515-5b1cdc536837.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_23,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23f4f2f1&from=url&id=DqPuI&originHeight=127&originWidth=816&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/png/25360659/1642208880848-7cdfee70-ffb1-4cc4-a8b6-2695e8ad0dc7.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_29,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23fbf9f7&from=url&id=HnTmo&originHeight=187&originWidth=1016&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/png/25360659/1642208900678-025694a3-984e-40bf-9c2a-c369e03b5e4e.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_35,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23edebe8&from=url&id=ERE6Y&originHeight=94&originWidth=1228&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/png/25360659/1642209357997-599ae51e-ca50-4978-982f-020c7b6fcfdc.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_37,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23fcfaf9&from=url&id=PHXq7&originHeight=301&originWidth=1288&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/png/25360659/1642209372742-43177770-2e3a-4ee8-9cda-171fe9265bdc.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_70,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23eae7e4&from=url&id=pvhhC&originHeight=103&originWidth=2465&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/png/25360659/1642300779857-a1082157-6a54-40e6-8a3e-9fdbe31df9cb.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_38,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23fdfcfc&from=url&id=n1R69&originHeight=1160&originWidth=1324&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/png/25360659/1642302061235-64548549-50a1-4906-9c16-eaf26c36117d.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_42,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23f7f6f5&from=url&id=TGQ3R&originHeight=124&originWidth=1458&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/jpeg/25360659/1642383998401-5dd3e138-e97e-4073-8e8e-e11122f9bb4d.jpeg?x-oss-process=image/resize,w_480,limit_0/interlace,1/watermark,type_d3F5LW1pY3JvaGVp,size_14,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23b1aba6&from=url&height=617&id=AvNPk&originHeight=640&originWidth=480&originalType=binary&ratio=1.25&rotation=90&showTitle=false&status=done&style=none&title=&width=463">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/png/25360659/1642474913167-419d3229-97f9-4a76-8c49-8b7ea0d09c90.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_36,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23fcfaf9&from=url&id=ELr8e&originHeight=215&originWidth=1248&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/png/25360659/1642477710284-ff8a0737-84df-4d77-9a65-2ffea46c46dc.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_23,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23fbf9f8&from=url&id=QYwU1&originHeight=304&originWidth=812&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/png/25360659/1642478313780-cec59ce2-7ea4-4fbc-a844-84d3cfe06d75.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_24,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23fcfaf9&from=url&id=S1xBu&originHeight=229&originWidth=847&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/png/25360659/1642478701206-9f60827c-7233-41a4-ac56-d319e4992d6d.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_22,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23fbf8f7&from=url&id=MxfBI&originHeight=297&originWidth=759&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/png/25360659/1642563564305-0f9fe752-ea7f-448f-91ab-7f6eef824903.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_23,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23fbf4f3&from=url&id=ygWoq&originHeight=146&originWidth=796&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/png/25360659/1642563666769-73a94a30-b93c-4fea-9540-3e0e66949e42.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_21,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23fcfbfa&from=url&id=p6iAs&originHeight=229&originWidth=728&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/png/25360659/1642564225813-bc29b5a3-8ffb-484a-b84c-7bd6bf7331bf.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_32,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23fcfbfa&from=url&id=VrdmE&originHeight=271&originWidth=1140&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/png/25360659/1642732009313-26f7be1c-485f-4f3d-8899-9294fe08518b.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_35,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23fdfcfb&from=url&id=UM2fp&originHeight=499&originWidth=1240&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/png/25360659/1642733389232-67dd6db0-d39a-486c-b919-831884fb518b.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_53,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23fdfcfb&from=url&id=zgcVt&originHeight=532&originWidth=1848&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/png/25360659/1642994202913-5da44c35-4243-43bc-9a33-3766569cf2bd.png?x-oss-process=image/resize,w_669,limit_0/watermark,type_d3F5LW1pY3JvaGVp,size_19,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23fefcfc&from=url&id=Fa9yh&originHeight=496&originWidth=669&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/png/25360659/1642994412238-cef37e56-f9f3-46b0-8555-7d8e7cb4267c.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_29,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23fdfcfb&from=url&id=J3VCn&originHeight=699&originWidth=1027&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/png/25360659/1642994786494-e89fce51-97d3-4f88-aab6-ca3bfe35bea9.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_19,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23fcfbfb&from=url&id=fgtRg&originHeight=268&originWidth=659&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/png/25360659/1642994830073-5bc30919-566d-4f8a-a744-55ffc938ba1a.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_51,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23fdfcfc&from=url&id=pcJpg&originHeight=299&originWidth=1788&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/png/25360659/1642994950022-1b5a0944-0095-4eb0-b6eb-18b9fe2c9860.png?x-oss-process=image/resize,w_718,limit_0/watermark,type_d3F5LW1pY3JvaGVp,size_20,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23fbfaf9&from=url&id=APvp0&originHeight=557&originWidth=718&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/png/25360659/1642994993296-76bab7bf-fcea-4f6e-8ba6-8620b55cf9e7.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_47,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23fdfdfc&from=url&id=CRl3Y&originHeight=463&originWidth=1637&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/png/25360659/1643081258800-ce046d63-b514-457f-a329-4f7267657e9b.png?x-oss-process=image/resize,w_720,limit_0/watermark,type_d3F5LW1pY3JvaGVp,size_21,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23f3f2f2&from=url&id=KfaLZ&originHeight=371&originWidth=720&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/jpeg/25360659/1643168150166-cc21c10d-8e2a-482c-9fc8-8daa2d967e71.jpeg?x-oss-process=image/resize,w_736,limit_0/interlace,1/watermark,type_d3F5LW1pY3JvaGVp,size_21,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23b1aba6&from=url&id=Fw8jx&originHeight=552&originWidth=736&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/jpeg/25360659/1643168174272-5595a003-38e0-4be2-bdf7-569758b67652.jpeg?x-oss-process=image/resize,w_878,limit_0/interlace,1/watermark,type_d3F5LW1pY3JvaGVp,size_25,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23b7b2ae&from=url&id=SCrb1&originHeight=659&originWidth=878&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/jpeg/25360659/1643250611367-0d6d5e39-31aa-4179-9492-8c3f5b839ed9.jpeg?x-oss-process=image/resize,w_745,limit_0/interlace,1/watermark,type_d3F5LW1pY3JvaGVp,size_21,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23b9b4b2&from=url&id=SvYex&originHeight=559&originWidth=745&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="article:published_time" content="2024-07-30T12:49:54.032Z">
+<meta property="article:modified_time" content="2024-07-30T12:49:54.221Z">
+<meta property="article:author" content="Boy">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.nlark.com/yuque/0/2021/png/25360659/1638273293695-0a20904f-80d1-4f7f-8753-7e0088b1e40f.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_28,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23faf9f7&from=url&id=WR83f&originHeight=716&originWidth=990&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title=">
+  
+    <link rel="alternate" href="/atom.xml" title="Morthos" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/images/favicon.ico">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<link rel="stylesheet" href="https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.css">
+
+  
+  
+  
+  
+<script src="https://npm.webcache.cn/pace-js@1.2.4/pace.min.js"></script>
+
+  
+    
+<link rel="stylesheet" href="https://npm.webcache.cn/wowjs@1.1.3/css/libs/animate.css">
+
+    
+<script src="https://npm.webcache.cn/wowjs@1.1.3/dist/wow.min.js"></script>
+
+    <script>
+      new WOW({
+        offset: 0,
+        mobile: true,
+        live: false
+      }).init();
+    </script>
+  
+  
+    <script src="/sw.js"></script>
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+  <body>
+    
+  <div id='loader'>
+    <div class="loading-left-bg loading-bg"></div>
+    <div class="loading-right-bg loading-bg"></div>
+    <div class="spinner-box">
+      <div class="loading-taichi">
+        <svg width="150" height="150" viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="https://www.w3.org/2000/svg" shape-rendering="geometricPrecision">
+          <path d="M303.5 432A80 80 0 0 1 291.5 592A80 80 0 0 1 303.5 432z" fill="#ff6e6b" />
+          <path d="M512 65A447 447 0 0 1 512 959L512 929A417 417 0 0 0 512 95A417 417 0 0 0 512 929L512 959A447 447 0 0 1 512 65z" fill="#fd0d00" />
+          <path d="M512 95A417 417 0 0 1 929 512A208.5 208.5 0 0 1 720.5 720.5L720.5 592A80 80 0 0 0 720.5 432A80 80 0 0 0 720.5 592L720.5 720.5A208.5 208.5 0 0 1 512 512A208.5 208.5 0 0 0 303.5 303.5A208.5 208.5 0 0 0 95 512A417 417 0 0 1 512 95" fill="#fd0d00" />
+        </svg>
+      </div>
+      <div class="loading-word">少女祈祷中...</div>
+    </div>
+  </div>
+  </div>
+  <script>
+    var time = null;
+    var startLoading = () => {
+      time = Date.now();
+      document.getElementById('loader').classList.remove("loading");
+    }
+    var endLoading = () => {
+      if (!time) {
+        document.body.style.overflow = 'auto';
+        document.getElementById('loader').classList.add("loading");
+      } else {
+        if (Date.now() - time > 500) {
+          time = null;
+          document.body.style.overflow = 'auto';
+          document.getElementById('loader').classList.add("loading");
+        } else {
+          setTimeout(endLoading, 500 - (Date.now() - time));
+          time = null;
+        }
+      }
+    }
+    window.addEventListener('DOMContentLoaded', endLoading);
+    document.getElementById('loader').addEventListener('click', endLoading);
+  </script>
+
+<div id="copy-tooltip" style="pointer-events: none; opacity: 0; transition: all 0.2s ease; position: fixed;top: 50%;left: 50%;z-index: 999;transform: translate(-50%, -50%);color: white;background: rgba(0, 0, 0, 0.5);padding: 10px 15px;border-radius: 10px;">
+</div>
+
+    <div id="container">
+      <div id="wrap">
+        <div id="header-nav">
+  <nav id="main-nav">
+    
+      <span class="main-nav-link-wrap">
+        <span class="main-nav-icon"></span>
+        <a class="main-nav-link" href="/">首页</a>
+      </span>
+    
+      <span class="main-nav-link-wrap">
+        <span class="main-nav-icon"></span>
+        <a class="main-nav-link" href="/archives">归档</a>
+      </span>
+    
+      <span class="main-nav-link-wrap">
+        <span class="main-nav-icon"></span>
+        <a class="main-nav-link" href="/about">关于</a>
+      </span>
+    
+      <span class="main-nav-link-wrap">
+        <span class="main-nav-icon"></span>
+        <a class="main-nav-link" href="/friend">友链</a>
+      </span>
+    
+    <a id="main-nav-toggle" class="nav-icon"></a>
+  </nav>
+  <nav id="sub-nav">
+    
+      <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS 订阅"></a>
+    
+    
+    
+  </nav>
+</div>
+<header id="header">
+  
+    
+      <img fetchpriority="high" src="/images/banner.webp" alt="">
+    
+  
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <div id="logo-wrap">
+        
+          
+          
+            <a href="/" id="logo">
+              <h1>Morthos</h1>
+            </a>
+          
+        
+      </div>
+      
+        
+        <h2 id="subtitle-wrap">
+          
+        </h2>
+      
+    </div>
+  </div>
+</header>
+
+        <div id="content" class="outer">
+          
+          <section id="main"><article id="post-php基础" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-inner">
+    <div class="article-meta">
+      <div class="article-date wow slideInLeft">
+  <a href="/2024/07/30/php%E5%9F%BA%E7%A1%80/" class="article-date-link">
+    <time datetime="2024-07-30T12:49:54.032Z" itemprop="datePublished">2024-07-30</time>
+  </a>
+</div>
+
+      
+
+    </div>
+    <div class="hr-line"></div>
+    
+
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>PHP 脚本以 <strong><?php** 开始，以 **?></strong> 结束<br>PHP注释类似C语言：“&#x2F;&#x2F;”单行注释 “&#x2F;* …*&#x2F;”多行注释<br>PHP脚本可以放在文档任何地方<br><a name="EHT6h"></a></p>
+<h2 id="PHP数据类型"><a href="#PHP数据类型" class="headerlink" title="PHP数据类型"></a>PHP数据类型</h2><p><a name="F0prm"></a></p>
+<h3 id="标量数据类型"><a href="#标量数据类型" class="headerlink" title="标量数据类型"></a>标量数据类型</h3><p>**bollaen(布尔型)**：只有两个值，真（true）假（false）<br>**string(字符串型)**：是连续的字符序列，由数字，字母和符号组成，字符串中每字符只占一个字节，3种定义字符串的方式：单引号(‘)双引号(“)定界符(&lt;&lt;&lt;)<br>**integer(整型)**：只能包含整数，可以用十进制，八进制，十六进制，八进制数字前面必须加0，十六进制前面必须加ox<br>**folat(浮点型)**：可以用来储存数字，也可以保存小数，精度大<br><a name="j57WL"></a></p>
+<h3 id="复合数据类型"><a href="#复合数据类型" class="headerlink" title="复合数据类型"></a>复合数据类型</h3><p>**array(数组)**：一组数据的集合，数组中每个数据称为一个元素，元素包括索引()和值两部分索引由数字或字符串组成，值可以是多种数据类型<br><strong>object(对象</strong>)：面向过程·和面向对象<br><a name="G8POr"></a></p>
+<h3 id="特殊数据类型"><a href="#特殊数据类型" class="headerlink" title="特殊数据类型"></a>特殊数据类型</h3><p>**resource(资源)**：在使用资源时系统会自动启用垃圾回收机制，释放不在使用的资源，避免内存消耗殆尽<br>**null(空值)**：表示没有为该变量设置任何值，且不区分大小写<br><a name="nygF6"></a></p>
+<h2 id="PHP常量"><a href="#PHP常量" class="headerlink" title="PHP常量"></a>PHP常量</h2><p><a name="cqoYS"></a></p>
+<h3 id="声明和使用常量"><a href="#声明和使用常量" class="headerlink" title="声明和使用常量"></a>声明和使用常量</h3><p><strong>name：</strong>必选参数，常量名称，即标志符。<br><strong>value：</strong>必选参数，常量的值。<br>**case_insensitive **：可选参数，如果设置为 TRUE，该常量则大小写不敏感。默认是大小写敏感的。</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2021/png/25360659/1638273293695-0a20904f-80d1-4f7f-8753-7e0088b1e40f.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_28,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23faf9f7&from=url&id=WR83f&originHeight=716&originWidth=990&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><strong>常量是全局的，在程序任何地方都可以使用</strong><br><a name="f6Hsg"></a></p>
+<h3 id="预定义常量"><a href="#预定义常量" class="headerlink" title="预定义常量"></a>预定义常量</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">__FILE__  默认常量，是指PHP程序文件名及路径；</span><br><span class="line"> __LINE__ 默认常量，是指PHP程序的行数；</span><br><span class="line"> __CLASS__： 类的名称。自 PHP <span class="number">5</span> 起本常量返回该类被定义时的名字（区分大小写）</span><br><span class="line"> __METHOD__： 类的方法名。返回该方法被定义时的名字（区分大小写）。</span><br><span class="line"> PHP_VERSION 内建常量，是指PHP程序的版本；</span><br><span class="line"> PHP_OS 内建常量，是指PHP解析器的操作系统的名称；</span><br><span class="line"> TRUE 是指真值（<span class="literal">true</span>）；</span><br><span class="line"> FALSE 是指假指（<span class="literal">false</span>）；</span><br><span class="line"> NULL 是指空值（null）；</span><br><span class="line"> E_ERROR 是指最近的错误之处；</span><br><span class="line"> E_WARNING 是指最近的警告之处；</span><br><span class="line"> E_PARSE 是指解析语法有潜在的问题之处；</span><br><span class="line"> E_NOTICE 是指发生不同寻常的提示，但不一定是错误处；</span><br><span class="line"> 注意：“__FILE__” “_LINE__ ” “__CLASS__” “__METHOD__” 中的“__”是指两个下划线，不是指一个下划线。</span><br></pre></td></tr></table></figure>
+<p><a name="ZKAIE"></a></p>
+<h2 id="PHP变量"><a href="#PHP变量" class="headerlink" title="PHP变量"></a>PHP变量</h2><p><a name="zksTf"></a></p>
+<h3 id="声明和使用变量"><a href="#声明和使用变量" class="headerlink" title="声明和使用变量"></a>声明和使用变量</h3><p>可以给 PHP 变量赋予某个值（x&#x3D;5）或者表达式（z&#x3D;x+y）。<br>变量可以是很短的名称（如 x 和 y）或者更具描述性的名称（如 age、carname、totalvolume）。<br>PHP 变量规则：<br>●变量以 $ 符号开始，后面跟着变量的名称<br>●变量名必须以字母或者下划线字符开始<br>●变量名只能包含字母、数字以及下划线（A-z、0-9 和 _ ）<br>●变量名不能包含空格<br>●变量名是区分大小写的（$y 和 $Y 是两个不同的变量）<br>●**特殊：可变变量 允许动态改变一个变量名称 **该变量的名称由另一个变量的值来确定，实现过程是在变量前面加一个“$”<br><a name="qAqmS"></a></p>
+<h3 id="变量作用域"><a href="#变量作用域" class="headerlink" title="变量作用域"></a>变量作用域</h3><p><strong>局部变量：</strong>在函数内部定义的变量，其作用域是所在变量<br><strong>全局变量：</strong>使用global声明可用于全局<br><strong>静态变量：</strong>使用ststic声明，能够在函数调用结束后仍保存变量值，再次返回作用域时又可以继续使用原来的值、<br><strong>全局变量 使用global声明</strong></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2021/png/25360659/1638274347314-bb06eaac-99e6-4025-8742-eb635a6fda67.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_10,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23fefdfd&from=url&id=RGPDg&originHeight=499&originWidth=351&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><strong>静态变量 使用ststic声明</strong></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2021/png/25360659/1638274424565-fcc029ca-de97-47fe-9632-4b6651e5a834.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_14,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23fefefd&from=url&id=NVZpF&originHeight=498&originWidth=483&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title="><br><a name="eenpG"></a></p>
+<h2 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h2><p><img src="https://cdn.nlark.com/yuque/0/2021/png/25360659/1638442063383-86675e57-adf5-41de-a385-749cd88c32db.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_16,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23f6f4f2&from=url&id=wDkMb&originHeight=320&originWidth=547&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2021/png/25360659/1638442074480-4e311534-3090-4dde-b7f8-7f3d9a311f3f.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_19,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23f6f4f2&from=url&id=zmRHq&originHeight=547&originWidth=681&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2021/png/25360659/1638442083109-3a0b0cfa-68b0-4352-9fbb-9a59e502ff2a.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_19,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23f6f4f2&from=url&id=aNVig&originHeight=561&originWidth=683&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2021/png/25360659/1638442092035-f74ae13b-877e-48b2-9783-d9173a4870ea.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_19,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23f5f1ef&from=url&id=dujdc&originHeight=372&originWidth=681&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2021/png/25360659/1638442100399-a6105fdf-d09e-474c-8fbb-3bdad514071f.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_19,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23f4f2ef&from=url&id=Yjivh&originHeight=682&originWidth=677&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2021/png/25360659/1638442111901-1010762a-2654-4bc1-9312-603ad4cb2dde.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_19,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23f6f4f2&from=url&id=bDhgR&originHeight=507&originWidth=683&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title="><br><a name="cNMCz"></a></p>
+<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><p><strong>创建函数</strong>：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">function fun_name($str1,$str2,.......,$strn) <span class="comment">//function为声明自定义函数必须用到的关键字</span></span><br><span class="line"> &#123;  <span class="comment">//fun_name为自定义函数名称</span></span><br><span class="line"> fun_body;  <span class="comment">//$str1,$str2,.......,$strn为函数参数 </span></span><br><span class="line"> &#125; <span class="comment">//fun_body为自定义函数主体</span></span><br></pre></td></tr></table></figure>
+<p><br><strong>按值传递：</strong></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2021/png/25360659/1638445604042-3debd4ab-cd32-4105-8ec0-b1fe6404acc1.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_20,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%232a2a23&from=url&id=GIRIS&originHeight=429&originWidth=685&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title="><br>按值传递：原来参数的值在调用其他函数之后还是原来的值<br><strong>引用传递：</strong></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2021/png/25360659/1638445712122-54300ce1-c134-4d60-9879-717357a0e60c.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_19,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%232b2b24&from=url&id=kxlq4&originHeight=441&originWidth=668&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title="><br>引用传递：原来参数的值在调用其他函数之后发生了改变<br><strong>默认参数：</strong></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2021/jpeg/25360659/1638446024064-06a8b87d-996f-4673-a02a-b840fef3b4d5.jpeg?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_29,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23f6f6f6&from=url&id=VZn9L&originHeight=486&originWidth=1029&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title="><br>默认参数：第二次调用时不给参数赋值<br><a name="qwWOE"></a></p>
+<h2 id="控制语句"><a href="#控制语句" class="headerlink" title="控制语句"></a><strong>控制语句</strong></h2><p><strong>条件控制语句：</strong>if语句，if…else语句，elseif语句，swith语句。<br><strong>循环控制语句：</strong>while语句，do…while语句，for循环语句，foreach语句。<br>foreach语句:只能用于数组  foreach(array_name as $value) { statement; }<br> 这里的array_name是你要遍历的数组名，每次循环中，array_name数组的当前元素的值被赋给$value,并且数组内部的下标向下移一步，<br>也就是下次循环回得到下一个元素。foreach(array_name as $key &#x3D;&gt; $value) { statement; } <br> 这里跟第一种方法的区别就是多了个$key,也就是除了把当前元素的值赋给$value外，当前元素的键值也会在每次循环中被赋给变量$key。键值可以是下标值，也可以是字符串。比如book[0]&#x3D;1中的“0”，book[id]&#x3D;”001”中的“id”.<br><strong>跳转语句：</strong><br>break跳出当前循环<br> continue跳出本次循环<br><a name="YZm2Z"></a></p>
+<h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><p><strong>单引号 双引号：</strong>单引号和双引号都可以标识一个字符串，但双引号的内容都经过PHP语法分析器解析过，任何变量都会在双引号内转换成对应的值输出，单引号“所见即所得”<br><strong>定界符：</strong>定界符(&lt;&lt;&lt;)<br>$str&#x3D; &lt;&lt;&lt;STR<br>文本<br>STR;</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2021/jpeg/25360659/1638788611530-cdd5d3e3-97af-4f95-8b24-cb1fccd9349c.jpeg?x-oss-process=image/resize,w_1275,limit_0/interlace,1/watermark,type_d3F5LW1pY3JvaGVp,size_36,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23bfbab3&from=url&id=uzVVw&originHeight=374&originWidth=1275&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><strong>去除字符串首尾空格和特殊字符：trim()函数，ltrim()函数，rtrim()函数</strong><br><strong>trim()：</strong> 移除字符串两侧的空白字符或其他预定义字符。<br>语法：string trim(string str[string,charlist]); str为要操作的字符串对象，charlist为可选参数一般要指定希望过滤的字符不指定将过滤默认特殊字符和空格<br>不指定时去除字符：\0(NULL 空值) \t(tab 制表符) \n(换行符) \xOB(垂直制表符) \r(回车符) “ “(空格) <br><strong>ltrim()：</strong>移除字符串左侧的空白字符或其他预定义字符。<br>语法：string ltrim(string str[string,charlist]); <strong>rtrim()：</strong>移除字符串右侧的空白字符或其他预定义字符。<br>语法：string rtrim(string str[string,charlist]); <br><strong>转义还原字符串数据：</strong><br><strong>手动：</strong>\（转义符）跟在其后的第一个字符将没有意义或没有特殊意义<br><strong>自动：addslasha()函数</strong> 作用是使用反斜线引用字符串<br> 格式：string addslashes (string str) str为要转义的字符串 ，在某些字符前加上反斜线<br>** stripslashes()函数** 作用还原字符串与addslasha()函数恰好相反<br> 格式：string stripslashes (string str)<br>**addcslasha()函数 ** 作用：在指定字符前加上反斜线<br> 格式：string addcslashes (string str)<br>**stripcslashes()函数 **作用：还原指定字符<br> 格式：string stripcslashes (string str) <br><strong>获取字符串的长度：</strong><br><strong>strlen()函数</strong> 作用：主要用于获取指定字符串的长度 在获取字符长度的同时也可以检测字符串长度<br>格式：int strlen(string str)<br>注：汉字占两个字符，数字 英文 小数点 下划线 空格 占一个字符<br><strong>截取字符串：</strong><br>**substr()函数 ** 作用：截取指定字符串中指定长度的字符<br>格式： string substr (string str,int start[,int length]) <br>str：指定字符串对象 start ：指定开始截取字符串的位置，若为负数，则从末尾开始截取 length：指定截取字符串个数吗，若为负数，则表示倒数第length个字符<br><strong>注</strong>：substr()函数 start的指定位置是从0开始计算，即第一个字符表示为0<br><strong>比较字符串</strong><br><strong>按字节比较：strcmp()函数 strcasecmp()函数</strong><br>strcmp()函数区分字符大小写 strcasecmp()函数不区分字符大小写<br>格式： int strcmp(string str1,string str2) int strcasecmp(string str1,string str2)<br>若 str1 str2相等 返回0，str1大于str2 返回值大于0，str1小于str2 返回值小于0<br><strong>按自然排序法：</strong>strnatcmp()函数 区分大小写<br>格式：int strcnatmp(string str1,string str2) 数字与数字按自然排序法，其他形况按ASCII码表比较<br>若 str1 str2相等 返回0，str1大于str2 返回值大于0，str1小于str2 返回值小于0<br><strong>指定从源字符串的位置开始比较：</strong><br>**strncmp()函数 **作用：用来比较字符串前n个字符<br>格式 int strncmp(string str1,string str2,int len) len指定每个字符串参与比较字符的数量<br><strong>检索字符串</strong><br>**strstr()函数 **区分大小写<br>作用：用于获取一个指定字符串在另一个字符串中首次出现的位置到后者末尾的子字符串，若执行成功返回剩余字符串，若没有相匹配的字符串则返回false <br>格式：string strstr(string haystack,string needle)<br>haystack：指定从那个字符串里搜索<br>needle：指定搜索对象<br><strong>strrchr()函数与strstr()函数相反</strong><br><strong>subst_count()函数：</strong><br>作用：获取指定字符在字符串中出现的次数<br>格式：int substr_count(string haystake,string needle)<br>haystack：指定字符串 needle：指定字符<br><strong>替换字符串</strong><br>**str_ireplace()函数 ** 作用：用新字符串代替原来的字符串 不区分大小写 若相区分用str-replace()函数<br>格式：mixed str_irepale (mixed search,mixed replace,mixed subject[,int &amp;count])<br>search(要搜索的值) replace（指定替换的值） subject（要被搜索和替换的字符串或数组）count（执行替换的数量）<br><strong>substr_replace()函数</strong> 作用：对指定字符串中部分字符串进行替换<br>格式：mixed substr_replace (mixed string,mixed repl,mixed start,[mixed length])<br>string（要操作的原始字符串或数组）repl（替换后的新字符串）<br>start（替换字符串的位置 负数为倒数第几个，0是第一个）length（指定返回字符串的长度）<br><strong>格式化字符串</strong><br>**number_format()函数 **可以有1 2或4个参数 不能有3个参数<br>格式：string number_format(float number[,int decimals [,string dec_point[,string thousands_sep]]])<br>number（要格式化的数字）decimals（要保留的小数位数）dec_point（指定小数点显示字符）thousands_sep（千位分隔符显示的字符）<br><strong>分割合成字符串</strong><br>**explode()函数 ** 作用：按照指定的规则对一个字符串进行分割返回至为数组<br>格式：arry explode(string delimiter,string str[,int limit])<br>delimiter（边界上分割字符）str（将要被分割的字符串）limlt（若设置，则返回数组最多含limit个参数，若为负则为除了最后limit个）<br>**implode()函数 ** 作用：将数组内容合成一个新的字符串<br>格式：string implode(string glue,arry pieces)<br>glue（字符串类型）pieces（数组类型，指定要被合成的数组）<br><a name="KIYVJ"></a></p>
+<h2 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a><a target="_blank" rel="noopener" href="https://blog.csdn.net/mysteryflower/article/details/92805659">正则表达式</a></h2><p>正则表达式描述了一种字符串匹配的模式，可以用来检查一个串是否含有某种子串、将匹配的子串做替换或者从某个串中取出符合某个条件的子串等。<br>列目录时， dir <em>.txt或ls <em>.txt中的</em>.txt就不是一个正则表达式,因为这里</em>与正则式的*的含义是不同的。<br>正则表达式是由普通字符（例如字符 a 到 z）以及特殊字符（称为元字符）组成的文字模式。正则表达式作为一个模板，将某个字符模式与所搜索的字符串进行匹配。<br>更多： <a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_27905477/article/details/78819090">https://blog.csdn.net/qq_27905477&#x2F;article&#x2F;details&#x2F;78819090</a><br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/longdaye/p/8001221.html">https://www.cnblogs.com/longdaye/p/8001221.html</a><br><a name="BemB9"></a></p>
+<h3 id="PCRE兼容正则表达式函数"><a href="#PCRE兼容正则表达式函数" class="headerlink" title="PCRE兼容正则表达式函数"></a><strong>PCRE兼容正则表达式函数</strong></h3><p><strong>preg_grep()函数</strong><br>语法：array preg_grep( string pattern, array input)<br>功能：使用数组input中的元素一一匹配表达式pattern，最后返回由所有相匹配的元素所组成的数组</p>
+<p><strong>preg_match()</strong><br>功能：根据正则表达式的模式对指定的字符串进行搜索和匹配。返回值为0或1因为preg_match()在第一次匹配成功后就停止查找。<br>语法：int preg_match( string pattern, string subject [, array matches [, int flags]])<br>&#x2F;&#x2F;matches存储与第一个参数中的子模式的各个部分的匹配结果。<br>子模式：正则表达式中的子模式是使用括号括起的模式单元，数组matches中的第一个元素matches[0]保存与正则表达式pattern匹配的整体内容，而数组matches中的其他元素则按照顺序保存了与正则表达式小括号内子表达式相匹配的内容。</p>
+<p><strong>preg_match_all()</strong><br>语法： int preg_match_all( string pattern, string subject, array matches [, int flags])<br>功能：&#x2F;&#x2F;matches存储所有的匹配结果，并且返回整个模式匹配的次数，如果出错则返回FALSE。<br>preg_match()在第一次匹配成功后就停止查找。<br>preg_match_all()则会一直匹配到最后才会停止，获取到所有相匹配的结果。</p>
+<p><strong>preg_replace()</strong><br>语法：mixed preg_replace( mixed pattern, mixed replacement, mixed subject [, int limit])<br>功能：该函数在字符串subject中匹配表达式pattern，并将匹配项替换成字串replacement。如果有参数limit，则替换limit次。</p>
+<p><strong>preg_replace_callback()</strong><br>语法：mixed preg_replace_callback( mixed pattern, callback callback, mixed subject [, int limit])<br>功能：此处使用一个回调函数（callback）来代替replacement参数。<br>ps：在preg_replace_callback()函数的回调函数中，建议使用单引号定义字符串，这样可以保证字符串中的特殊符号不被转义。</p>
+<p><strong>preg_quote()函数</strong><br>语法：string preg_quote(string str[,string delimiter)<br>功能：该函数将字符串str中所有特殊字符进行自动转义。如果有参数delimiter，那么该参数所包含的字符串也将被转义。返回转义后的字符串<br><a name="uFCz8"></a></p>
+<h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a><strong>数组</strong></h2><p><a name="BCkYV"></a></p>
+<h3 id="声明数组"><a href="#声明数组" class="headerlink" title="声明数组"></a><strong>声明数组</strong></h3><p>使用数组标识符“[ ]”创建数组<br>$变量名[下标] &#x3D; 值; 下标也可以不写，系统默认从0开始<br>使用array数组创建数组<br>array array([mixed……])<br>其中mixed语法为key&#x3D;&gt;value,多个mixed参数间用逗号分开，分别定义了索引和值，索引可以是字符串或数字也可以省略，若省略索引则自动产生从0开始的整数索引，若索引为整数则下一个产生的索引是当前最大的索引加1，若定义了两个完全一样的索引则后一个会覆盖前一个当mixed为数组类型时就是二维数组例：<br><img src="https://cdn.nlark.com/yuque/0/2021/png/25360659/1639303196969-fca98f0e-cab0-4d77-b6ae-423ba6a84c7b.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_34,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23fcfbfa&from=url&id=jGCqw&originHeight=480&originWidth=1183&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p> 输出结果： <br><img src="https://cdn.nlark.com/yuque/0/2021/png/25360659/1639303255649-3afcd9f9-1117-414e-8ae7-9b47ebd4b7ec.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_23,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23f6f5f4&from=url&id=YKbI2&originHeight=286&originWidth=802&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title="><br><a name="QuIyQ"></a></p>
+<h3 id="数组的类型"><a href="#数组的类型" class="headerlink" title="数组的类型"></a><strong>数组的类型</strong></h3><p>索引数组：使用数字作为键<br>联合数组：使用字符串作为键</p>
+<p><a name="WCRXx"></a></p>
+<h3 id="输出数组"><a href="#输出数组" class="headerlink" title="输出数组"></a><strong>输出数组</strong></h3><p>print_r()函数可以将数组结构进行输出<br><a name="XmPgm"></a></p>
+<h3 id="数组的构造"><a href="#数组的构造" class="headerlink" title="数组的构造"></a><strong>数组的构造</strong></h3><p>一维数组：最普通的数组<br>二维数组：一个数组的元素是一维数组</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/25360659/1641807814075-feab8777-34e7-465a-8276-325962045024.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_33,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23fcfbfa&from=url&id=hLJVl&originHeight=262&originWidth=1161&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title="><br><img src="https://cdn.nlark.com/yuque/0/2022/bmp/25360659/1641807881011-2bf95442-46e7-4cb9-ac50-1695f99e19fd.bmp?x-oss-process=image/resize,w_426,limit_0/watermark,type_d3F5LW1pY3JvaGVp,size_12,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23efedec&from=url&id=tLWAc&originHeight=44&originWidth=426&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p>按形同思路可创建多维数组<br><a name="af3Lv"></a></p>
+<h3 id="遍历数组"><a href="#遍历数组" class="headerlink" title="遍历数组"></a><strong>遍历数组</strong></h3><p><strong>freach结构遍历数组：</strong></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/25360659/1641809848153-af206f87-3c84-4d39-9bd6-819f5dd090e1.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_21,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23fcfaf9&from=url&id=MKBoW&originHeight=379&originWidth=730&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title="><br><img src="https://cdn.nlark.com/yuque/0/2022/png/25360659/1641809824831-8131a62b-b462-43c8-9ca7-d9c3f1efec5f.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_13,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23edeae7&from=url&id=ac7OB&originHeight=159&originWidth=295&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p>PHP为$url的每个元素依次执行循环体（echo语句）一次将$link赋值给当前元素的值。各元素按数组内部顺序进行处理。<br><strong>list()结构遍历数组：</strong><br>把数组的值赋给一些变量，于array()函数类似，这不是真正的函数，而是语言结构。link()函数仅能用于数字索引数组，且数字索引从0开始。<br>语法格式：void link (mixed…….) 其中mixed为被赋值的变量名称<br><a name="Z9xhV"></a></p>
+<h3 id="字符串与数组的转换"><a href="#字符串与数组的转换" class="headerlink" title="字符串与数组的转换"></a><strong>字符串与数组的转换</strong></h3><p><strong>使用explode(）函数将字符串转换成数组：</strong>explode(）函数依指定的字符串或字符separator切开<br>array explode(string separator,string string,[int limit])<br>实例</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/25360659/1641980329783-1eb80396-61a4-4bfa-bbb8-841535a89d11.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_13,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23fcfaf8&from=url&id=ifYjC&originHeight=200&originWidth=459&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title="><br><img src="https://cdn.nlark.com/yuque/0/2022/png/25360659/1641980348045-a001d732-01e6-49b9-8960-68f3d37c1edb.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_21,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23f0eeec&from=url&id=xALes&originHeight=65&originWidth=723&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><strong>使用implode()函数将数组转换成一个新的字符串：</strong><br>implode()函数用于将数组内容组合成一个字符串<br>string impliode(string glue,array pieces) glue是字符串类型指要传入的分隔符：pieces是数组类型，指要传入的要合并元素的数组变量名称<br><a name="ZSujE"></a></p>
+<h3 id="统计数组元素个数"><a href="#统计数组元素个数" class="headerlink" title="统计数组元素个数"></a><strong>统计数组元素个数</strong></h3><p>in count (mixed array[,int mode])<br>array：必要函数输入数组 mode：可选参数，COUNT_RECURSIVE 或 1若选中此函数，本函数将递归地对数组计数，对计算多维数组尤为有用，默认值为0<br><a name="ArMem"></a></p>
+<h3 id="查询数组中指定元素"><a href="#查询数组中指定元素" class="headerlink" title="查询数组中指定元素"></a><strong>查询数组中指定元素</strong></h3><p>array_search()函数用于数组中搜索给定的值，找到后返回键名，否则返回false，<br>格式mixed array_search(mixde nedle,array haystack[,bool strict])<br><a name="UL4Xu"></a></p>
+<h3 id="获取数组最后一个元素"><a href="#获取数组最后一个元素" class="headerlink" title="获取数组最后一个元素"></a><strong>获取数组最后一个元素</strong></h3><p>array_pop()函数获取数组最后一个元素，并将数组长度减1，若数组为空或者不是数组则返回null<br>array_pop(array array)</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/25360659/1642208269026-efb98ed4-e599-428f-84c5-a17f0ee3481b.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_18,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23fbf8f6&from=url&id=F89th&originHeight=218&originWidth=638&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title="><br><img src="https://cdn.nlark.com/yuque/0/2022/png/25360659/1642208286089-b6aadfb2-e7e9-41ea-9515-5b1cdc536837.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_23,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23f4f2f1&from=url&id=DqPuI&originHeight=127&originWidth=816&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title="><br><a name="IQTn0"></a></p>
+<h3 id="向数组中添加元素"><a href="#向数组中添加元素" class="headerlink" title="向数组中添加元素"></a><strong>向数组中添加元素</strong></h3><p>array_push()函数将数组当成一个栈，将传入的变量压入该数组末尾人，将该数组长度将增加入栈变量数目，返回新数组元素总数。<br>array_push(array array,mixed var[,mixed…]) array为指定数组，var压入数组的值</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/25360659/1642208880848-7cdfee70-ffb1-4cc4-a8b6-2695e8ad0dc7.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_29,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23fbf9f7&from=url&id=HnTmo&originHeight=187&originWidth=1016&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title="><br><img src="https://cdn.nlark.com/yuque/0/2022/png/25360659/1642208900678-025694a3-984e-40bf-9c2a-c369e03b5e4e.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_35,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23edebe8&from=url&id=ERE6Y&originHeight=94&originWidth=1228&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title="><br><a name="oQMMO"></a></p>
+<h3 id="删除数组中重复元素"><a href="#删除数组中重复元素" class="headerlink" title="删除数组中重复元素"></a><strong>删除数组中重复元素</strong></h3><p>array_unique()函数用于将值作为字符串排序，然后对每个值只保留第一个键名，忽略后面的键名，即删除数组中重复元素<br>array array_unique(array array)</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/25360659/1642209357997-599ae51e-ca50-4978-982f-020c7b6fcfdc.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_37,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23fcfaf9&from=url&id=PHXq7&originHeight=301&originWidth=1288&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title="><br><img src="https://cdn.nlark.com/yuque/0/2022/png/25360659/1642209372742-43177770-2e3a-4ee8-9cda-171fe9265bdc.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_70,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23eae7e4&from=url&id=pvhhC&originHeight=103&originWidth=2465&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title="><br><a name="YDKJT"></a></p>
+<h3 id="综合运用数组函数实现多文件上传"><a href="#综合运用数组函数实现多文件上传" class="headerlink" title="综合运用数组函数实现多文件上传"></a><strong>综合运用数组函数实现多文件上传</strong></h3><p>文件的上传使用的是move_uplosded_file()函数，使用array_push()函数向数组中添加元素，使用array_unique()函数删除数组中重复元素，使用array_pop()函数获取数组中最后一个元素，并将数组长度减1，使用count()函数获取数组个数。</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/25360659/1642300779857-a1082157-6a54-40e6-8a3e-9fdbe31df9cb.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_38,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23fdfcfc&from=url&id=n1R69&originHeight=1160&originWidth=1324&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title="><br><a name="pYL2c"></a></p>
+<h2 id="表单"><a href="#表单" class="headerlink" title="表单"></a>表单</h2><p>用<from>标记，并在其中插入相关的表单元素，即可。</from></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/25360659/1642302061235-64548549-50a1-4906-9c16-eaf26c36117d.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_42,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23f7f6f5&from=url&id=TGQ3R&originHeight=124&originWidth=1458&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p> <from>标记的属性</from></p>
+<p>| name</p>
+<p> | 表单名称</p>
+<p> |<br>| — | — |<br>| method</p>
+<p> | 表单提交方式，GET或POST方法</p>
+<p> |<br>| action</p>
+<p> | 指向处理该表单页面的URL</p>
+<p> |<br>| entype</p>
+<p> | 设置表单内容编辑方式</p>
+<p> |<br>| targer</p>
+<p> | 设置返回信息内容的显示方式</p>
+<p> |</p>
+<p>GET方法是将表单内容附加在URL地址后面发送，method属性默认方法为GET方法。<br>POST方法是将表单中的信息作为一个数据块发送到服务器上的处理程序中，在浏览器的地址不显示提交的信息。<br> targer属性</p>
+<p>| _blank</p>
+<p> | 返回信息显示在新的窗口中</p>
+<p> |<br>| — | — |<br>| _parent</p>
+<p> | 返回信息显示在父级窗口中</p>
+<p> |<br>| _self</p>
+<p> | 返回信息显示在当前窗口中</p>
+<p> |<br>| _top</p>
+<p> | 返回信息显示在顶级窗口中</p>
+<p> |</p>
+<p>type属性：<br>text (单行文本输入框) password(密码输入框) radio(单选按钮) checkbox(复选框)<br>button (普通按钮) submit(提交按钮) reset(重置按钮) image(图像形式的提交按钮)<br>file(文件域)<br>name 自定义 控件名称 value 自定义 input控件中的默认文本值<br>size 正整数 input 控件在页面中的显示宽度 checked checked 定义选择控件默认被选中的项<br>maxlength 正整数 控件允许输入的最多字符数<br><strong>选择域标记<select>和<option>可以建立一个列表或者菜单.如果数量过多还会自动出现滚动条</option></select></strong><br><img src="https://cdn.nlark.com/yuque/0/2022/jpeg/25360659/1642383998401-5dd3e138-e97e-4073-8e8e-e11122f9bb4d.jpeg?x-oss-process=image/resize,w_480,limit_0/interlace,1/watermark,type_d3F5LW1pY3JvaGVp,size_14,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23b1aba6&from=url&height=617&id=AvNPk&originHeight=640&originWidth=480&originalType=binary&ratio=1.25&rotation=90&showTitle=false&status=done&style=none&title=&width=463"></p>
+<p>文字域标记<textarea><br>其中参数name表示文本域的名称；row表示文本域的行数；cols表示文本域的列数；value表示文本域的默认值；wrap用于设定显示和送出时的换行的方式，值为off表示不自动换行；值为hard表示自动按回车键换行；换行标记一同被送到服务器，输出时也会换行；值为soft表示自动按回车键换行，换行标记不会被送到服务器，输出时仍然为一列<br></textarea><textarea name="name" rows="a" cols="b" value="value" wrap="value"><br>…<br></textarea><br><a name="mvlfr"></a></p>
+<h3 id="获取表单数据的方法"><a href="#获取表单数据的方法" class="headerlink" title="获取表单数据的方法"></a><strong>获取表单数据的方法</strong></h3><p><strong>POST方法</strong><br>from表单属性method设置成POST即可（安全性高）所有信息在后台传输<br><strong>GET方法</strong><br>是from表单method属性的默认方法（安全性低）将表单数据附加到URL后作为URL的一部分发到服务器端<br><a name="z7vFR"></a></p>
+<h3 id="PHP参数传递方法"><a href="#PHP参数传递方法" class="headerlink" title="PHP参数传递方法"></a><strong>PHP参数传递方法</strong></h3><p><strong>$_POST[] ** 格式：$_POST[name]<br></strong>$_GET[]** 格式：$_GET[name]<br>以上两个例：<?php <php<br /> $user=$_POST["uaer"] $user=$_GET["user"]<br> ?> ?&gt;<br>$_SESSION[] 格式：$_SESSION[“name”] 例：$user&#x3D;$_SESSION[“user”]<br><a name="eG9ZI"></a></p>
+<h3 id="Web页面嵌入脚本"><a href="#Web页面嵌入脚本" class="headerlink" title="Web页面嵌入脚本"></a><strong>Web页面嵌入脚本</strong></h3><p>在HTML标记中添加PHP脚本：<br>include语句调用外部文件：<?php<br /> include("top.php");<br> ?><br>对表单元素的value属性进行赋值：对value属性进行赋值就能获取该表单默认值<br><?php<br />$hidden="yg0025"; //为变量$hidden赋值<br>?><br>隐藏域的值:&lt;input type&#x3D;”hidden”name&#x3D;”ID”value&#x3D;”<?php echo $hidden;?>“ &#x2F;&#x2F;将变量$hidden的值赋给隐藏域POST<br><a name="sSmOz"></a></p>
+<h3 id="在PHP中获取表单数据"><a href="#在PHP中获取表单数据" class="headerlink" title="在PHP中获取表单数据"></a>在PHP中获取表单数据</h3><p><strong>获取文本框，密码域，隐藏域，按钮，文本域的值</strong><br>使用if语句判断用户是否提交了表单成立则使用$_POST[]方法获取</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/25360659/1642474913167-419d3229-97f9-4a76-8c49-8b7ea0d09c90.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_36,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23fcfaf9&from=url&id=ELr8e&originHeight=215&originWidth=1248&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><strong>获取单选按钮的值</strong><br>一般成组出现，有相同name值和不同value值，一组单选按钮只能用一个被选中<br><?php<br />if(isset($_POST["sex"])&&$_POST["sex"]!=""){ echo"您选择的性别为：".$_POST["sex"];'<br>} ?><br><strong>获取复选框的值</strong><br>复选框一般都是多个同时存在，为了便于传值name的名字可以是一个数组的形式<br>&lt;input type&#x3D;”checkbox”name&#x3D;”checkbox[]”value&#x3D;”checkbox1”&gt;<br>输出需要for循环</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/25360659/1642477710284-ff8a0737-84df-4d77-9a65-2ffea46c46dc.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_23,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23fbf9f8&from=url&id=QYwU1&originHeight=304&originWidth=812&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><strong>获取下拉列表框&#x2F;菜单列表框的值</strong><br>列表框跟文本框类似，点击提交按钮后显示</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/25360659/1642478313780-cec59ce2-7ea4-4fbc-a844-84d3cfe06d75.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_24,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23fcfaf9&from=url&id=S1xBu&originHeight=229&originWidth=847&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p>菜单列表框域复选框类似一般都是多个同时存在，为了便于传值<select>标记的命名数组的形式<br>&lt;input type&#x3D;”checekbook” name&#x3D;”checkbook[]”multiple&gt;</select></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/25360659/1642478701206-9f60827c-7233-41a4-ac56-d319e4992d6d.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_22,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23fbf8f7&from=url&id=MxfBI&originHeight=297&originWidth=759&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title="><br><a name="e37ah"></a></p>
+<h3 id="获取文件域的值"><a href="#获取文件域的值" class="headerlink" title="获取文件域的值"></a>获取文件域的值</h3><p>创建上传文件域<br><img src="https://cdn.nlark.com/yuque/0/2022/png/25360659/1642563564305-0f9fe752-ea7f-448f-91ab-7f6eef824903.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_23,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23fbf4f3&from=url&id=ygWoq&originHeight=146&originWidth=796&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p>获取文件域的值：<br><img src="https://cdn.nlark.com/yuque/0/2022/png/25360659/1642563666769-73a94a30-b93c-4fea-9540-3e0e66949e42.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_21,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23fcfbfa&from=url&id=p6iAs&originHeight=229&originWidth=728&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><strong>对URL传递的参数进行编&#x2F;解码</strong><br><strong>对URL传递的参数进行编码：</strong>可通过urlencode()函数实现：string urlencode(string str)<br>&lt;a herf&#x3D;”index.php?id&#x3D;<?php echo urlencode("编码词典");?>“&gt;编码词典 &#x2F;&#x2F;对”编码词典”进行URL编码<br><strong>对URL传递的参数进行姐&#x3D;解码：</strong>可通过urlecode()函数实现：string urlecode(string str)</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/25360659/1642564225813-bc29b5a3-8ffb-484a-b84c-7bd6bf7331bf.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_32,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23fcfbfa&from=url&id=VrdmE&originHeight=271&originWidth=1140&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title="><br><a name="LJHgz"></a></p>
+<h3 id="PHP与web表单的综合应用"><a href="#PHP与web表单的综合应用" class="headerlink" title="PHP与web表单的综合应用"></a><strong>PHP与web表单的综合应用</strong><br><br></h3><p>对表单提交数据进行处理输出各组件提交的数据<br><?php<br />if(isset($_POST['submit'])&&$_POST['submit']!="")<br>{<br> echo"您的个人简历内容是";<br> echo"姓名：".$_POST['user'];<br> echo"姓别；".$_POST['sex'];<br> echo"密码：".$_POST['pwd'];<br> echo"学历：".$_POST['select'];<br> echo"爱好：";<br> for($i=0;$i<count($_POST['fond'];$i++)<br> echo $_POST['fond'][$i]."&nbsp;&nbsp;";<br> $path='./upfile/'.$_FILES['photo']['name'];<br> move_uploaded_file($_FILES)['photo']['tmp_name'],$path;<br> echo"个人写真".$path;<br> echo"个人简介".$_POST['intro'];<br>{<br>?><br><a name="Dp3t7"></a></count($_POST['fond'];$i++)<br></p>
+<h2 id="PHP中调用javascript"><a href="#PHP中调用javascript" class="headerlink" title="PHP中调用javascript"></a><strong>PHP中调用javascript</strong></h2><p><strong>使用<script>可以将Javascript嵌入到HTML文件中</strong><br><a name="picB8"></a></p>
+<h3 id="用javascript脚本验证表单元素是否为空"><a href="#用javascript脚本验证表单元素是否为空" class="headerlink" title="用javascript脚本验证表单元素是否为空"></a><strong>用javascript脚本验证表单元素是否为空</strong></h3><p><input type="submit"name="submit"onClink="return mycheck();"value="登录"><br />添加了一个onclick鼠标单击事件调用自定义函数mycheck()验证表单元素是否为空<br /><strong>函数mycheck()</strong></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/25360659/1642732009313-26f7be1c-485f-4f3d-8899-9294fe08518b.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_35,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23fdfcfb&from=url&id=UM2fp&originHeight=499&originWidth=1240&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title="><br><a name="HtWiD"></a></p>
+<h3 id="应用JavaScript脚本制作二级导航菜单"><a href="#应用JavaScript脚本制作二级导航菜单" class="headerlink" title="应用JavaScript脚本制作二级导航菜单"></a><strong>应用JavaScript脚本制作二级导航菜单</strong></h3><p>在网页要显示二级菜单的位置添加一个名为submenu的div层<br /><div id="submenu"class="word_yellow">&nbsp;</div><br />鼠标移动到某一个一级菜单时显示对应的位置对应的二级菜单</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/25360659/1642733389232-67dd6db0-d39a-486c-b919-831884fb518b.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_53,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23fdfcfb&from=url&id=zgcVt&originHeight=532&originWidth=1848&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title="><br /><strong>Cookie Session</strong><br><a name="v5vHa"></a></p>
+<h3 id="Cookie管理"><a href="#Cookie管理" class="headerlink" title="Cookie管理"></a><strong>Cookie管理</strong></h3><p>Setcookie( )函数创建Cookie。Cookie是HTTP头标的组成部分，而头标必须在页面其他内容之前发送，因此它必须最先输出。若在setcookie()函数之前输出一个HTML标记、echo语句，甚至一个空行都会导致程序出错。<br />语法：<br />Bool setcookie(string name[,string value[,int expire[,string path[,string domain[,int secure]]]]])<br /><strong>Name Cookie的变量名</strong> 可以通过$_COOKIE[“cookiename”]调用标量名为cookiename的cookie<br />Value Cookie变量的值，该值保存在客户端，不能用来保存敏感数据 可以通过$_COOKIE[“values”]获取名为values的值<br />Expire Cookie的失效时间，expire是标准的UNIX时间标记，可以用time()函数或mktime()函数获取，单位为秒 如果不设置Cookie的失效时间，那么Cookie将永远有效，除非手动将其删除<br />Path Cookie在服务器端的有效路径 如果该参数设置为”/”,则它在整个domain下内有效，如果设置“/11”，它在domain下的/11目录及子目录内有效。默认是当前目录<br />Domain Cookie有效的域名 如果要使Cookie在mrbccd.com域名下的所有子域都有效，应该设置为mrbccd.com<br />Secure 指明Cookie是否仅通过安全的HTTPS，值为0或1 如果值为1，则Cookie只能在HTTPS连续上有效；如果值为默认值0，则Cookie在HTTP和HTTPS连接上均有效<br />例：<br /><?php<br />Setcookie(“TMCookie”,’www.mrbccd.com’);<br />Setcookie(“TMCookie”,’www.mrbccd.com’,time()+60);<br />//设置Cookie有效时间为60秒<br />?><br><a name="Iw1On"></a></p>
+<h3 id="读取Cookie"><a href="#读取Cookie" class="headerlink" title="读取Cookie"></a><strong>读取Cookie</strong></h3><?php<br />date_default_timezone_set("PRC"); //使用中华人民共和国的时区<br />if(!isset($_COOKIE["visit_time"])){ //如果Cookie文件是否存在，如果不存在<br />setcookie("visit_time",date("Y-m-d H:i:s")); //设置一个Cookie变量<br />$string="欢迎您第一次访问网站！"; //输出字符串<br />}else{ //如果Cookie存在<br />setcookie("visit_time",date("Y-m-d H:i:s"),time()+60); //设置带Cookie失效时间的变量<br />$string="您上次访问网站的时间为：".$_COOKIE["visit_time"]; //输出上次访问网站的时间<br />}<br />?>
+<p><a name="lwVbb"></a></p>
+<h3 id="删除Cookie"><a href="#删除Cookie" class="headerlink" title="删除Cookie"></a><strong>删除Cookie</strong></h3><?php //删除单个cookie：键值设置为空、时间设置为过期了的时间 setCookie("name","",time()-60);<br />//删除多个cookie，采用遍历数组方式 foreach($_COOKIE as $key=>$value){ setCookie($key,"",time()-60); } ?><p><br />第二个参数值设置为空值，第三个参数值设置为小于系统当前时间<br /><br><a name="wZvrD"></a></p>
+<h2 id="Session"><a href="#Session" class="headerlink" title="Session"></a><strong>Session</strong></h2><p><strong>创建session会话</strong><br />方法一：session_start()函数<br />bool session_start(void);<br />方法二：session_register()函数，为回话登录一个变量来隐含地启动会话,但需要将register_globalsa指令设置为on，然后重启Apache服务器<br /><strong>注册会话</strong><br />会话变量别启动后全部保存在数组$_SESSION中，通过$<em>SESSION创建一个会话<br /><?php<br /> session_srart();<br /> $SESSION</em>["admin"]=null;<br />?><br /><strong>使用会话</strong><br />判断储存用户会话变量Sesion会话变量是否为空，若不为空则将该会话变量赋给$myvalue<br /><?php<br /> if(!empty($_SESSION['session_name']))<br /> $myvalue=$_SESSION['session_name'];<br />?><br /><strong>删除对话</strong> 删除单个对话：直接注销$_SEEEION数组中某个元素。可使用unster()函数<br />unster($_SEEEION['user'])<br />删除多个会话：将一个空的数组赋值给$_SEEEION<br />$_SEEEION=array()<br />结束当前对话：注销所有会话变量，然后使用session_destroy()函数清除结束当前的会话，并清空会话中所有资源，彻底销毁Session<br />session_destroy()<br /><strong>Session设置时间</strong><br /><strong>客户端没有禁止Coookie：</strong><br />使用sesssion_set_cookie_params()设置失效时间，sesssion_set_cookie_params()必须在session_start()之前调用<br /><?php<br /> $time=1*60;<br /> session_set_cookie_params($time);<br /> session_start();<br /> $_SESSION[username]='mr';<br />?><br />以上代码让session在一分钟后失效（结合cookie）<br />使用setcookie()函数设置session失效时间：<br /><?php<br /> session_start();<br /> $time=1*60;<br /> setcookie(session_name(),session_id(),time()+$time,"/");<br /> $_SESSION['user']="mr";<br />?><br /><strong>通过Session判断用户操作权限</strong><br />创建登录界面</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/25360659/1642994202913-5da44c35-4243-43bc-9a33-3766569cf2bd.png?x-oss-process=image/resize,w_669,limit_0/watermark,type_d3F5LW1pY3JvaGVp,size_19,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23fefcfc&from=url&id=Fa9yh&originHeight=496&originWidth=669&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p>验证表单元素</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/25360659/1642994412238-cef37e56-f9f3-46b0-8555-7d8e7cb4267c.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_29,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23fdfcfb&from=url&id=J3VCn&originHeight=699&originWidth=1027&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p>提交表单元素到数据处理页default.php 首先使用session_start()函数初始化Session变量，然后通过POST方法接收表单的值将获取的用户名和密码赋给Session变量</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/25360659/1642994786494-e89fce51-97d3-4f88-aab6-ca3bfe35bea9.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_19,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23fcfbfb&from=url&id=fgtRg&originHeight=268&originWidth=659&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p>防止非法登录系统</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/25360659/1642994830073-5bc30919-566d-4f8a-a744-55ffc938ba1a.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_51,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23fdfcfc&from=url&id=pcJpg&originHeight=299&originWidth=1788&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p>在数据处理页default.php的导航栏代码</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/25360659/1642994950022-1b5a0944-0095-4eb0-b6eb-18b9fe2c9860.png?x-oss-process=image/resize,w_718,limit_0/watermark,type_d3F5LW1pY3JvaGVp,size_20,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23fbfaf9&from=url&id=APvp0&originHeight=557&originWidth=718&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p>注销用户</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/25360659/1642994993296-76bab7bf-fcea-4f6e-8ba6-8620b55cf9e7.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_47,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23fdfdfc&from=url&id=CRl3Y&originHeight=463&originWidth=1637&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_30270889/article/details/97093406?ops_request_misc=&request_id=&biz_id=102&utm_term=php%E9%80%9A%E8%BF%87session%E5%88%A4%E6%96%AD%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95%E6%9D%83%E9%99%90&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduweb~default-3-97093406.first_rank_v2_pc_rank_v29&spm=1018.2226.3001.4187">查看完整代码点击此处</a><br /><strong>Session高级应用</strong><br /><strong>Session临时文件：</strong><br />session_save_path()储存Session临时文件 (session_save_path()在session_start()函数之前调用)<br /><?php<br /> $path='./tmp/';<br /> session_save_path($path);<br /> session_atart();<br />?><br /><strong>Session缓存：</strong><br />session_cache_limiter()函数缓存：<br />string seaaion-cache_limiter([string cache_limiter])<br />cache_limiter为public或private<br />session_cache_expire()缓存时间设置<br />int session_cache_expire([int new_cache_expire])单位为分钟<br />这两个函数均需要在session_start()函数前面调用<br /><?php<br /> session_cache_limiter('private');<br /> $cache_limit=session_cache_limiter();<br /> session_cache_expire(30);<br /> $cache_expire=session_cache_expire();<br /> session_start();<br />?><br /><strong>Session数据库存储：</strong><br />session_set_save_handler()函数用于session数据库存储<br />bool session_set_save_handler(string open,string close,string readd,string destory,string gc)</p>
+<p>| 参数</p>
+<p> | 说明</p>
+<p> |<br>| --- | --- |<br>| open(save_path，session_name)</p>
+<p> | 找到Session存储地址，取出变量名称</p>
+<p> |<br>| clos()</p>
+<p> | 不需要参数，关闭数据库</p>
+<p> |<br>| read(key)</p>
+<p> | 读取Session键值，key对应session_id</p>
+<p> |<br>| write(key,data)</p>
+<p> | 其中data对应设置Session变量</p>
+<p> |<br>| destory(key)</p>
+<p> | 注销Session对应Session键值</p>
+<p> |<br>| gc(expirty_time)</p>
+<p> | 清除过期Session记录 |</p>
+<p><a name="xUZpb"></a></p>
+<h2 id="文件管理"><a href="#文件管理" class="headerlink" title="文件管理"></a><strong>文件管理</strong></h2><p><a name="TTUqr"></a></p>
+<h3 id="打开关闭文件"><a href="#打开关闭文件" class="headerlink" title="打开关闭文件"></a><strong>打开关闭文件</strong></h3><p><strong>fopen函数打开文件：</strong><br />resource fopen(string filename,string mode[,bool use_include_path]);<br />filename是要打开的文件包含的路径的文件名，相对路径 绝对路径均可<br />mode是打开方式</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/25360659/1643081258800-ce046d63-b514-457f-a329-4f7267657e9b.png?x-oss-process=image/resize,w_720,limit_0/watermark,type_d3F5LW1pY3JvaGVp,size_21,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23f3f2f2&from=url&id=KfaLZ&originHeight=371&originWidth=720&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><strong>fcolse函数关闭文件：</strong><br />bool fclose(resonurce handle);<br />完整格式：<br /><?php<br /> $f_open=fopen("../file.txt","br");<br /> ....<br /> fclose($f_open);<br />?><br><a name="cgJ9C"></a></p>
+<h3 id="读写文件"><a href="#读写文件" class="headerlink" title="读写文件"></a><strong>读写文件</strong></h3><p><strong>读取文件：</strong><br /><strong>readfile()函数：</strong>读入文件并放到缓冲区，不需要打开关闭文件不需要输出语句，直接写出文件路径即可<br />int readdfile(string filename);<br /><strong>file()函数：</strong>读取整个文件，将内容按行存放到数组中，<br />array file(string filename);<br /><strong>file_get_contents()函数：</strong>将文件内容读入一个字符串，若有offset和maxlen参数，在参数offest处开始读取长度为maxlen的函数<br />string file_get_contents(string filename[,int offest[,intmaxlen]]);<br /><strong>fgets()函数：</strong>一次读取一行数据<br />string fget(int handle[,intlength])<br />handle是被打开的文件，length是读取的数据长度，读取length-1长度的字符串<br /><strong>fgetss()函数：</strong>用于读取一行数据，会自动过滤掉被读取内容中的HTML和PHP标记<br />string fgetss(resource handle[,int lengrh[,string allowable_tags]])<br /><strong>fgetc()函数：</strong>在对某一个字符进行查找、替换时，需要有针对性的对某个字符进行读取<br />string fgetc(rescource handle)<br /><strong>fread()函数：</strong>读取任意长度字符，读取指定长度字符<br />string fread(int handle,int length)<br /><strong>将数据写入文件：</strong><br />fwrite()函数：也称fputs()函数 ，用法相同<br />int fwrite(resource handle,string string[,int length])<br />该函数将string写入文件指针headle处，若指定了长度length则写入length长度后停止，若文件长度小于length则输出文件全部内容<br />file_put_contents()函数：<br />int file_put_contents(string filename,string data[,int flages])<br><a name="cpC1a"></a></p>
+<h3 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h3><p><img src="https://cdn.nlark.com/yuque/0/2022/jpeg/25360659/1643168150166-cc21c10d-8e2a-482c-9fc8-8daa2d967e71.jpeg?x-oss-process=image/resize,w_736,limit_0/interlace,1/watermark,type_d3F5LW1pY3JvaGVp,size_21,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23b1aba6&from=url&id=Fw8jx&originHeight=552&originWidth=736&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title="><br /><img src="https://cdn.nlark.com/yuque/0/2022/jpeg/25360659/1643168174272-5595a003-38e0-4be2-bdf7-569758b67652.jpeg?x-oss-process=image/resize,w_878,limit_0/interlace,1/watermark,type_d3F5LW1pY3JvaGVp,size_25,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23b7b2ae&from=url&id=SCrb1&originHeight=659&originWidth=878&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title="><br><a name="u0PQT"></a></p>
+<h3 id="目录处理"><a href="#目录处理" class="headerlink" title="目录处理"></a><strong>目录处理</strong></h3><p><strong>打开关闭目录：</strong><br />opendir()函数打开目录 path是一个合法的路径<br />resource opendir(string path)<br />closedir()函数关闭目录：<br />void closedir(resource handle)<br />id_dir()函数判断当前路径是否为一个合法目录<br /><strong>浏览目录：</strong><br />scandir()函数浏览目录函数：<br />array scandir(string dirctory[,int sorting_order])<br />该函数返回一个数组，包含dictory中所有文件和目录，参数sorting_order指定排序顺序，默认字母升序，添加了该函数则面为降序排序<br />操作目录：</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/jpeg/25360659/1643250611367-0d6d5e39-31aa-4179-9492-8c3f5b839ed9.jpeg?x-oss-process=image/resize,w_745,limit_0/interlace,1/watermark,type_d3F5LW1pY3JvaGVp,size_21,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23b9b4b2&from=url&id=SvYex&originHeight=559&originWidth=745&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title="><br><a name="ctOax"></a></p>
+<h3 id="文件高级处理应用"><a href="#文件高级处理应用" class="headerlink" title="文件高级处理应用"></a><strong>文件高级处理应用</strong></h3><p>文件指针： <br />rewind()函数：将文件handle的指针设为文件流的开头<br />bool rewind(resouurce handle)<br />fseek()函数：实现文件指针的定位<br />int fseek(resource handle,int offset[,int whence])<br />feof()函数：判断文件指针是否在文件尾<br />bool reof(resource handle)<br />ftell()函数：返回当前指针的位置<br />int ftell(resource handle)<br /><strong>锁定文件</strong><br />flock()函数：锁定文件，防止其他用户同时修该此文件内容<br />bool flock(int handle,int operation)<br />operation参数值：</p>
+<p>| 参数值</p>
+<p> | 说明</p>
+<p> |<br>| --- | --- |<br>| LOCK_SH</p>
+<p> | 取得共享锁定（读取程序）</p>
+<p> |<br>| LOCK_EX</p>
+<p> | 取得独占锁定（写入程序）</p>
+<p> |<br>| LOCK_UN</p>
+<p> | 释放锁定</p>
+<p> |<br>| LOCK_NB</p>
+<p> | 防止flock()锁定时堵塞</p>
+<p> |</p>
+<p><strong>文件上传</strong><br /><strong>= ——+）（*‘/8；。76了，5烤面预定义变量$_FLES：</strong>储存上传文件相关信息<br /><strong>文件上传函数：</strong><br />move_uploaded_file()函数上传文件，将函数上传到指定位置<br />bool move_uploaded_file(string filename,string destination)<br />filename是上传文件的临时文件名（$_FILES[tmp_name]）参数destination是上传后保存新的路径名称<br />在创建from表单时，必须设置from表单的“enctype="multipart/form-data"”属性<br /><strong>多文件上传：</strong>需要在表单中对文件上传域使用数组命名<br><a name="I0VJv"></a></p>
+<h2 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a><strong>面向对象</strong></h2><p><a name="fSgAL"></a></p>
+<h3 id="类与对象"><a href="#类与对象" class="headerlink" title="类与对象"></a>类与对象</h3><p><strong>类的定义：</strong></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span> </span><br><span class="line"> <span class="class"><span class="keyword">class</span> <span class="title">SporObject</span>()</span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">....</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<p><br /><strong>成员方法：</strong><br />类中的函数称为成员方法，二者区别就是，函数实现的是某个独立的功能，而成员方法是实现类中的一个行为，是类的一部分<br />** 类的实例化：**<br />使用new来声明一个对象<br />使用 对象名->成员方法 调用<br /><strong>成员变量：</strong><br />成员变量用来保存信息数据，或与成员方法进行交互来实现某项功能<br />关键字 成员变量名<br />关键字：public private protected static final<br />$this->作用是调用本类中的成员变量或成员方法<br />注：“$this->”“对象名->”后面变量没有$符号<br /><strong>类常量：</strong><br />常量就是不会改变的量是一个恒值 定义常量关键词：<strong>const</strong><br /><strong>构造方法和析构方法</strong><br /><strong>构造：</strong><br />一个类实例化一个对象时随着对象初始化一些成员变量<br />public $成员变量<br />PHP构造方法：生成对象时自动执行的成员方法，作用就是初始化对象，可以没有参数也可以有多个参数<br />void__construct([mixed args[,...]])两条下划线"__"<br /><strong>析构：</strong><br />与构造方法相反，析构方法是对象被销毁的时候调用的，释放内存<br />void__destruct(void)<br /><strong>继承与多态</strong><br />继承格式：<br />class subClass extends superClass{<br />}<br />子类名称：subClass 父类名称：superClass<br /><strong>多态：</strong><br />覆盖和重载<br />覆盖：在子类中重写父类的方法，而在两个子类的对象中虽然调用的是父类相同的方法但返回的结果是不同的<br />重载：一个标识符被用作多个函数名，且能够通过函数的参数个数或参数类型将这些同名的函数区分开<br /><strong>$this->：</strong><br />伪变量，意思就是本身，只能在类内部使用<br /><strong>操作符“::”：</strong><br />可以在没有声明任何实例的情况下访问类中的成员方法或成员变量，<br />关键字::变量名/常量名/方法名<br />关键字：parent：可以调用父类中成员变量，成员方法和常量<br /> self：可以调用当前类中的静态成员和变量<br /> 类名： 可以调用本类中的变量，常量和方法<br><a name="GVeYV"></a></p>
+<h3 id="静态变量（方法）"><a href="#静态变量（方法）" class="headerlink" title="静态变量（方法）"></a><strong>静态变量（方法）</strong></h3><p>不是所有变量(方法)都要通过创建对象来调用。可以通过给变量（方法）加上static关键字来直接调用<br />关键字:静态成员<br />关键字：self，在类内部调用静态成员时所使用<br><a name="KCgSj"></a></p>
+<h3 id="面向对象的高级应用"><a href="#面向对象的高级应用" class="headerlink" title="** 面向对象的高级应用**"></a>** 面向对象的高级应用**</h3><p><strong>final关键字：</strong>说明该类不可以在被继承，也不能再有子类<br />final class class_name{<br />} <br />final function method_name():说明该方法不可以进行重写，也不可以被覆盖<br /><strong>抽象类</strong><br />不可以被实例化的类，只能用作为其他类的父类来使用<br />关键字：abstract<br />abstract class AbstractName{<br />}<br />抽象类方法修饰：abstract function abstractName();<br /><strong>接口的使用</strong><br />实现PHP多重继承，通过关键字：interface实现<br />interface InterfaceName{<br /> functon interfaceName1();<br /> functon interfaceName1();<br />}<br />修饰接口中类的成员必须用public关键字来修饰<br /><strong>克隆对象</strong><br />关键字：clone<br />$object1=new ClassName();<br />$object2=clone $object1;<br />_clone方法：<br />将克隆出来的对象可以用拥有属于自己的属性和行为<br />作用：在克隆对象的过程中调用_clone方法，可以使克隆出来的对象保持自己的一些行为和属性<br /><strong>对象比较：</strong><br />”==“比较两个对象的内容的关系是克隆还是引用”===“比较两个对象的地址的关系是克隆还是引用<br />对象类型检测：<br />instanceof操作符可以检测当前对象所属类<br />ObjectName instanceof ClassName<br />魔术方法：<br />_set 和_get方法<br />_set：包含两个参数，分别表示变量名称和变量值，不可省略，当程序试图写入一个不存在或者不可见的成员变量时执行<br />_get方法</p>
+</script></strong></p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+    
+  <nav id="article-nav" class="wow fadeInUp">
+    
+      <div class="article-nav-link-wrap article-nav-link-left">
+        
+          
+          
+            <img data-src="https://d-sketon.top/img/backimg/bg17.jpg" data-sizes="auto" alt="" class="lazyload">
+          
+        
+        <a href="/2024/07/30/%E9%80%9F%E6%88%90mysql/"></a>
+        <div class="article-nav-caption">前一篇</div>
+        <h3 class="article-nav-title">
+          
+            (no title)
+          
+        </h3>
+      </div>
+    
+    
+    <div class="article-nav-link-wrap article-nav-link-right">
+      
+        
+        
+          <img data-src="/covers/bg17.jpg" data-sizes="auto" alt="" class="lazyload">
+        
+      
+      <a href="/2024/07/30/%E6%90%AD%E5%BB%BA%E7%BD%91%E7%AB%99/"></a>
+      <div class="article-nav-caption">后一篇</div>
+      <h3 class="article-nav-title">
+        
+          (no title)
+        
+      </h3>
+    </div>
+    
+  </nav>
+
+
+  
+</article>
+
+
+
+
+
+
+</section>
+          
+            <aside id="sidebar">
+  <div class="sidebar-wrap wow fadeInRight wrap-sticky">
+    
+      <div class="sidebar-toc-sidebar"><div class="sidebar-toc">
+  <h3 class="toc-title">文章目录</h3>
+  <div class="sidebar-toc-wrapper toc-div-class" >
+      
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#PHP%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.</span> <span class="toc-text">PHP数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%87%E9%87%8F%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.1.</span> <span class="toc-text">标量数据类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%8D%E5%90%88%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.2.</span> <span class="toc-text">复合数据类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%B9%E6%AE%8A%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.3.</span> <span class="toc-text">特殊数据类型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PHP%E5%B8%B8%E9%87%8F"><span class="toc-number">2.</span> <span class="toc-text">PHP常量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A3%B0%E6%98%8E%E5%92%8C%E4%BD%BF%E7%94%A8%E5%B8%B8%E9%87%8F"><span class="toc-number">2.1.</span> <span class="toc-text">声明和使用常量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%84%E5%AE%9A%E4%B9%89%E5%B8%B8%E9%87%8F"><span class="toc-number">2.2.</span> <span class="toc-text">预定义常量</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PHP%E5%8F%98%E9%87%8F"><span class="toc-number">3.</span> <span class="toc-text">PHP变量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A3%B0%E6%98%8E%E5%92%8C%E4%BD%BF%E7%94%A8%E5%8F%98%E9%87%8F"><span class="toc-number">3.1.</span> <span class="toc-text">声明和使用变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%98%E9%87%8F%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="toc-number">3.2.</span> <span class="toc-text">变量作用域</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">4.</span> <span class="toc-text">运算符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%BD%E6%95%B0"><span class="toc-number">5.</span> <span class="toc-text">函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%A7%E5%88%B6%E8%AF%AD%E5%8F%A5"><span class="toc-number">6.</span> <span class="toc-text">控制语句</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-number">7.</span> <span class="toc-text">字符串</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-number">8.</span> <span class="toc-text">正则表达式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#PCRE%E5%85%BC%E5%AE%B9%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%87%BD%E6%95%B0"><span class="toc-number">8.1.</span> <span class="toc-text">PCRE兼容正则表达式函数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E7%BB%84"><span class="toc-number">9.</span> <span class="toc-text">数组</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A3%B0%E6%98%8E%E6%95%B0%E7%BB%84"><span class="toc-number">9.1.</span> <span class="toc-text">声明数组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E7%9A%84%E7%B1%BB%E5%9E%8B"><span class="toc-number">9.2.</span> <span class="toc-text">数组的类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E6%95%B0%E7%BB%84"><span class="toc-number">9.3.</span> <span class="toc-text">输出数组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E7%9A%84%E6%9E%84%E9%80%A0"><span class="toc-number">9.4.</span> <span class="toc-text">数组的构造</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%81%8D%E5%8E%86%E6%95%B0%E7%BB%84"><span class="toc-number">9.5.</span> <span class="toc-text">遍历数组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%8E%E6%95%B0%E7%BB%84%E7%9A%84%E8%BD%AC%E6%8D%A2"><span class="toc-number">9.6.</span> <span class="toc-text">字符串与数组的转换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%9F%E8%AE%A1%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0%E4%B8%AA%E6%95%B0"><span class="toc-number">9.7.</span> <span class="toc-text">统计数组元素个数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2%E6%95%B0%E7%BB%84%E4%B8%AD%E6%8C%87%E5%AE%9A%E5%85%83%E7%B4%A0"><span class="toc-number">9.8.</span> <span class="toc-text">查询数组中指定元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96%E6%95%B0%E7%BB%84%E6%9C%80%E5%90%8E%E4%B8%80%E4%B8%AA%E5%85%83%E7%B4%A0"><span class="toc-number">9.9.</span> <span class="toc-text">获取数组最后一个元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%91%E6%95%B0%E7%BB%84%E4%B8%AD%E6%B7%BB%E5%8A%A0%E5%85%83%E7%B4%A0"><span class="toc-number">9.10.</span> <span class="toc-text">向数组中添加元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E6%95%B0%E7%BB%84%E4%B8%AD%E9%87%8D%E5%A4%8D%E5%85%83%E7%B4%A0"><span class="toc-number">9.11.</span> <span class="toc-text">删除数组中重复元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%BC%E5%90%88%E8%BF%90%E7%94%A8%E6%95%B0%E7%BB%84%E5%87%BD%E6%95%B0%E5%AE%9E%E7%8E%B0%E5%A4%9A%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0"><span class="toc-number">9.12.</span> <span class="toc-text">综合运用数组函数实现多文件上传</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%A8%E5%8D%95"><span class="toc-number">10.</span> <span class="toc-text">表单</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96%E8%A1%A8%E5%8D%95%E6%95%B0%E6%8D%AE%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-number">10.1.</span> <span class="toc-text">获取表单数据的方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PHP%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92%E6%96%B9%E6%B3%95"><span class="toc-number">10.2.</span> <span class="toc-text">PHP参数传递方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Web%E9%A1%B5%E9%9D%A2%E5%B5%8C%E5%85%A5%E8%84%9A%E6%9C%AC"><span class="toc-number">10.3.</span> <span class="toc-text">Web页面嵌入脚本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%A8PHP%E4%B8%AD%E8%8E%B7%E5%8F%96%E8%A1%A8%E5%8D%95%E6%95%B0%E6%8D%AE"><span class="toc-number">10.4.</span> <span class="toc-text">在PHP中获取表单数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96%E6%96%87%E4%BB%B6%E5%9F%9F%E7%9A%84%E5%80%BC"><span class="toc-number">10.5.</span> <span class="toc-text">获取文件域的值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PHP%E4%B8%8Eweb%E8%A1%A8%E5%8D%95%E7%9A%84%E7%BB%BC%E5%90%88%E5%BA%94%E7%94%A8"><span class="toc-number">10.6.</span> <span class="toc-text">PHP与web表单的综合应用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PHP%E4%B8%AD%E8%B0%83%E7%94%A8javascript"><span class="toc-number">11.</span> <span class="toc-text">PHP中调用javascript</span></a></li></ol>
+      
+  </div>
+</div>
+</div>
+      <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img data-src="/avatar/avatar.jpg" data-sizes="auto" alt="Boy" class="lazyload">
+  <div class="sidebar-author-name">Boy</div>
+  <div class="sidebar-description"></div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>文章</div>
+    <div class="sidebar-state-number">23</div>
+  </div>
+  <div class="sidebar-state-category">
+    <div>分类</div>
+    <div class="sidebar-state-number">0</div>
+  </div>
+  <div class="sidebar-state-tag">
+    <div>标签</div>
+    <div class="sidebar-state-number">0</div>
+  </div>
+</div>
+<div class="sidebar-social">
+  
+</div>
+<div class="sidebar-menu">
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/" aria-label="首页"></a>
+      <span class="sidebar-menu-icon"></span>
+      <div class="sidebar-menu-link">首页</div>
+    </div>
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/archives" aria-label="归档"></a>
+      <span class="sidebar-menu-icon"></span>
+      <div class="sidebar-menu-link">归档</div>
+    </div>
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/about" aria-label="关于"></a>
+      <span class="sidebar-menu-icon"></span>
+      <div class="sidebar-menu-link">关于</div>
+    </div>
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/friend" aria-label="友链"></a>
+      <span class="sidebar-menu-icon"></span>
+      <div class="sidebar-menu-link">友链</div>
+    </div>
+  
+</div>
+</div>
+    
+    
+      <div class="sidebar-btn-wrapper" style="position:static">
+        <div class="sidebar-toc-btn current"></div>
+        <div class="sidebar-common-btn"></div>
+      </div>
+    
+  </div>
+
+  
+</aside>
+
+          
+        </div>
+        <footer id="footer" class="wow fadeInUp">
+  <div style="width: 100%; overflow: hidden">
+    <div class="footer-line"></div>
+  </div>
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      <div>
+        <span class="icon-copyright"></span>
+        2020-2024
+        <span class="footer-info-sep"></span>
+        Boy
+      </div>
+      
+        <div>
+          基于&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>&nbsp;
+          Theme.<a href="https://github.com/D-Sketon/hexo-theme-reimu" target="_blank">Reimu</a>
+        </div>
+      
+      
+        <div>
+          <span class="icon-brush"></span>
+          47.1k
+          &nbsp;|&nbsp;
+          <span class="icon-coffee"></span>
+          03:36
+        </div>
+      
+      
+        <div>
+          <span class="icon-eye"></span>
+          <span id="busuanzi_container_site_pv">总访问量&nbsp;<span id="busuanzi_value_site_pv"></span></span>
+          &nbsp;|&nbsp;
+          <span class="icon-user"></span>
+          <span id="busuanzi_container_site_uv">总访客量&nbsp;<span id="busuanzi_value_site_uv"></span></span>
+        </div>
+      
+    </div>
+  </div>
+</footer>
+
+        <div class="sidebar-top">
+          <img src="/images/taichi.png" height="50" width="50" alt="backtop" />
+          <div class="arrow-up"></div>
+        </div>
+        <div id="mask"></div>
+      </div>
+      <nav id="mobile-nav">
+  <div class="sidebar-wrap">
+    
+      <div class="sidebar-toc-sidebar"><div class="sidebar-toc">
+  <h3 class="toc-title">文章目录</h3>
+  <div class="sidebar-toc-wrapper toc-div-class" >
+      
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#PHP%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.</span> <span class="toc-text">PHP数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%87%E9%87%8F%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.1.</span> <span class="toc-text">标量数据类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%8D%E5%90%88%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.2.</span> <span class="toc-text">复合数据类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%B9%E6%AE%8A%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.3.</span> <span class="toc-text">特殊数据类型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PHP%E5%B8%B8%E9%87%8F"><span class="toc-number">2.</span> <span class="toc-text">PHP常量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A3%B0%E6%98%8E%E5%92%8C%E4%BD%BF%E7%94%A8%E5%B8%B8%E9%87%8F"><span class="toc-number">2.1.</span> <span class="toc-text">声明和使用常量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%84%E5%AE%9A%E4%B9%89%E5%B8%B8%E9%87%8F"><span class="toc-number">2.2.</span> <span class="toc-text">预定义常量</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PHP%E5%8F%98%E9%87%8F"><span class="toc-number">3.</span> <span class="toc-text">PHP变量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A3%B0%E6%98%8E%E5%92%8C%E4%BD%BF%E7%94%A8%E5%8F%98%E9%87%8F"><span class="toc-number">3.1.</span> <span class="toc-text">声明和使用变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%98%E9%87%8F%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="toc-number">3.2.</span> <span class="toc-text">变量作用域</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">4.</span> <span class="toc-text">运算符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%BD%E6%95%B0"><span class="toc-number">5.</span> <span class="toc-text">函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%A7%E5%88%B6%E8%AF%AD%E5%8F%A5"><span class="toc-number">6.</span> <span class="toc-text">控制语句</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-number">7.</span> <span class="toc-text">字符串</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-number">8.</span> <span class="toc-text">正则表达式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#PCRE%E5%85%BC%E5%AE%B9%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%87%BD%E6%95%B0"><span class="toc-number">8.1.</span> <span class="toc-text">PCRE兼容正则表达式函数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E7%BB%84"><span class="toc-number">9.</span> <span class="toc-text">数组</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A3%B0%E6%98%8E%E6%95%B0%E7%BB%84"><span class="toc-number">9.1.</span> <span class="toc-text">声明数组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E7%9A%84%E7%B1%BB%E5%9E%8B"><span class="toc-number">9.2.</span> <span class="toc-text">数组的类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E6%95%B0%E7%BB%84"><span class="toc-number">9.3.</span> <span class="toc-text">输出数组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E7%9A%84%E6%9E%84%E9%80%A0"><span class="toc-number">9.4.</span> <span class="toc-text">数组的构造</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%81%8D%E5%8E%86%E6%95%B0%E7%BB%84"><span class="toc-number">9.5.</span> <span class="toc-text">遍历数组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%8E%E6%95%B0%E7%BB%84%E7%9A%84%E8%BD%AC%E6%8D%A2"><span class="toc-number">9.6.</span> <span class="toc-text">字符串与数组的转换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%9F%E8%AE%A1%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0%E4%B8%AA%E6%95%B0"><span class="toc-number">9.7.</span> <span class="toc-text">统计数组元素个数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2%E6%95%B0%E7%BB%84%E4%B8%AD%E6%8C%87%E5%AE%9A%E5%85%83%E7%B4%A0"><span class="toc-number">9.8.</span> <span class="toc-text">查询数组中指定元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96%E6%95%B0%E7%BB%84%E6%9C%80%E5%90%8E%E4%B8%80%E4%B8%AA%E5%85%83%E7%B4%A0"><span class="toc-number">9.9.</span> <span class="toc-text">获取数组最后一个元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%91%E6%95%B0%E7%BB%84%E4%B8%AD%E6%B7%BB%E5%8A%A0%E5%85%83%E7%B4%A0"><span class="toc-number">9.10.</span> <span class="toc-text">向数组中添加元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E6%95%B0%E7%BB%84%E4%B8%AD%E9%87%8D%E5%A4%8D%E5%85%83%E7%B4%A0"><span class="toc-number">9.11.</span> <span class="toc-text">删除数组中重复元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%BC%E5%90%88%E8%BF%90%E7%94%A8%E6%95%B0%E7%BB%84%E5%87%BD%E6%95%B0%E5%AE%9E%E7%8E%B0%E5%A4%9A%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0"><span class="toc-number">9.12.</span> <span class="toc-text">综合运用数组函数实现多文件上传</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%A8%E5%8D%95"><span class="toc-number">10.</span> <span class="toc-text">表单</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96%E8%A1%A8%E5%8D%95%E6%95%B0%E6%8D%AE%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-number">10.1.</span> <span class="toc-text">获取表单数据的方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PHP%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92%E6%96%B9%E6%B3%95"><span class="toc-number">10.2.</span> <span class="toc-text">PHP参数传递方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Web%E9%A1%B5%E9%9D%A2%E5%B5%8C%E5%85%A5%E8%84%9A%E6%9C%AC"><span class="toc-number">10.3.</span> <span class="toc-text">Web页面嵌入脚本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%A8PHP%E4%B8%AD%E8%8E%B7%E5%8F%96%E8%A1%A8%E5%8D%95%E6%95%B0%E6%8D%AE"><span class="toc-number">10.4.</span> <span class="toc-text">在PHP中获取表单数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96%E6%96%87%E4%BB%B6%E5%9F%9F%E7%9A%84%E5%80%BC"><span class="toc-number">10.5.</span> <span class="toc-text">获取文件域的值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PHP%E4%B8%8Eweb%E8%A1%A8%E5%8D%95%E7%9A%84%E7%BB%BC%E5%90%88%E5%BA%94%E7%94%A8"><span class="toc-number">10.6.</span> <span class="toc-text">PHP与web表单的综合应用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PHP%E4%B8%AD%E8%B0%83%E7%94%A8javascript"><span class="toc-number">11.</span> <span class="toc-text">PHP中调用javascript</span></a></li></ol>
+      
+  </div>
+</div>
+</div>
+      <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img data-src="/avatar/avatar.jpg" data-sizes="auto" alt="Boy" class="lazyload">
+  <div class="sidebar-author-name">Boy</div>
+  <div class="sidebar-description"></div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>文章</div>
+    <div class="sidebar-state-number">23</div>
+  </div>
+  <div class="sidebar-state-category">
+    <div>分类</div>
+    <div class="sidebar-state-number">0</div>
+  </div>
+  <div class="sidebar-state-tag">
+    <div>标签</div>
+    <div class="sidebar-state-number">0</div>
+  </div>
+</div>
+<div class="sidebar-social">
+  
+</div>
+<div class="sidebar-menu">
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/" aria-label="首页"></a>
+      <span class="sidebar-menu-icon"></span>
+      <div class="sidebar-menu-link">首页</div>
+    </div>
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/archives" aria-label="归档"></a>
+      <span class="sidebar-menu-icon"></span>
+      <div class="sidebar-menu-link">归档</div>
+    </div>
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/about" aria-label="关于"></a>
+      <span class="sidebar-menu-icon"></span>
+      <div class="sidebar-menu-link">关于</div>
+    </div>
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/friend" aria-label="友链"></a>
+      <span class="sidebar-menu-icon"></span>
+      <div class="sidebar-menu-link">友链</div>
+    </div>
+  
+</div>
+</div>
+    
+  </div>
+  
+    <div class="sidebar-btn-wrapper">
+      <div class="sidebar-toc-btn current"></div>
+      <div class="sidebar-common-btn"></div>
+    </div>
+  
+</nav>
+
+    </div>
+    <div class="site-search">
+      <div class="reimu-popup popup">
+        <div class="reimu-search">
+          <span class="reimu-search-input-icon"></span>
+          <div class="reimu-search-input" id="reimu-search-input"></div>
+        </div>
+        <div class="reimu-results">
+          <div id="reimu-stats"></div>
+          <div id="reimu-hits"></div>
+          <div id="reimu-pagination" class="reimu-pagination"></div>
+        </div>
+        <span class="popup-btn-close"></span>
+      </div>
+    </div>
+    
+<script src="https://npm.webcache.cn/lazysizes@5.3.2/lazysizes.min.js"></script>
+
+
+<script src="https://npm.webcache.cn/clipboard@2.0.11/dist/clipboard.min.js"></script>
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+<script src="/js/pjax_script.js" data-pjax></script>
+
+
+<script type="module" data-pjax>
+  import PhotoSwipeLightbox from "https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe-lightbox.esm.js";
+  
+  const pswp = () => {
+    if (_$$('.article-entry a.article-gallery-item').length > 0) {
+      new PhotoSwipeLightbox({
+        gallery: '.article-entry',
+        children: 'a.article-gallery-item',
+        pswpModule: () => import("https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.esm.js")
+      }).init();
+    }
+    if(_$$('.article-gallery a.article-gallery-item').length > 0) {
+      new PhotoSwipeLightbox({
+        gallery: '.article-gallery',
+        children: 'a.article-gallery-item',
+        pswpModule: () => import("https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.esm.js")
+      }).init();
+    }
+    window.lightboxStatus = 'done';
+    window.removeEventListener('lightbox:ready', pswp);
+  }
+  if(window.lightboxStatus === 'ready') {
+    pswp()
+  } else {
+    window.addEventListener('lightbox:ready', pswp);
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<script src="https://npm.webcache.cn/mouse-firework@0.0.4/dist/index.umd.js"></script>
+
+  <script>
+    firework(JSON.parse('{"excludeElements":["a","button"],"particles":[{"shape":"circle","move":["emit"],"easing":"easeOutExpo","colors":["#ff5252","#ff7c7c","#ffafaf","#ffd0d0"],"number":20,"duration":[1200,1800],"shapeOptions":{"radius":[16,32],"alpha":[0.3,0.5]}},{"shape":"circle","move":["diffuse"],"easing":"easeOutExpo","colors":["#ff0000"],"number":1,"duration":[1200,1800],"shapeOptions":{"radius":20,"alpha":[0.2,0.5],"lineWidth":6}}]}'))
+  </script>
+
+
+
+
+
+
+<div id="lazy-script">
+  <div>
+    
+  </div>
+</div>
+
+
+  <script>
+    console.log(String.raw`%c 
+ ______     ______     __     __    __     __  __    
+/\  == \   /\  ___\   /\ \   /\ "-./  \   /\ \/\ \   
+\ \  __<   \ \  __\   \ \ \  \ \ \-./\ \  \ \ \_\ \  
+ \ \_\ \_\  \ \_____\  \ \_\  \ \_\ \ \_\  \ \_____\ 
+  \/_/ /_/   \/_____/   \/_/   \/_/  \/_/   \/_____/ 
+                                                  
+`,'color: #ff5252;')
+    console.log('%c Theme.Reimu v' + '0.2.0' + ' %c https://github.com/D-Sketon/hexo-theme-reimu ', 'color: white; background: #ff5252; padding:5px 0;', 'padding:4px;border:1px solid #ff5252;')
+  </script>
+  
+
+
+  
+<script src="https://npm.webcache.cn/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+  <!-- hexo injector body_end start -->
+<script src="/js/insert_highlight.js" data-pjax></script>
+<!-- hexo injector body_end end --></body>
+  </html>
+

@@ -1,0 +1,605 @@
+
+  <!DOCTYPE html>
+  <html lang="zh-CN"  >
+  <head>
+  <meta name="referrer"content="no-referrer"/>
+  <meta charset="utf-8">
+  
+
+  
+
+  
+
+  
+  <script>window.icon_font = '4552607_09mhdxci6yrk';window.clipboard_tips = {"success":"复制成功(*^▽^*)","fail":"复制失败 (ﾟ⊿ﾟ)ﾂ"};</script>
+  
+  
+  <title>
+    
+    Morthos
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7CNoto%20Serif%20SC:400,400italic,700,700italic%7CUbuntu%20Mono:400,400italic,700,700italic&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7CNoto%20Serif%20SC:400,400italic,700,700italic%7CUbuntu%20Mono:400,400italic,700,700italic&display=swap" media="print" onload="this.media&#x3D;&#39;all&#39;">
+  
+    <link rel="preload" href="//at.alicdn.com/t/c/font_4552607_09mhdxci6yrk.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  
+  
+<link rel="stylesheet" href="/css/loader.css">
+
+  <meta name="description" content="01 数据通信网络基础.pdf02 网络参考模型.pdf04 网络层协议及IP编址.pdf05 IP路由基础.pdf14 网络地址转换.pdf 通信与网络 信息的传递 局域网、城域网、广域网 Ip 什么是ip地址 ip地址的表现 ipv4和ipv6的区别在日常网络中，我用会遇到ipv4和ipv6 私有ip地址 特殊的ip地址">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Morthos">
+<meta property="og:url" content="http://example.com/2024/07/30/0710%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/index.html">
+<meta property="og:site_name" content="Morthos">
+<meta property="og:description" content="01 数据通信网络基础.pdf02 网络参考模型.pdf04 网络层协议及IP编址.pdf05 IP路由基础.pdf14 网络地址转换.pdf 通信与网络 信息的传递 局域网、城域网、广域网 Ip 什么是ip地址 ip地址的表现 ipv4和ipv6的区别在日常网络中，我用会遇到ipv4和ipv6 私有ip地址 特殊的ip地址">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1718336195364-6d643744-1c3c-42ca-b928-fd9a745a77fc.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_49,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23efefef&clientId=u71988e1c-800c-4&from=paste&height=779&id=u0efcd6d4&originHeight=974&originWidth=1724&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=349906&status=done&style=none&taskId=u022ed7d7-e549-43f9-916b-edf0cea5ac8&title=&width=1379.2">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1718336221933-563d2ebb-6b91-4475-ba50-383057caa3ee.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_48,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e4e4e4&clientId=u71988e1c-800c-4&from=paste&height=463&id=ue91e3ec0&originHeight=579&originWidth=1688&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=279075&status=done&style=none&taskId=u9e40a8a2-628a-4349-9d74-ff40a285406&title=&width=1350.4">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1718336232153-a0b97cc2-d4d7-4dff-97f1-8a37616affc8.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_49,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23f5f4f4&clientId=u71988e1c-800c-4&from=paste&height=778&id=Sb3oM&originHeight=973&originWidth=1729&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=304699&status=done&style=none&taskId=u6a1a64e2-dd82-4119-a02c-bab5449d38e&title=&width=1383.2">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1718336244945-2f5acddb-0ad4-4761-83ff-2a174e2f42fb.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_37,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e0e0e0&clientId=u71988e1c-800c-4&from=paste&height=852&id=drv5D&originHeight=1065&originWidth=1292&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=585502&status=done&style=none&taskId=u75b23553-aa82-434c-9eb9-0f7fe920a9c&title=&width=1033.6">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1718336443326-ebb2c060-ea33-4500-9d0e-6880b5455cae.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_36,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23f0f0ef&clientId=u71988e1c-800c-4&from=paste&height=568&id=ude5d5d20&originHeight=710&originWidth=1262&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=253650&status=done&style=none&taskId=ub29630c2-649f-499e-bdb9-ba4f5356c09&title=&width=1009.6">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1718336451113-6706f2ad-a96a-4bb5-9b9d-d8766744b395.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_37,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23efefef&clientId=u71988e1c-800c-4&from=paste&height=783&id=u8c2e1681&originHeight=979&originWidth=1301&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=306376&status=done&style=none&taskId=u8b34733c-098e-442d-91ac-275096fc50d&title=&width=1040.8">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1718336748773-7fe1f132-6349-4719-8c73-0dbc6fa2616e.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_44,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23f1f1f1&clientId=u71988e1c-800c-4&from=paste&height=694&id=ub3b16c04&originHeight=868&originWidth=1540&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=253921&status=done&style=none&taskId=u2691ada2-accc-4aa6-b8c5-aa0332d5720&title=&width=1232">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1718336759786-321aa20b-09e2-4401-acfb-eb5d5a93ca5b.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_43,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e3e3e3&clientId=u71988e1c-800c-4&from=paste&height=402&id=u44eab104&originHeight=503&originWidth=1518&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=182721&status=done&style=none&taskId=uf824619b-82e5-4db9-80e1-e0710bd0a31&title=&width=1214.4">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1718336778985-788344de-b11d-4a9b-8346-2c5100547bf2.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_44,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23f5f5f4&clientId=u71988e1c-800c-4&from=paste&height=696&id=uc487096b&originHeight=870&originWidth=1541&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=186162&status=done&style=none&taskId=u4870dddb-9f72-4375-9564-469d0061a10&title=&width=1232.8">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1718336786812-81bd3533-b72b-4820-92bf-c33d2d1506f9.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_43,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23ececec&clientId=u71988e1c-800c-4&from=paste&height=465&id=u77727e12&originHeight=581&originWidth=1510&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=160356&status=done&style=none&taskId=u9306f9ab-3e1a-4902-bd87-2bb4c55d0b9&title=&width=1208">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1718336696748-43ae858f-3a47-466a-9b49-322ff75673aa.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_42,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e1e1e1&clientId=u71988e1c-800c-4&from=paste&height=346&id=uaf5fd58e&originHeight=433&originWidth=1475&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=241336&status=done&style=none&taskId=uf948cd57-b6ed-410e-9e10-f8f5b283d26&title=&width=1180">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1718336985561-9492fb3b-212a-4d20-bd92-3b226441b2c3.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_37,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23f1f1f1&clientId=u71988e1c-800c-4&from=paste&height=578&id=u38ee5837&originHeight=722&originWidth=1285&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=271775&status=done&style=none&taskId=u6ace34fb-dfb4-4afa-960c-7ec4f76cd6e&title=&width=1028">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1718336906861-e65d11dc-50cc-4190-9f56-92474d32a987.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_38,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23f1f1f0&clientId=u71988e1c-800c-4&from=paste&height=594&id=u6a43b194&originHeight=743&originWidth=1316&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=229226&status=done&style=none&taskId=u58a9f152-0cfa-4746-aa57-631863e3cde&title=&width=1052.8">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1718336914965-c43ffe45-41b9-40a7-b07b-c27ada91396d.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_38,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e7e7e7&clientId=u71988e1c-800c-4&from=paste&height=616&id=uf3a0dedb&originHeight=770&originWidth=1335&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=270462&status=done&style=none&taskId=u5c077840-f135-4d2b-8aa7-8ac097cfbb4&title=&width=1068">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1718336936944-57c59bbc-6f4f-4f57-a831-01c2982d7d24.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_37,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23f2f2f2&clientId=u71988e1c-800c-4&from=paste&height=594&id=uef691179&originHeight=743&originWidth=1314&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=177015&status=done&style=none&taskId=u83961206-709c-4dd5-b2e1-21a8d9c4784&title=&width=1051.2">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1718336947128-e7096570-14dc-46a3-aa35-4a706be6b266.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_32,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e9e9e9&clientId=u71988e1c-800c-4&from=paste&height=741&id=ucd623a09&originHeight=926&originWidth=1128&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=366042&status=done&style=none&taskId=ua55819a8-6162-42c8-920c-0ec06fd57bb&title=&width=902.4">
+<meta property="article:published_time" content="2024-07-30T12:42:12.243Z">
+<meta property="article:modified_time" content="2024-07-30T12:42:12.433Z">
+<meta property="article:author" content="Boy">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1718336195364-6d643744-1c3c-42ca-b928-fd9a745a77fc.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_49,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23efefef&clientId=u71988e1c-800c-4&from=paste&height=779&id=u0efcd6d4&originHeight=974&originWidth=1724&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=349906&status=done&style=none&taskId=u022ed7d7-e549-43f9-916b-edf0cea5ac8&title=&width=1379.2">
+  
+    <link rel="alternate" href="/atom.xml" title="Morthos" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/images/favicon.ico">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<link rel="stylesheet" href="https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.css">
+
+  
+  
+  
+  
+<script src="https://npm.webcache.cn/pace-js@1.2.4/pace.min.js"></script>
+
+  
+    
+<link rel="stylesheet" href="https://npm.webcache.cn/wowjs@1.1.3/css/libs/animate.css">
+
+    
+<script src="https://npm.webcache.cn/wowjs@1.1.3/dist/wow.min.js"></script>
+
+    <script>
+      new WOW({
+        offset: 0,
+        mobile: true,
+        live: false
+      }).init();
+    </script>
+  
+  
+    <script src="/sw.js"></script>
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+  <body>
+    
+  <div id='loader'>
+    <div class="loading-left-bg loading-bg"></div>
+    <div class="loading-right-bg loading-bg"></div>
+    <div class="spinner-box">
+      <div class="loading-taichi">
+        <svg width="150" height="150" viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="https://www.w3.org/2000/svg" shape-rendering="geometricPrecision">
+          <path d="M303.5 432A80 80 0 0 1 291.5 592A80 80 0 0 1 303.5 432z" fill="#ff6e6b" />
+          <path d="M512 65A447 447 0 0 1 512 959L512 929A417 417 0 0 0 512 95A417 417 0 0 0 512 929L512 959A447 447 0 0 1 512 65z" fill="#fd0d00" />
+          <path d="M512 95A417 417 0 0 1 929 512A208.5 208.5 0 0 1 720.5 720.5L720.5 592A80 80 0 0 0 720.5 432A80 80 0 0 0 720.5 592L720.5 720.5A208.5 208.5 0 0 1 512 512A208.5 208.5 0 0 0 303.5 303.5A208.5 208.5 0 0 0 95 512A417 417 0 0 1 512 95" fill="#fd0d00" />
+        </svg>
+      </div>
+      <div class="loading-word">少女祈祷中...</div>
+    </div>
+  </div>
+  </div>
+  <script>
+    var time = null;
+    var startLoading = () => {
+      time = Date.now();
+      document.getElementById('loader').classList.remove("loading");
+    }
+    var endLoading = () => {
+      if (!time) {
+        document.body.style.overflow = 'auto';
+        document.getElementById('loader').classList.add("loading");
+      } else {
+        if (Date.now() - time > 500) {
+          time = null;
+          document.body.style.overflow = 'auto';
+          document.getElementById('loader').classList.add("loading");
+        } else {
+          setTimeout(endLoading, 500 - (Date.now() - time));
+          time = null;
+        }
+      }
+    }
+    window.addEventListener('DOMContentLoaded', endLoading);
+    document.getElementById('loader').addEventListener('click', endLoading);
+  </script>
+
+<div id="copy-tooltip" style="pointer-events: none; opacity: 0; transition: all 0.2s ease; position: fixed;top: 50%;left: 50%;z-index: 999;transform: translate(-50%, -50%);color: white;background: rgba(0, 0, 0, 0.5);padding: 10px 15px;border-radius: 10px;">
+</div>
+
+    <div id="container">
+      <div id="wrap">
+        <div id="header-nav">
+  <nav id="main-nav">
+    
+      <span class="main-nav-link-wrap">
+        <span class="main-nav-icon"></span>
+        <a class="main-nav-link" href="/">首页</a>
+      </span>
+    
+      <span class="main-nav-link-wrap">
+        <span class="main-nav-icon"></span>
+        <a class="main-nav-link" href="/archives">归档</a>
+      </span>
+    
+      <span class="main-nav-link-wrap">
+        <span class="main-nav-icon"></span>
+        <a class="main-nav-link" href="/about">关于</a>
+      </span>
+    
+      <span class="main-nav-link-wrap">
+        <span class="main-nav-icon"></span>
+        <a class="main-nav-link" href="/friend">友链</a>
+      </span>
+    
+    <a id="main-nav-toggle" class="nav-icon"></a>
+  </nav>
+  <nav id="sub-nav">
+    
+      <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS 订阅"></a>
+    
+    
+    
+  </nav>
+</div>
+<header id="header">
+  
+    
+      <img fetchpriority="high" src="/images/banner.webp" alt="">
+    
+  
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <div id="logo-wrap">
+        
+          
+          
+            <a href="/" id="logo">
+              <h1>Morthos</h1>
+            </a>
+          
+        
+      </div>
+      
+        
+        <h2 id="subtitle-wrap">
+          
+        </h2>
+      
+    </div>
+  </div>
+</header>
+
+        <div id="content" class="outer">
+          
+          <section id="main"><article id="post-0710 计算机网络基础" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-inner">
+    <div class="article-meta">
+      <div class="article-date wow slideInLeft">
+  <a href="/2024/07/30/0710%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/" class="article-date-link">
+    <time datetime="2024-07-30T12:42:12.243Z" itemprop="datePublished">2024-07-30</time>
+  </a>
+</div>
+
+      
+
+    </div>
+    <div class="hr-line"></div>
+    
+
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><a target="_blank" rel="noopener" href="https://www.yuque.com/attachments/yuque/0/2024/pdf/46222800/1722251160734-ccaf6fca-fd04-46fc-9ff9-4eeee2f81a86.pdf?_lake_card=%7B%22src%22:%22https://www.yuque.com/attachments/yuque/0/2024/pdf/46222800/1722251160734-ccaf6fca-fd04-46fc-9ff9-4eeee2f81a86.pdf%22,%22name%22:%2201%20%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80.pdf%22,%22size%22:1246372,%22ext%22:%22pdf%22,%22source%22:%22%22,%22status%22:%22done%22,%22download%22:true,%22taskId%22:%22u93f3ba32-e186-48e0-9fd1-bea7208ccb5%22,%22taskType%22:%22transfer%22,%22type%22:%22application/pdf%22,%22mode%22:%22title%22,%22id%22:%22uf02714cc%22,%22card%22:%22file%22%7D">01 数据通信网络基础.pdf</a><a target="_blank" rel="noopener" href="https://www.yuque.com/attachments/yuque/0/2024/pdf/46222800/1722251160733-23490847-944b-4a40-80ad-f7767794f757.pdf?_lake_card=%7B%22src%22:%22https://www.yuque.com/attachments/yuque/0/2024/pdf/46222800/1722251160733-23490847-944b-4a40-80ad-f7767794f757.pdf%22,%22name%22:%2202%20%E7%BD%91%E7%BB%9C%E5%8F%82%E8%80%83%E6%A8%A1%E5%9E%8B.pdf%22,%22size%22:1634242,%22ext%22:%22pdf%22,%22source%22:%22%22,%22status%22:%22done%22,%22download%22:true,%22taskId%22:%22u923856bf-0333-40b2-8619-25beb4aa601%22,%22taskType%22:%22transfer%22,%22type%22:%22application/pdf%22,%22mode%22:%22title%22,%22id%22:%22u463c4330%22,%22card%22:%22file%22%7D">02 网络参考模型.pdf</a><a target="_blank" rel="noopener" href="https://www.yuque.com/attachments/yuque/0/2024/pdf/46222800/1722251160726-ca0d6bbc-b96f-4f90-82a5-82b850bbc977.pdf?_lake_card=%7B%22src%22:%22https://www.yuque.com/attachments/yuque/0/2024/pdf/46222800/1722251160726-ca0d6bbc-b96f-4f90-82a5-82b850bbc977.pdf%22,%22name%22:%2204%20%E7%BD%91%E7%BB%9C%E5%B1%82%E5%8D%8F%E8%AE%AE%E5%8F%8AIP%E7%BC%96%E5%9D%80.pdf%22,%22size%22:1592504,%22ext%22:%22pdf%22,%22source%22:%22%22,%22status%22:%22done%22,%22download%22:true,%22taskId%22:%22u354d76d7-bc07-4e1e-bace-0eb7451e728%22,%22taskType%22:%22transfer%22,%22type%22:%22application/pdf%22,%22mode%22:%22title%22,%22id%22:%22u28f25a62%22,%22card%22:%22file%22%7D">04 网络层协议及IP编址.pdf</a><a target="_blank" rel="noopener" href="https://www.yuque.com/attachments/yuque/0/2024/pdf/46222800/1722251160944-551c36ee-5278-4fd4-b0fe-4ee8e3881b75.pdf?_lake_card=%7B%22src%22:%22https://www.yuque.com/attachments/yuque/0/2024/pdf/46222800/1722251160944-551c36ee-5278-4fd4-b0fe-4ee8e3881b75.pdf%22,%22name%22:%2205%20IP%E8%B7%AF%E7%94%B1%E5%9F%BA%E7%A1%80.pdf%22,%22size%22:1866082,%22ext%22:%22pdf%22,%22source%22:%22%22,%22status%22:%22done%22,%22download%22:true,%22taskId%22:%22ufdeb3152-7b66-4073-9377-cfceee53433%22,%22taskType%22:%22transfer%22,%22type%22:%22application/pdf%22,%22mode%22:%22title%22,%22id%22:%22u3a345a60%22,%22card%22:%22file%22%7D">05 IP路由基础.pdf</a><a target="_blank" rel="noopener" href="https://www.yuque.com/attachments/yuque/0/2024/pdf/46222800/1722251160949-2cfef66c-e008-46a8-80cd-b965498cbd17.pdf?_lake_card=%7B%22src%22:%22https://www.yuque.com/attachments/yuque/0/2024/pdf/46222800/1722251160949-2cfef66c-e008-46a8-80cd-b965498cbd17.pdf%22,%22name%22:%2214%20%E7%BD%91%E7%BB%9C%E5%9C%B0%E5%9D%80%E8%BD%AC%E6%8D%A2.pdf%22,%22size%22:1076811,%22ext%22:%22pdf%22,%22source%22:%22%22,%22status%22:%22done%22,%22download%22:true,%22taskId%22:%22u27a8f54a-e21d-4ab2-bddf-ea7932dcbe6%22,%22taskType%22:%22transfer%22,%22type%22:%22application/pdf%22,%22mode%22:%22title%22,%22id%22:%22udbc99592%22,%22card%22:%22file%22%7D">14 网络地址转换.pdf</a><br><a name="Gvo5z"></a></p>
+<h1 id="通信与网络"><a href="#通信与网络" class="headerlink" title="通信与网络"></a>通信与网络</h1><p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1718336195364-6d643744-1c3c-42ca-b928-fd9a745a77fc.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_49,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23efefef&clientId=u71988e1c-800c-4&from=paste&height=779&id=u0efcd6d4&originHeight=974&originWidth=1724&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=349906&status=done&style=none&taskId=u022ed7d7-e549-43f9-916b-edf0cea5ac8&title=&width=1379.2" alt="image.png"><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1718336221933-563d2ebb-6b91-4475-ba50-383057caa3ee.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_48,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e4e4e4&clientId=u71988e1c-800c-4&from=paste&height=463&id=ue91e3ec0&originHeight=579&originWidth=1688&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=279075&status=done&style=none&taskId=u9e40a8a2-628a-4349-9d74-ff40a285406&title=&width=1350.4" alt="image.png"><br><a name="eWJ8K"></a></p>
+<h3 id="信息的传递"><a href="#信息的传递" class="headerlink" title="信息的传递"></a>信息的传递</h3><p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1718336232153-a0b97cc2-d4d7-4dff-97f1-8a37616affc8.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_49,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23f5f4f4&clientId=u71988e1c-800c-4&from=paste&height=778&id=Sb3oM&originHeight=973&originWidth=1729&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=304699&status=done&style=none&taskId=u6a1a64e2-dd82-4119-a02c-bab5449d38e&title=&width=1383.2" alt="image.png"><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1718336244945-2f5acddb-0ad4-4761-83ff-2a174e2f42fb.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_37,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e0e0e0&clientId=u71988e1c-800c-4&from=paste&height=852&id=drv5D&originHeight=1065&originWidth=1292&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=585502&status=done&style=none&taskId=u75b23553-aa82-434c-9eb9-0f7fe920a9c&title=&width=1033.6" alt="image.png"><br><a name="GWVWx"></a></p>
+<h3 id="局域网、城域网、广域网"><a href="#局域网、城域网、广域网" class="headerlink" title="局域网、城域网、广域网"></a>局域网、城域网、广域网</h3><p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1718336443326-ebb2c060-ea33-4500-9d0e-6880b5455cae.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_36,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23f0f0ef&clientId=u71988e1c-800c-4&from=paste&height=568&id=ude5d5d20&originHeight=710&originWidth=1262&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=253650&status=done&style=none&taskId=ub29630c2-649f-499e-bdb9-ba4f5356c09&title=&width=1009.6" alt="image.png"><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1718336451113-6706f2ad-a96a-4bb5-9b9d-d8766744b395.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_37,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23efefef&clientId=u71988e1c-800c-4&from=paste&height=783&id=u8c2e1681&originHeight=979&originWidth=1301&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=306376&status=done&style=none&taskId=u8b34733c-098e-442d-91ac-275096fc50d&title=&width=1040.8" alt="image.png"><br><a name="mutAR"></a></p>
+<h1 id="Ip"><a href="#Ip" class="headerlink" title="Ip"></a>Ip</h1><p><a name="wcm8t"></a></p>
+<h3 id="什么是ip地址"><a href="#什么是ip地址" class="headerlink" title="什么是ip地址"></a>什么是ip地址</h3><p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1718336748773-7fe1f132-6349-4719-8c73-0dbc6fa2616e.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_44,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23f1f1f1&clientId=u71988e1c-800c-4&from=paste&height=694&id=ub3b16c04&originHeight=868&originWidth=1540&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=253921&status=done&style=none&taskId=u2691ada2-accc-4aa6-b8c5-aa0332d5720&title=&width=1232" alt="image.png"><br><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1718336759786-321aa20b-09e2-4401-acfb-eb5d5a93ca5b.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_43,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e3e3e3&clientId=u71988e1c-800c-4&from=paste&height=402&id=u44eab104&originHeight=503&originWidth=1518&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=182721&status=done&style=none&taskId=uf824619b-82e5-4db9-80e1-e0710bd0a31&title=&width=1214.4" alt="image.png"><br><a name="e8cc4"></a></p>
+<h3 id="ip地址的表现"><a href="#ip地址的表现" class="headerlink" title="ip地址的表现"></a>ip地址的表现</h3><p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1718336778985-788344de-b11d-4a9b-8346-2c5100547bf2.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_44,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23f5f5f4&clientId=u71988e1c-800c-4&from=paste&height=696&id=uc487096b&originHeight=870&originWidth=1541&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=186162&status=done&style=none&taskId=u4870dddb-9f72-4375-9564-469d0061a10&title=&width=1232.8" alt="image.png"><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1718336786812-81bd3533-b72b-4820-92bf-c33d2d1506f9.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_43,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23ececec&clientId=u71988e1c-800c-4&from=paste&height=465&id=u77727e12&originHeight=581&originWidth=1510&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=160356&status=done&style=none&taskId=u9306f9ab-3e1a-4902-bd87-2bb4c55d0b9&title=&width=1208" alt="image.png"><br><a name="wdoWq"></a></p>
+<h3 id="ipv4和ipv6的区别"><a href="#ipv4和ipv6的区别" class="headerlink" title="ipv4和ipv6的区别"></a>ipv4和ipv6的区别</h3><p>在日常网络中，我用会遇到ipv4和ipv6<br><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1718336696748-43ae858f-3a47-466a-9b49-322ff75673aa.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_42,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e1e1e1&clientId=u71988e1c-800c-4&from=paste&height=346&id=uaf5fd58e&originHeight=433&originWidth=1475&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=241336&status=done&style=none&taskId=uf948cd57-b6ed-410e-9e10-f8f5b283d26&title=&width=1180" alt="image.png"><br><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1718336985561-9492fb3b-212a-4d20-bd92-3b226441b2c3.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_37,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23f1f1f1&clientId=u71988e1c-800c-4&from=paste&height=578&id=u38ee5837&originHeight=722&originWidth=1285&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=271775&status=done&style=none&taskId=u6ace34fb-dfb4-4afa-960c-7ec4f76cd6e&title=&width=1028" alt="image.png"><br><a name="p3oaY"></a></p>
+<h3 id="私有ip地址"><a href="#私有ip地址" class="headerlink" title="私有ip地址"></a>私有ip地址</h3><p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1718336906861-e65d11dc-50cc-4190-9f56-92474d32a987.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_38,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23f1f1f0&clientId=u71988e1c-800c-4&from=paste&height=594&id=u6a43b194&originHeight=743&originWidth=1316&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=229226&status=done&style=none&taskId=u58a9f152-0cfa-4746-aa57-631863e3cde&title=&width=1052.8" alt="image.png"><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1718336914965-c43ffe45-41b9-40a7-b07b-c27ada91396d.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_38,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e7e7e7&clientId=u71988e1c-800c-4&from=paste&height=616&id=uf3a0dedb&originHeight=770&originWidth=1335&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=270462&status=done&style=none&taskId=u5c077840-f135-4d2b-8aa7-8ac097cfbb4&title=&width=1068" alt="image.png"><br><a name="SgcEg"></a></p>
+<h3 id="特殊的ip地址"><a href="#特殊的ip地址" class="headerlink" title="特殊的ip地址"></a>特殊的ip地址</h3><p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1718336936944-57c59bbc-6f4f-4f57-a831-01c2982d7d24.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_37,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23f2f2f2&clientId=u71988e1c-800c-4&from=paste&height=594&id=uef691179&originHeight=743&originWidth=1314&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=177015&status=done&style=none&taskId=u83961206-709c-4dd5-b2e1-21a8d9c4784&title=&width=1051.2" alt="image.png"><br><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1718336947128-e7096570-14dc-46a3-aa35-4a706be6b266.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_32,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e9e9e9&clientId=u71988e1c-800c-4&from=paste&height=741&id=ucd623a09&originHeight=926&originWidth=1128&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=366042&status=done&style=none&taskId=ua55819a8-6162-42c8-920c-0ec06fd57bb&title=&width=902.4" alt="image.png"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+    
+  <nav id="article-nav" class="wow fadeInUp">
+    
+      <div class="article-nav-link-wrap article-nav-link-left">
+        
+          
+          
+            <img data-src="https://d-sketon.top/img/backimg/bg9.jpg" data-sizes="auto" alt="" class="lazyload">
+          
+        
+        <a href="/2024/07/30/0711%20github%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/"></a>
+        <div class="article-nav-caption">前一篇</div>
+        <h3 class="article-nav-title">
+          
+            (no title)
+          
+        </h3>
+      </div>
+    
+    
+    <div class="article-nav-link-wrap article-nav-link-right">
+      
+        
+        
+          <img data-src="https://d-sketon.top/img/backimg/bg15.jpg" data-sizes="auto" alt="" class="lazyload">
+        
+      
+      <a href="/2024/07/30/0709%20%E6%B0%B8%E6%81%92%E4%B9%8B%E9%BB%91%E6%BC%8F%E6%B4%9E/"></a>
+      <div class="article-nav-caption">后一篇</div>
+      <h3 class="article-nav-title">
+        
+          (no title)
+        
+      </h3>
+    </div>
+    
+  </nav>
+
+
+  
+</article>
+
+
+
+
+
+
+</section>
+          
+            <aside id="sidebar">
+  <div class="sidebar-wrap wow fadeInRight wrap-sticky">
+    
+      <div class="sidebar-toc-sidebar"><div class="sidebar-toc">
+  <h3 class="toc-title">文章目录</h3>
+  <div class="sidebar-toc-wrapper toc-div-class" >
+      
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%80%9A%E4%BF%A1%E4%B8%8E%E7%BD%91%E7%BB%9C"><span class="toc-number">1.</span> <span class="toc-text">通信与网络</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%A1%E6%81%AF%E7%9A%84%E4%BC%A0%E9%80%92"><span class="toc-number">1.0.1.</span> <span class="toc-text">信息的传递</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B1%80%E5%9F%9F%E7%BD%91%E3%80%81%E5%9F%8E%E5%9F%9F%E7%BD%91%E3%80%81%E5%B9%BF%E5%9F%9F%E7%BD%91"><span class="toc-number">1.0.2.</span> <span class="toc-text">局域网、城域网、广域网</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Ip"><span class="toc-number">2.</span> <span class="toc-text">Ip</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFip%E5%9C%B0%E5%9D%80"><span class="toc-number">2.0.1.</span> <span class="toc-text">什么是ip地址</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ip%E5%9C%B0%E5%9D%80%E7%9A%84%E8%A1%A8%E7%8E%B0"><span class="toc-number">2.0.2.</span> <span class="toc-text">ip地址的表现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ipv4%E5%92%8Cipv6%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">2.0.3.</span> <span class="toc-text">ipv4和ipv6的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A7%81%E6%9C%89ip%E5%9C%B0%E5%9D%80"><span class="toc-number">2.0.4.</span> <span class="toc-text">私有ip地址</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%B9%E6%AE%8A%E7%9A%84ip%E5%9C%B0%E5%9D%80"><span class="toc-number">2.0.5.</span> <span class="toc-text">特殊的ip地址</span></a></li></ol></li></ol></li></ol>
+      
+  </div>
+</div>
+</div>
+      <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img data-src="/avatar/avatar.jpg" data-sizes="auto" alt="Boy" class="lazyload">
+  <div class="sidebar-author-name">Boy</div>
+  <div class="sidebar-description"></div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>文章</div>
+    <div class="sidebar-state-number">23</div>
+  </div>
+  <div class="sidebar-state-category">
+    <div>分类</div>
+    <div class="sidebar-state-number">0</div>
+  </div>
+  <div class="sidebar-state-tag">
+    <div>标签</div>
+    <div class="sidebar-state-number">0</div>
+  </div>
+</div>
+<div class="sidebar-social">
+  
+</div>
+<div class="sidebar-menu">
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/" aria-label="首页"></a>
+      <span class="sidebar-menu-icon"></span>
+      <div class="sidebar-menu-link">首页</div>
+    </div>
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/archives" aria-label="归档"></a>
+      <span class="sidebar-menu-icon"></span>
+      <div class="sidebar-menu-link">归档</div>
+    </div>
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/about" aria-label="关于"></a>
+      <span class="sidebar-menu-icon"></span>
+      <div class="sidebar-menu-link">关于</div>
+    </div>
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/friend" aria-label="友链"></a>
+      <span class="sidebar-menu-icon"></span>
+      <div class="sidebar-menu-link">友链</div>
+    </div>
+  
+</div>
+</div>
+    
+    
+      <div class="sidebar-btn-wrapper" style="position:static">
+        <div class="sidebar-toc-btn current"></div>
+        <div class="sidebar-common-btn"></div>
+      </div>
+    
+  </div>
+
+  
+</aside>
+
+          
+        </div>
+        <footer id="footer" class="wow fadeInUp">
+  <div style="width: 100%; overflow: hidden">
+    <div class="footer-line"></div>
+  </div>
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      <div>
+        <span class="icon-copyright"></span>
+        2020-2024
+        <span class="footer-info-sep"></span>
+        Boy
+      </div>
+      
+        <div>
+          基于&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>&nbsp;
+          Theme.<a href="https://github.com/D-Sketon/hexo-theme-reimu" target="_blank">Reimu</a>
+        </div>
+      
+      
+        <div>
+          <span class="icon-brush"></span>
+          47.1k
+          &nbsp;|&nbsp;
+          <span class="icon-coffee"></span>
+          03:36
+        </div>
+      
+      
+        <div>
+          <span class="icon-eye"></span>
+          <span id="busuanzi_container_site_pv">总访问量&nbsp;<span id="busuanzi_value_site_pv"></span></span>
+          &nbsp;|&nbsp;
+          <span class="icon-user"></span>
+          <span id="busuanzi_container_site_uv">总访客量&nbsp;<span id="busuanzi_value_site_uv"></span></span>
+        </div>
+      
+    </div>
+  </div>
+</footer>
+
+        <div class="sidebar-top">
+          <img src="/images/taichi.png" height="50" width="50" alt="backtop" />
+          <div class="arrow-up"></div>
+        </div>
+        <div id="mask"></div>
+      </div>
+      <nav id="mobile-nav">
+  <div class="sidebar-wrap">
+    
+      <div class="sidebar-toc-sidebar"><div class="sidebar-toc">
+  <h3 class="toc-title">文章目录</h3>
+  <div class="sidebar-toc-wrapper toc-div-class" >
+      
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%80%9A%E4%BF%A1%E4%B8%8E%E7%BD%91%E7%BB%9C"><span class="toc-number">1.</span> <span class="toc-text">通信与网络</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%A1%E6%81%AF%E7%9A%84%E4%BC%A0%E9%80%92"><span class="toc-number">1.0.1.</span> <span class="toc-text">信息的传递</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B1%80%E5%9F%9F%E7%BD%91%E3%80%81%E5%9F%8E%E5%9F%9F%E7%BD%91%E3%80%81%E5%B9%BF%E5%9F%9F%E7%BD%91"><span class="toc-number">1.0.2.</span> <span class="toc-text">局域网、城域网、广域网</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Ip"><span class="toc-number">2.</span> <span class="toc-text">Ip</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFip%E5%9C%B0%E5%9D%80"><span class="toc-number">2.0.1.</span> <span class="toc-text">什么是ip地址</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ip%E5%9C%B0%E5%9D%80%E7%9A%84%E8%A1%A8%E7%8E%B0"><span class="toc-number">2.0.2.</span> <span class="toc-text">ip地址的表现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ipv4%E5%92%8Cipv6%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">2.0.3.</span> <span class="toc-text">ipv4和ipv6的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A7%81%E6%9C%89ip%E5%9C%B0%E5%9D%80"><span class="toc-number">2.0.4.</span> <span class="toc-text">私有ip地址</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%B9%E6%AE%8A%E7%9A%84ip%E5%9C%B0%E5%9D%80"><span class="toc-number">2.0.5.</span> <span class="toc-text">特殊的ip地址</span></a></li></ol></li></ol></li></ol>
+      
+  </div>
+</div>
+</div>
+      <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img data-src="/avatar/avatar.jpg" data-sizes="auto" alt="Boy" class="lazyload">
+  <div class="sidebar-author-name">Boy</div>
+  <div class="sidebar-description"></div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>文章</div>
+    <div class="sidebar-state-number">23</div>
+  </div>
+  <div class="sidebar-state-category">
+    <div>分类</div>
+    <div class="sidebar-state-number">0</div>
+  </div>
+  <div class="sidebar-state-tag">
+    <div>标签</div>
+    <div class="sidebar-state-number">0</div>
+  </div>
+</div>
+<div class="sidebar-social">
+  
+</div>
+<div class="sidebar-menu">
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/" aria-label="首页"></a>
+      <span class="sidebar-menu-icon"></span>
+      <div class="sidebar-menu-link">首页</div>
+    </div>
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/archives" aria-label="归档"></a>
+      <span class="sidebar-menu-icon"></span>
+      <div class="sidebar-menu-link">归档</div>
+    </div>
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/about" aria-label="关于"></a>
+      <span class="sidebar-menu-icon"></span>
+      <div class="sidebar-menu-link">关于</div>
+    </div>
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/friend" aria-label="友链"></a>
+      <span class="sidebar-menu-icon"></span>
+      <div class="sidebar-menu-link">友链</div>
+    </div>
+  
+</div>
+</div>
+    
+  </div>
+  
+    <div class="sidebar-btn-wrapper">
+      <div class="sidebar-toc-btn current"></div>
+      <div class="sidebar-common-btn"></div>
+    </div>
+  
+</nav>
+
+    </div>
+    <div class="site-search">
+      <div class="reimu-popup popup">
+        <div class="reimu-search">
+          <span class="reimu-search-input-icon"></span>
+          <div class="reimu-search-input" id="reimu-search-input"></div>
+        </div>
+        <div class="reimu-results">
+          <div id="reimu-stats"></div>
+          <div id="reimu-hits"></div>
+          <div id="reimu-pagination" class="reimu-pagination"></div>
+        </div>
+        <span class="popup-btn-close"></span>
+      </div>
+    </div>
+    
+<script src="https://npm.webcache.cn/lazysizes@5.3.2/lazysizes.min.js"></script>
+
+
+<script src="https://npm.webcache.cn/clipboard@2.0.11/dist/clipboard.min.js"></script>
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+<script src="/js/pjax_script.js" data-pjax></script>
+
+
+<script type="module" data-pjax>
+  import PhotoSwipeLightbox from "https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe-lightbox.esm.js";
+  
+  const pswp = () => {
+    if (_$$('.article-entry a.article-gallery-item').length > 0) {
+      new PhotoSwipeLightbox({
+        gallery: '.article-entry',
+        children: 'a.article-gallery-item',
+        pswpModule: () => import("https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.esm.js")
+      }).init();
+    }
+    if(_$$('.article-gallery a.article-gallery-item').length > 0) {
+      new PhotoSwipeLightbox({
+        gallery: '.article-gallery',
+        children: 'a.article-gallery-item',
+        pswpModule: () => import("https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.esm.js")
+      }).init();
+    }
+    window.lightboxStatus = 'done';
+    window.removeEventListener('lightbox:ready', pswp);
+  }
+  if(window.lightboxStatus === 'ready') {
+    pswp()
+  } else {
+    window.addEventListener('lightbox:ready', pswp);
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<script src="https://npm.webcache.cn/mouse-firework@0.0.4/dist/index.umd.js"></script>
+
+  <script>
+    firework(JSON.parse('{"excludeElements":["a","button"],"particles":[{"shape":"circle","move":["emit"],"easing":"easeOutExpo","colors":["#ff5252","#ff7c7c","#ffafaf","#ffd0d0"],"number":20,"duration":[1200,1800],"shapeOptions":{"radius":[16,32],"alpha":[0.3,0.5]}},{"shape":"circle","move":["diffuse"],"easing":"easeOutExpo","colors":["#ff0000"],"number":1,"duration":[1200,1800],"shapeOptions":{"radius":20,"alpha":[0.2,0.5],"lineWidth":6}}]}'))
+  </script>
+
+
+
+
+
+
+<div id="lazy-script">
+  <div>
+    
+  </div>
+</div>
+
+
+  <script>
+    console.log(String.raw`%c 
+ ______     ______     __     __    __     __  __    
+/\  == \   /\  ___\   /\ \   /\ "-./  \   /\ \/\ \   
+\ \  __<   \ \  __\   \ \ \  \ \ \-./\ \  \ \ \_\ \  
+ \ \_\ \_\  \ \_____\  \ \_\  \ \_\ \ \_\  \ \_____\ 
+  \/_/ /_/   \/_____/   \/_/   \/_/  \/_/   \/_____/ 
+                                                  
+`,'color: #ff5252;')
+    console.log('%c Theme.Reimu v' + '0.2.0' + ' %c https://github.com/D-Sketon/hexo-theme-reimu ', 'color: white; background: #ff5252; padding:5px 0;', 'padding:4px;border:1px solid #ff5252;')
+  </script>
+  
+
+
+  
+<script src="https://npm.webcache.cn/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+  <!-- hexo injector body_end start -->
+<script src="/js/insert_highlight.js" data-pjax></script>
+<!-- hexo injector body_end end --></body>
+  </html>
+

@@ -1,0 +1,620 @@
+
+  <!DOCTYPE html>
+  <html lang="zh-CN"  >
+  <head>
+  <meta name="referrer"content="no-referrer"/>
+  <meta charset="utf-8">
+  
+
+  
+
+  
+
+  
+  <script>window.icon_font = '4552607_09mhdxci6yrk';window.clipboard_tips = {"success":"复制成功(*^▽^*)","fail":"复制失败 (ﾟ⊿ﾟ)ﾂ"};</script>
+  
+  
+  <title>
+    
+    Morthos
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7CNoto%20Serif%20SC:400,400italic,700,700italic%7CUbuntu%20Mono:400,400italic,700,700italic&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7CNoto%20Serif%20SC:400,400italic,700,700italic%7CUbuntu%20Mono:400,400italic,700,700italic&display=swap" media="print" onload="this.media&#x3D;&#39;all&#39;">
+  
+    <link rel="preload" href="//at.alicdn.com/t/c/font_4552607_09mhdxci6yrk.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  
+  
+<link rel="stylesheet" href="/css/loader.css">
+
+  <meta name="description" content="mysql基础 a.打开mysql并启动mysql 1D:\phpstudy_pro\Extensions\MySQL5.7.26\bin 2.输入cmd  b.登录mysql12mysql -u root -proot   c.mysql基础命令 ;是sql语句的结束符号.  1show databases;  1CREATE DATABASE study; 出现Query OK, 1 row">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Morthos">
+<meta property="og:url" content="http://example.com/2024/07/30/0712%20Mysql%E5%9F%BA%E7%A1%80/index.html">
+<meta property="og:site_name" content="Morthos">
+<meta property="og:description" content="mysql基础 a.打开mysql并启动mysql 1D:\phpstudy_pro\Extensions\MySQL5.7.26\bin 2.输入cmd  b.登录mysql12mysql -u root -proot   c.mysql基础命令 ;是sql语句的结束符号.  1show databases;  1CREATE DATABASE study; 出现Query OK, 1 row">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1714960628584-2204b36a-44c4-429b-8029-20f885318226.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_29,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10/format,webp#averageHue=%23dfb67c&from=url&id=ykh6U&originHeight=787&originWidth=1000&originalType=binary&ratio=1.5&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1714960728728-37ce6180-511c-4a1c-a716-7c382046ec18.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_28,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10/format,webp#averageHue=%23f9f9f8&from=url&id=ktY06&originHeight=189&originWidth=995&originalType=binary&ratio=1.5&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1714960824238-1db94502-fce7-42d1-90eb-4e9bfae3155c.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_23,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10/format,webp#averageHue=%231b1b1b&from=url&id=isO9a&originHeight=63&originWidth=805&originalType=binary&ratio=1.5&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1718346252139-841177cb-0fad-455a-90cd-2b7ebb737367.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_12,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10/format,webp#averageHue=%23141210&from=url&id=erdp4&originHeight=224&originWidth=265&originalType=binary&ratio=1.5&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1718346353256-7549461f-1bf4-4cf5-b86c-7e3c854d7eda.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_11,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10/format,webp#averageHue=%2312110f&from=url&id=yMOrE&originHeight=299&originWidth=388&originalType=binary&ratio=1.5&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1718346628719-5f75dade-5fcd-4fb7-9a72-23cd285ef87a.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_10,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10/format,webp#averageHue=%23171412&from=url&id=nJuly&originHeight=62&originWidth=216&originalType=binary&ratio=1.5&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1718346667514-06cd20b8-b321-4ec6-a5a5-f642863e905c.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_15,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10/format,webp#averageHue=%2311100f&from=url&id=MNKG3&originHeight=312&originWidth=528&originalType=binary&ratio=1.5&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1718346749160-2352461c-2de5-44a3-98c7-b40b475ab671.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_14,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10/format,webp#averageHue=%23161413&from=url&id=nxprr&originHeight=60&originWidth=301&originalType=binary&ratio=1.5&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1718351027352-f2a0f96e-a5f0-4f62-9865-102fb8a1e75d.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_15,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10/format,webp#averageHue=%23121110&from=url&id=vHmHf&originHeight=264&originWidth=513&originalType=binary&ratio=1.5&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="article:published_time" content="2024-07-30T12:42:40.254Z">
+<meta property="article:modified_time" content="2024-07-30T12:42:40.434Z">
+<meta property="article:author" content="Boy">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1714960628584-2204b36a-44c4-429b-8029-20f885318226.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_29,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10/format,webp#averageHue=%23dfb67c&from=url&id=ykh6U&originHeight=787&originWidth=1000&originalType=binary&ratio=1.5&rotation=0&showTitle=false&status=done&style=none&title=">
+  
+    <link rel="alternate" href="/atom.xml" title="Morthos" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/images/favicon.ico">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<link rel="stylesheet" href="https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.css">
+
+  
+  
+  
+  
+<script src="https://npm.webcache.cn/pace-js@1.2.4/pace.min.js"></script>
+
+  
+    
+<link rel="stylesheet" href="https://npm.webcache.cn/wowjs@1.1.3/css/libs/animate.css">
+
+    
+<script src="https://npm.webcache.cn/wowjs@1.1.3/dist/wow.min.js"></script>
+
+    <script>
+      new WOW({
+        offset: 0,
+        mobile: true,
+        live: false
+      }).init();
+    </script>
+  
+  
+    <script src="/sw.js"></script>
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+  <body>
+    
+  <div id='loader'>
+    <div class="loading-left-bg loading-bg"></div>
+    <div class="loading-right-bg loading-bg"></div>
+    <div class="spinner-box">
+      <div class="loading-taichi">
+        <svg width="150" height="150" viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="https://www.w3.org/2000/svg" shape-rendering="geometricPrecision">
+          <path d="M303.5 432A80 80 0 0 1 291.5 592A80 80 0 0 1 303.5 432z" fill="#ff6e6b" />
+          <path d="M512 65A447 447 0 0 1 512 959L512 929A417 417 0 0 0 512 95A417 417 0 0 0 512 929L512 959A447 447 0 0 1 512 65z" fill="#fd0d00" />
+          <path d="M512 95A417 417 0 0 1 929 512A208.5 208.5 0 0 1 720.5 720.5L720.5 592A80 80 0 0 0 720.5 432A80 80 0 0 0 720.5 592L720.5 720.5A208.5 208.5 0 0 1 512 512A208.5 208.5 0 0 0 303.5 303.5A208.5 208.5 0 0 0 95 512A417 417 0 0 1 512 95" fill="#fd0d00" />
+        </svg>
+      </div>
+      <div class="loading-word">少女祈祷中...</div>
+    </div>
+  </div>
+  </div>
+  <script>
+    var time = null;
+    var startLoading = () => {
+      time = Date.now();
+      document.getElementById('loader').classList.remove("loading");
+    }
+    var endLoading = () => {
+      if (!time) {
+        document.body.style.overflow = 'auto';
+        document.getElementById('loader').classList.add("loading");
+      } else {
+        if (Date.now() - time > 500) {
+          time = null;
+          document.body.style.overflow = 'auto';
+          document.getElementById('loader').classList.add("loading");
+        } else {
+          setTimeout(endLoading, 500 - (Date.now() - time));
+          time = null;
+        }
+      }
+    }
+    window.addEventListener('DOMContentLoaded', endLoading);
+    document.getElementById('loader').addEventListener('click', endLoading);
+  </script>
+
+<div id="copy-tooltip" style="pointer-events: none; opacity: 0; transition: all 0.2s ease; position: fixed;top: 50%;left: 50%;z-index: 999;transform: translate(-50%, -50%);color: white;background: rgba(0, 0, 0, 0.5);padding: 10px 15px;border-radius: 10px;">
+</div>
+
+    <div id="container">
+      <div id="wrap">
+        <div id="header-nav">
+  <nav id="main-nav">
+    
+      <span class="main-nav-link-wrap">
+        <span class="main-nav-icon"></span>
+        <a class="main-nav-link" href="/">首页</a>
+      </span>
+    
+      <span class="main-nav-link-wrap">
+        <span class="main-nav-icon"></span>
+        <a class="main-nav-link" href="/archives">归档</a>
+      </span>
+    
+      <span class="main-nav-link-wrap">
+        <span class="main-nav-icon"></span>
+        <a class="main-nav-link" href="/about">关于</a>
+      </span>
+    
+      <span class="main-nav-link-wrap">
+        <span class="main-nav-icon"></span>
+        <a class="main-nav-link" href="/friend">友链</a>
+      </span>
+    
+    <a id="main-nav-toggle" class="nav-icon"></a>
+  </nav>
+  <nav id="sub-nav">
+    
+      <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS 订阅"></a>
+    
+    
+    
+  </nav>
+</div>
+<header id="header">
+  
+    
+      <img fetchpriority="high" src="/images/banner.webp" alt="">
+    
+  
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <div id="logo-wrap">
+        
+          
+          
+            <a href="/" id="logo">
+              <h1>Morthos</h1>
+            </a>
+          
+        
+      </div>
+      
+        
+        <h2 id="subtitle-wrap">
+          
+        </h2>
+      
+    </div>
+  </div>
+</header>
+
+        <div id="content" class="outer">
+          
+          <section id="main"><article id="post-0712 Mysql基础" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-inner">
+    <div class="article-meta">
+      <div class="article-date wow slideInLeft">
+  <a href="/2024/07/30/0712%20Mysql%E5%9F%BA%E7%A1%80/" class="article-date-link">
+    <time datetime="2024-07-30T12:42:40.254Z" itemprop="datePublished">2024-07-30</time>
+  </a>
+</div>
+
+      
+
+    </div>
+    <div class="hr-line"></div>
+    
+
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><a name="ylLMd"></a></p>
+<h1 id="mysql基础"><a href="#mysql基础" class="headerlink" title="mysql基础"></a><strong>mysql基础</strong></h1><p><a name="VqLZO"></a></p>
+<h2 id="a-打开mysql并启动mysql"><a href="#a-打开mysql并启动mysql" class="headerlink" title="a.打开mysql并启动mysql"></a>a.打开mysql并启动mysql</h2><p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1714960628584-2204b36a-44c4-429b-8029-20f885318226.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_29,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10/format,webp#averageHue=%23dfb67c&from=url&id=ykh6U&originHeight=787&originWidth=1000&originalType=binary&ratio=1.5&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">D:\phpstudy_pro\Extensions\MySQL5.<span class="number">7.26</span>\bin</span><br></pre></td></tr></table></figure>
+<p>2.输入cmd <br><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1714960728728-37ce6180-511c-4a1c-a716-7c382046ec18.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_28,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10/format,webp#averageHue=%23f9f9f8&from=url&id=ktY06&originHeight=189&originWidth=995&originalType=binary&ratio=1.5&rotation=0&showTitle=false&status=done&style=none&title="><br><a name="uuJZg"></a></p>
+<h2 id="b-登录mysql"><a href="#b-登录mysql" class="headerlink" title="b.登录mysql"></a>b.登录mysql</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql -u root -p</span><br><span class="line">root</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1714960824238-1db94502-fce7-42d1-90eb-4e9bfae3155c.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_23,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10/format,webp#averageHue=%231b1b1b&from=url&id=isO9a&originHeight=63&originWidth=805&originalType=binary&ratio=1.5&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><a name="u8hER"></a></p>
+<h2 id="c-mysql基础命令"><a href="#c-mysql基础命令" class="headerlink" title="c.mysql基础命令"></a>c.mysql基础命令</h2><blockquote>
+<p>;是sql语句的结束符号.</p>
+</blockquote>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show databases;</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1718346252139-841177cb-0fad-455a-90cd-2b7ebb737367.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_12,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10/format,webp#averageHue=%23141210&from=url&id=erdp4&originHeight=224&originWidth=265&originalType=binary&ratio=1.5&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE DATABASE study;</span><br></pre></td></tr></table></figure>
+<p>出现Query OK, 1 row affected (0.01 sec)表示执行成功 <br><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1718346353256-7549461f-1bf4-4cf5-b86c-7e3c854d7eda.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_11,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10/format,webp#averageHue=%2312110f&from=url&id=yMOrE&originHeight=299&originWidth=388&originalType=binary&ratio=1.5&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">use</span> <span class="title">study</span>;</span><br></pre></td></tr></table></figure>
+<p>出现Database changed表示执行成功</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show tables;</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1718346628719-5f75dade-5fcd-4fb7-9a72-23cd285ef87a.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_10,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10/format,webp#averageHue=%23171412&from=url&id=nJuly&originHeight=62&originWidth=216&originalType=binary&ratio=1.5&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create table users</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1718346667514-06cd20b8-b321-4ec6-a5a5-f642863e905c.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_15,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10/format,webp#averageHue=%2311100f&from=url&id=MNKG3&originHeight=312&originWidth=528&originalType=binary&ratio=1.5&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * <span class="keyword">from</span> users;</span><br></pre></td></tr></table></figure>
+<p>select 查询想要的字段 *所有字段 from 来自 users表 <br><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1718346749160-2352461c-2de5-44a3-98c7-b40b475ab671.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_14,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10/format,webp#averageHue=%23161413&from=url&id=nxprr&originHeight=60&originWidth=301&originalType=binary&ratio=1.5&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO <span class="title function_ invoke__">users</span> (username, password) <span class="title function_ invoke__">VALUES</span> (<span class="string">&#x27;zhangsan&#x27;</span>, <span class="string">&#x27;123456&#x27;</span>);</span><br></pre></td></tr></table></figure>
+<p>插入 表 字段1，字段2 值 （值1，值2; <br><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1718351027352-f2a0f96e-a5f0-4f62-9865-102fb8a1e75d.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_15,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10/format,webp#averageHue=%23121110&from=url&id=vHmHf&originHeight=264&originWidth=513&originalType=binary&ratio=1.5&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">UPDATE users SET username = <span class="string">&#x27;admin&#x27;</span>, password = <span class="string">&#x27;admin&#x27;</span> WHERE username = <span class="string">&#x27;zhangsan&#x27;</span>;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DROP TABLE users;</span><br></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DROP DATABASE study;</span><br></pre></td></tr></table></figure>
+<p><a name="rxDZe"></a></p>
+<h1 id="mysql远程连接"><a href="#mysql远程连接" class="headerlink" title="mysql远程连接"></a>mysql远程连接</h1><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grant all privileges on *.* to <span class="string">&#x27;root&#x27;</span>@<span class="string">&#x27;%&#x27;</span> identified by <span class="string">&#x27;root&#x27;</span> with grant option;</span><br></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flush privileges;</span><br></pre></td></tr></table></figure>
+<br> 
+
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+    
+  <nav id="article-nav" class="wow fadeInUp">
+    
+      <div class="article-nav-link-wrap article-nav-link-left">
+        
+          
+          
+            <img data-src="https://d-sketon.top/img/backimg/bg6.jpg" data-sizes="auto" alt="" class="lazyload">
+          
+        
+        <a href="/2024/07/30/0713%20yakit%E5%9F%BA%E7%A1%80/"></a>
+        <div class="article-nav-caption">前一篇</div>
+        <h3 class="article-nav-title">
+          
+            (no title)
+          
+        </h3>
+      </div>
+    
+    
+    <div class="article-nav-link-wrap article-nav-link-right">
+      
+        
+        
+          <img data-src="/covers/bg7.jpg" data-sizes="auto" alt="" class="lazyload">
+        
+      
+      <a href="/2024/07/30/0711%20github%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/"></a>
+      <div class="article-nav-caption">后一篇</div>
+      <h3 class="article-nav-title">
+        
+          (no title)
+        
+      </h3>
+    </div>
+    
+  </nav>
+
+
+  
+</article>
+
+
+
+
+
+
+</section>
+          
+            <aside id="sidebar">
+  <div class="sidebar-wrap wow fadeInRight wrap-sticky">
+    
+      <div class="sidebar-toc-sidebar"><div class="sidebar-toc">
+  <h3 class="toc-title">文章目录</h3>
+  <div class="sidebar-toc-wrapper toc-div-class" >
+      
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#mysql%E5%9F%BA%E7%A1%80"><span class="toc-number">1.</span> <span class="toc-text">mysql基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#a-%E6%89%93%E5%BC%80mysql%E5%B9%B6%E5%90%AF%E5%8A%A8mysql"><span class="toc-number">1.1.</span> <span class="toc-text">a.打开mysql并启动mysql</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#b-%E7%99%BB%E5%BD%95mysql"><span class="toc-number">1.2.</span> <span class="toc-text">b.登录mysql</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#c-mysql%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4"><span class="toc-number">1.3.</span> <span class="toc-text">c.mysql基础命令</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#mysql%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5"><span class="toc-number">2.</span> <span class="toc-text">mysql远程连接</span></a></li></ol>
+      
+  </div>
+</div>
+</div>
+      <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img data-src="/avatar/avatar.jpg" data-sizes="auto" alt="Boy" class="lazyload">
+  <div class="sidebar-author-name">Boy</div>
+  <div class="sidebar-description"></div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>文章</div>
+    <div class="sidebar-state-number">23</div>
+  </div>
+  <div class="sidebar-state-category">
+    <div>分类</div>
+    <div class="sidebar-state-number">0</div>
+  </div>
+  <div class="sidebar-state-tag">
+    <div>标签</div>
+    <div class="sidebar-state-number">0</div>
+  </div>
+</div>
+<div class="sidebar-social">
+  
+</div>
+<div class="sidebar-menu">
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/" aria-label="首页"></a>
+      <span class="sidebar-menu-icon"></span>
+      <div class="sidebar-menu-link">首页</div>
+    </div>
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/archives" aria-label="归档"></a>
+      <span class="sidebar-menu-icon"></span>
+      <div class="sidebar-menu-link">归档</div>
+    </div>
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/about" aria-label="关于"></a>
+      <span class="sidebar-menu-icon"></span>
+      <div class="sidebar-menu-link">关于</div>
+    </div>
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/friend" aria-label="友链"></a>
+      <span class="sidebar-menu-icon"></span>
+      <div class="sidebar-menu-link">友链</div>
+    </div>
+  
+</div>
+</div>
+    
+    
+      <div class="sidebar-btn-wrapper" style="position:static">
+        <div class="sidebar-toc-btn current"></div>
+        <div class="sidebar-common-btn"></div>
+      </div>
+    
+  </div>
+
+  
+</aside>
+
+          
+        </div>
+        <footer id="footer" class="wow fadeInUp">
+  <div style="width: 100%; overflow: hidden">
+    <div class="footer-line"></div>
+  </div>
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      <div>
+        <span class="icon-copyright"></span>
+        2020-2024
+        <span class="footer-info-sep"></span>
+        Boy
+      </div>
+      
+        <div>
+          基于&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>&nbsp;
+          Theme.<a href="https://github.com/D-Sketon/hexo-theme-reimu" target="_blank">Reimu</a>
+        </div>
+      
+      
+        <div>
+          <span class="icon-brush"></span>
+          47.1k
+          &nbsp;|&nbsp;
+          <span class="icon-coffee"></span>
+          03:36
+        </div>
+      
+      
+        <div>
+          <span class="icon-eye"></span>
+          <span id="busuanzi_container_site_pv">总访问量&nbsp;<span id="busuanzi_value_site_pv"></span></span>
+          &nbsp;|&nbsp;
+          <span class="icon-user"></span>
+          <span id="busuanzi_container_site_uv">总访客量&nbsp;<span id="busuanzi_value_site_uv"></span></span>
+        </div>
+      
+    </div>
+  </div>
+</footer>
+
+        <div class="sidebar-top">
+          <img src="/images/taichi.png" height="50" width="50" alt="backtop" />
+          <div class="arrow-up"></div>
+        </div>
+        <div id="mask"></div>
+      </div>
+      <nav id="mobile-nav">
+  <div class="sidebar-wrap">
+    
+      <div class="sidebar-toc-sidebar"><div class="sidebar-toc">
+  <h3 class="toc-title">文章目录</h3>
+  <div class="sidebar-toc-wrapper toc-div-class" >
+      
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#mysql%E5%9F%BA%E7%A1%80"><span class="toc-number">1.</span> <span class="toc-text">mysql基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#a-%E6%89%93%E5%BC%80mysql%E5%B9%B6%E5%90%AF%E5%8A%A8mysql"><span class="toc-number">1.1.</span> <span class="toc-text">a.打开mysql并启动mysql</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#b-%E7%99%BB%E5%BD%95mysql"><span class="toc-number">1.2.</span> <span class="toc-text">b.登录mysql</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#c-mysql%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4"><span class="toc-number">1.3.</span> <span class="toc-text">c.mysql基础命令</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#mysql%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5"><span class="toc-number">2.</span> <span class="toc-text">mysql远程连接</span></a></li></ol>
+      
+  </div>
+</div>
+</div>
+      <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img data-src="/avatar/avatar.jpg" data-sizes="auto" alt="Boy" class="lazyload">
+  <div class="sidebar-author-name">Boy</div>
+  <div class="sidebar-description"></div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>文章</div>
+    <div class="sidebar-state-number">23</div>
+  </div>
+  <div class="sidebar-state-category">
+    <div>分类</div>
+    <div class="sidebar-state-number">0</div>
+  </div>
+  <div class="sidebar-state-tag">
+    <div>标签</div>
+    <div class="sidebar-state-number">0</div>
+  </div>
+</div>
+<div class="sidebar-social">
+  
+</div>
+<div class="sidebar-menu">
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/" aria-label="首页"></a>
+      <span class="sidebar-menu-icon"></span>
+      <div class="sidebar-menu-link">首页</div>
+    </div>
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/archives" aria-label="归档"></a>
+      <span class="sidebar-menu-icon"></span>
+      <div class="sidebar-menu-link">归档</div>
+    </div>
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/about" aria-label="关于"></a>
+      <span class="sidebar-menu-icon"></span>
+      <div class="sidebar-menu-link">关于</div>
+    </div>
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/friend" aria-label="友链"></a>
+      <span class="sidebar-menu-icon"></span>
+      <div class="sidebar-menu-link">友链</div>
+    </div>
+  
+</div>
+</div>
+    
+  </div>
+  
+    <div class="sidebar-btn-wrapper">
+      <div class="sidebar-toc-btn current"></div>
+      <div class="sidebar-common-btn"></div>
+    </div>
+  
+</nav>
+
+    </div>
+    <div class="site-search">
+      <div class="reimu-popup popup">
+        <div class="reimu-search">
+          <span class="reimu-search-input-icon"></span>
+          <div class="reimu-search-input" id="reimu-search-input"></div>
+        </div>
+        <div class="reimu-results">
+          <div id="reimu-stats"></div>
+          <div id="reimu-hits"></div>
+          <div id="reimu-pagination" class="reimu-pagination"></div>
+        </div>
+        <span class="popup-btn-close"></span>
+      </div>
+    </div>
+    
+<script src="https://npm.webcache.cn/lazysizes@5.3.2/lazysizes.min.js"></script>
+
+
+<script src="https://npm.webcache.cn/clipboard@2.0.11/dist/clipboard.min.js"></script>
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+<script src="/js/pjax_script.js" data-pjax></script>
+
+
+<script type="module" data-pjax>
+  import PhotoSwipeLightbox from "https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe-lightbox.esm.js";
+  
+  const pswp = () => {
+    if (_$$('.article-entry a.article-gallery-item').length > 0) {
+      new PhotoSwipeLightbox({
+        gallery: '.article-entry',
+        children: 'a.article-gallery-item',
+        pswpModule: () => import("https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.esm.js")
+      }).init();
+    }
+    if(_$$('.article-gallery a.article-gallery-item').length > 0) {
+      new PhotoSwipeLightbox({
+        gallery: '.article-gallery',
+        children: 'a.article-gallery-item',
+        pswpModule: () => import("https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.esm.js")
+      }).init();
+    }
+    window.lightboxStatus = 'done';
+    window.removeEventListener('lightbox:ready', pswp);
+  }
+  if(window.lightboxStatus === 'ready') {
+    pswp()
+  } else {
+    window.addEventListener('lightbox:ready', pswp);
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<script src="https://npm.webcache.cn/mouse-firework@0.0.4/dist/index.umd.js"></script>
+
+  <script>
+    firework(JSON.parse('{"excludeElements":["a","button"],"particles":[{"shape":"circle","move":["emit"],"easing":"easeOutExpo","colors":["#ff5252","#ff7c7c","#ffafaf","#ffd0d0"],"number":20,"duration":[1200,1800],"shapeOptions":{"radius":[16,32],"alpha":[0.3,0.5]}},{"shape":"circle","move":["diffuse"],"easing":"easeOutExpo","colors":["#ff0000"],"number":1,"duration":[1200,1800],"shapeOptions":{"radius":20,"alpha":[0.2,0.5],"lineWidth":6}}]}'))
+  </script>
+
+
+
+
+
+
+<div id="lazy-script">
+  <div>
+    
+  </div>
+</div>
+
+
+  <script>
+    console.log(String.raw`%c 
+ ______     ______     __     __    __     __  __    
+/\  == \   /\  ___\   /\ \   /\ "-./  \   /\ \/\ \   
+\ \  __<   \ \  __\   \ \ \  \ \ \-./\ \  \ \ \_\ \  
+ \ \_\ \_\  \ \_____\  \ \_\  \ \_\ \ \_\  \ \_____\ 
+  \/_/ /_/   \/_____/   \/_/   \/_/  \/_/   \/_____/ 
+                                                  
+`,'color: #ff5252;')
+    console.log('%c Theme.Reimu v' + '0.2.0' + ' %c https://github.com/D-Sketon/hexo-theme-reimu ', 'color: white; background: #ff5252; padding:5px 0;', 'padding:4px;border:1px solid #ff5252;')
+  </script>
+  
+
+
+  
+<script src="https://npm.webcache.cn/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+  <!-- hexo injector body_end start -->
+<script src="/js/insert_highlight.js" data-pjax></script>
+<!-- hexo injector body_end end --></body>
+  </html>
+

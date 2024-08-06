@@ -1,0 +1,811 @@
+
+  <!DOCTYPE html>
+  <html lang="zh-CN"  >
+  <head>
+  <meta name="referrer"content="no-referrer"/>
+  <meta charset="utf-8">
+  
+
+  
+
+  
+
+  
+  <script>window.icon_font = '4552607_09mhdxci6yrk';window.clipboard_tips = {"success":"复制成功(*^▽^*)","fail":"复制失败 (ﾟ⊿ﾟ)ﾂ"};</script>
+  
+  
+  <title>
+    
+    Morthos
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7CNoto%20Serif%20SC:400,400italic,700,700italic%7CUbuntu%20Mono:400,400italic,700,700italic&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7CNoto%20Serif%20SC:400,400italic,700,700italic%7CUbuntu%20Mono:400,400italic,700,700italic&display=swap" media="print" onload="this.media&#x3D;&#39;all&#39;">
+  
+    <link rel="preload" href="//at.alicdn.com/t/c/font_4552607_09mhdxci6yrk.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  
+  
+<link rel="stylesheet" href="/css/loader.css">
+
+  <meta name="description" content="table_name表名col_name字段名db_name    库名table_reference参照表function_name函数名show create table corse查看建表语句展示表结构 show create table + 表名创建表    create table  表名（                  字段名  数据类型   多种多个字段约束（主键约束&#x2F;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Morthos">
+<meta property="og:url" content="http://example.com/2024/07/30/%E9%80%9F%E6%88%90mysql/index.html">
+<meta property="og:site_name" content="Morthos">
+<meta property="og:description" content="table_name表名col_name字段名db_name    库名table_reference参照表function_name函数名show create table corse查看建表语句展示表结构 show create table + 表名创建表    create table  表名（                  字段名  数据类型   多种多个字段约束（主键约束&#x2F;">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351437786-815f6cde-b4fd-4c65-a8de-d3521a7c9ec3.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_37,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e8e8e8&id=SERjm&originHeight=688&originWidth=1313&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351438221-a81f9b53-b6de-4942-81ef-7c624ef21633.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_35,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e4e4e4&id=L11NR&originHeight=292&originWidth=1223&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351438689-b58146e9-532b-4693-ac6c-8ca23a1a65bd.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_44,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23eeeee5&id=xTk7p&originHeight=866&originWidth=1547&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351439321-f7c78aad-7a07-45af-a6f9-0e3d7f9a5d7f.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_42,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e7e7e7&id=QxulG&originHeight=804&originWidth=1487&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351439819-da9ed769-8829-45be-96f4-bffe6a2d0cf6.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_44,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e3e3e3&id=oy54U&originHeight=752&originWidth=1531&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351440404-a64b5577-ecef-442a-a177-f8eba65a1cb0.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_42,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e4e4e4&id=OVSsD&originHeight=797&originWidth=1466&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351440947-0cb426e8-b334-49b7-9a5f-3138fa56e1a0.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_55,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23c8c8c8&id=f40C6&originHeight=1030&originWidth=1920&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351441536-828d14ba-920f-449b-a83e-d742f6d1b382.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_42,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23dbdbdb&id=XFpWU&originHeight=545&originWidth=1484&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351442066-eeba53f5-84fd-42df-90a3-282d64f35832.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_55,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23dadad5&id=hAACE&originHeight=1030&originWidth=1920&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351442551-02fdf99d-83dd-4d07-8307-e6d36f0406f9.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_40,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e8e8e8&id=fbrfo&originHeight=742&originWidth=1404&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351442969-20e4fa58-ecb6-425f-b221-8ef1a1dc7fdf.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_12,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%2398967b&id=Xdwap&originHeight=120&originWidth=432&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351443288-387e6033-d54e-4b0e-ae30-8b9ba25118e8.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_19,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23dfdfdf&id=bobIW&originHeight=108&originWidth=683&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351443628-46f3f7c5-0039-493a-a2d3-cbb818de65e1.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_23,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e9e9e9&id=vOTYz&originHeight=212&originWidth=821&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351443909-aba80296-e94c-4eb9-84d3-d8119c4ae7ab.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_32,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23ededed&id=N8HQS&originHeight=425&originWidth=1123&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351444251-03fd3f82-76c1-4702-8445-970108a1f56c.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_26,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e9e9e9&id=t0vNO&originHeight=369&originWidth=905&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351444646-c7218497-efe7-4c48-a0a0-d3a2d2dcb292.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_48,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23d8d8d8&id=yE5Vt&originHeight=829&originWidth=1670&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351445131-95284aec-fe64-499d-ba54-0848c4b8ad74.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_38,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e7e7e7&id=h6EzT&originHeight=509&originWidth=1316&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351445485-1f222c0b-0819-479c-96a7-cb5565362b94.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_25,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e7e7e7&id=vAjd6&originHeight=531&originWidth=894&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351445914-04d7b574-ebec-4f86-b7ae-7ef4a754e8b2.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_13,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23090909&id=zJtFG&originHeight=263&originWidth=470&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351446248-c330e489-e9b4-4fc8-8391-7f7947b08462.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_34,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e7e6e6&id=xbvaT&originHeight=753&originWidth=1194&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351446821-948c3337-c6c3-40b3-8226-f8e4bc80b391.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_40,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e3e3e3&id=xV3QW&originHeight=558&originWidth=1406&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351447433-bddd3f1c-c465-4b48-8747-38c2c4a2c3ad.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_22,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23f3f2f2&id=QjMPF&originHeight=273&originWidth=771&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351447697-b20281c4-5657-480d-b034-4cb3f5e6eb3a.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_40,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e3e3e3&id=g00o0&originHeight=549&originWidth=1412&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351448064-c4d87cd4-02b9-432c-b769-58f6c34cd1d1.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_16,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23282927&id=hXPff&originHeight=21&originWidth=568&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351448324-b0572b5a-fc85-4f43-8153-da4df986d917.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_16,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%230c0c0c&id=mTnu9&originHeight=48&originWidth=544&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351448610-e60f3445-8401-4623-acbd-5d43fc89b237.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_48,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e7e7e7&id=lWNJ3&originHeight=690&originWidth=1675&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351449035-eaae6bd7-2d37-4cd2-b88d-56f0c3ace303.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_47,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e5e5e5&id=HsAaq&originHeight=667&originWidth=1636&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351449525-145fc845-9b17-4406-b542-c02c966e3649.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_41,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e5e5e5&id=qr3Vq&originHeight=371&originWidth=1438&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351449852-2df10c60-2411-4f6e-aacc-6003b6811e95.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_26,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%231d1d1b&id=Ucsnt&originHeight=307&originWidth=921&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351450225-73c77c3e-b463-402b-87a1-871ce8077c2a.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_29,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e6e6e6&id=nfP17&originHeight=312&originWidth=1026&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351450639-1a8594a3-638b-43f8-ae98-443427b96489.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_39,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e5e5e5&id=eYz3b&originHeight=638&originWidth=1374&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351451050-d62bb436-9b73-48e7-81c7-4aaf10c82fe7.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_39,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e0e0e0&id=yBclS&originHeight=438&originWidth=1377&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351451452-a007b025-f753-42af-b379-1d6e1da0a1c4.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_14,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23252523&id=sLYdy&originHeight=40&originWidth=486&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351451745-a97a53e6-e9e8-4367-8193-5d0747aed13e.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_40,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e6e6e6&id=PZH4A&originHeight=406&originWidth=1388&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351452083-f218f37c-5235-4256-92c1-684948a45901.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_12,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%230f0f0f&id=fM0vT&originHeight=35&originWidth=427&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351452369-b2766090-f07b-47fa-8574-f3d34180428c.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_35,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e6e6e6&id=ztiR1&originHeight=356&originWidth=1234&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351452729-0cdcb49b-0551-4ef4-b2b2-ef2d5a8eabbe.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_29,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e7e7e7&id=A1MFz&originHeight=324&originWidth=1008&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351453249-96663906-a61a-4af0-a859-00a4e1e16a29.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_44,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e6e6e6&id=LEGQh&originHeight=415&originWidth=1548&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351453654-08374799-da7d-41a2-ad14-ffea90f19257.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_13,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23ab978a&id=jEO8x&originHeight=31&originWidth=448&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351453918-75d5be4e-e2b7-4465-9141-f1985bcca6f7.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_40,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e7e7e7&id=sTCpX&originHeight=421&originWidth=1388&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351454316-70fc99ab-53f6-43ef-809b-a63b9e63c1da.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_10,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23191918&id=gbpda&originHeight=33&originWidth=353&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351454599-b6556db6-d583-4201-9a65-1e4c9d996fae.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_35,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e6e6e6&id=nQfRJ&originHeight=701&originWidth=1224&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351455014-af4be898-83d3-41f4-b938-642cd193483d.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_21,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23272726&id=SiSuF&originHeight=33&originWidth=752&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351455293-d73c78e6-e395-4962-8377-babcf5258e15.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_17,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23131513&id=JcIt3&originHeight=85&originWidth=610&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351455615-562dffc6-fc91-4025-8da2-c9ab9d50ba05.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_43,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e0e0e0&id=O50IL&originHeight=506&originWidth=1511&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351456101-be9cce59-cbe9-48c1-bb14-ece6649e9a58.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_42,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23dfdfdf&id=WWyv1&originHeight=749&originWidth=1472&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351456524-19a84ec9-4ddd-4a50-8ad4-1116eb6188c3.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_36,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e2e2e2&id=KPL5w&originHeight=782&originWidth=1274&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351457072-19114665-fa02-4b40-8e60-5f53baa28f59.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_38,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23d7dad8&id=XfFvs&originHeight=552&originWidth=1327&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351457490-1cd8a047-2035-4043-be57-ca2064233800.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_28,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23070707&id=NKd0S&originHeight=335&originWidth=987&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351457891-eb5f95e9-9a7a-47ae-a7f9-357b45bfa22c.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_28,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23272625&id=zhKK1&originHeight=408&originWidth=981&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351458221-ffbd9ee3-ee8b-4e2f-bc0b-19a7fe0333bb.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_17,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%231f1f1e&id=czIU0&originHeight=37&originWidth=598&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351458491-03d662a5-9f24-492f-baba-f4893a880477.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_19,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23020202&id=HbYdj&originHeight=180&originWidth=658&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351458829-977f2c58-076a-4600-b312-101d2d125354.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_41,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e6e6e6&id=qSmXg&originHeight=646&originWidth=1423&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351459243-3f5bc630-f020-421e-8189-9e3c4adb27f8.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_35,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23eaeaea&id=RP3YV&originHeight=401&originWidth=1241&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351459625-f6b23a28-e68a-4cd1-aa2b-a0de8ed05298.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_34,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e3e3e3&id=G8Wu0&originHeight=462&originWidth=1182&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351460179-d034210b-b787-4c1d-b825-5f82a2bccab5.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_42,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e4e4e4&id=RC7MR&originHeight=606&originWidth=1484&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351460571-3709026f-9a4d-4ee1-822e-d87a524822a2.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_27,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23121212&id=SDyPp&originHeight=36&originWidth=952&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351460771-b70257a7-9e09-4305-bcfb-8a6d25641b47.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_24,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%231b1b19&id=ZktgD&originHeight=22&originWidth=844&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351461088-d7d81a45-b38e-453b-850d-00d71871787a.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_45,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e4e4e4&id=PPFfx&originHeight=695&originWidth=1563&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351461659-c4e8c965-28c4-4f48-a684-52f5d0d1b7a4.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_36,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23ebebeb&id=Twpop&originHeight=606&originWidth=1248&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351462056-a8c7e834-c358-4e14-92ff-f5b522cf9ac5.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_39,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e3e3e3&id=vpDLn&originHeight=497&originWidth=1358&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351462478-74262e00-0386-43ff-bc61-2e0389a599ae.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_38,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23eae5e4&id=duq2y&originHeight=858&originWidth=1339&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351462879-1d28c4f0-a9ee-47d5-97db-1da58e006381.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_40,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e3dbd9&id=tgpNa&originHeight=853&originWidth=1402&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351463310-fe02d01a-8812-4034-a9ca-6add8794866f.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_29,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%230d0d0d&id=tLJrW&originHeight=351&originWidth=1000&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351463671-20652370-cb3b-4386-a42e-d5327693b518.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_42,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e3dbd9&id=lp5fm&originHeight=846&originWidth=1487&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351464082-23acf92a-911d-49af-8f2b-f2b2a7684ffa.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_43,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e4e4e4&id=DRsrx&originHeight=642&originWidth=1511&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351464484-8eee9021-3825-46bb-b929-b06cfbb2aef2.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_46,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23dcdcdc&id=gqyou&originHeight=443&originWidth=1598&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351464890-e12ac350-323c-414e-a818-09c81a8ad341.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_40,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e0e3e4&id=YkdT4&originHeight=697&originWidth=1405&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351465342-82ffebe5-4e3a-49eb-a3aa-2ea9a5a3fbdc.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_39,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e7eaea&id=TaMjK&originHeight=757&originWidth=1384&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351465787-7b4bd1c3-b0a9-4e0d-acaf-5462329d14bb.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_40,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23d7d9d1&id=hsQ9I&originHeight=551&originWidth=1400&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351466191-ebb17b6f-25df-45cb-9171-586bb458ab55.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_17,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%232e2e2c&id=nvHYU&originHeight=31&originWidth=587&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351466446-be12f13a-0f0d-4d61-a776-203a48c07701.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_46,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23dbdedc&id=FuRr6&originHeight=622&originWidth=1599&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351466893-d18bbeea-5dce-4f06-a6af-65f1f24bf30b.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_10,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%231e1e1d&id=MGmdf&originHeight=37&originWidth=226&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351467121-e2aa0af3-6959-4913-9676-cba6e4a591f9.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%231d1d1c&id=J96gN&originHeight=30&originWidth=469&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351467379-ef7d9e59-160a-4dcb-bfd8-988dd5b1b376.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%231f1f1d&id=afYPI&originHeight=32&originWidth=562&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351467656-29293d7d-a543-4b5e-b445-379a9a9bc71a.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23edf0f0&id=mjJGd&originHeight=617&originWidth=1403&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351468056-126857d1-650a-4d16-a7f1-be47d8bdd847.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23d5d8d6&id=RfVac&originHeight=594&originWidth=1431&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351468389-3ef297a0-7136-45c2-b379-a0736f9c099f.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%2332312f&id=RFAGT&originHeight=35&originWidth=393&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351468729-51e7d19a-88da-4daa-b6ff-71795dfff2c5.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e1e0de&id=GVKRD&originHeight=553&originWidth=1511&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351469029-4cee87ce-0323-49b3-a411-08e045c5a0aa.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%231a1b1a&id=oObk9&originHeight=29&originWidth=248&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351469356-dc3f52e2-e933-42a4-a31f-02ab749eeed4.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e5e5e5&id=gk1Cu&originHeight=443&originWidth=1622&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351469787-d95486b0-cd29-4487-8ac0-1fe65a9b874b.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e8e8e8&id=UUyk1&originHeight=693&originWidth=1472&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351470166-63051eec-df25-40c1-b3c7-0f96079f6204.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e6e6e6&id=POQMD&originHeight=518&originWidth=958&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351470533-7b045ecd-c803-4cd7-9756-3099b1a6830e.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e0e0e0&id=FP1Gn&originHeight=535&originWidth=1347&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351470870-8e8a3fdf-eb0b-48ff-8cf9-26169f7d69fb.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23ececec&id=hedGW&originHeight=331&originWidth=1130&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351471208-dd4362ab-e796-4998-b95e-3b15c868298f.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%2331302a&id=UBhgB&originHeight=307&originWidth=914&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351471644-304a518a-bfe8-4f09-8350-8828ac0aec2c.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23090808&id=Dn4UQ&originHeight=257&originWidth=894&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351472042-db6d5be6-d739-4aea-a047-3b0ae9c04229.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23edede9&id=eA7Qp&originHeight=776&originWidth=1508&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351472528-bd660ab7-58c2-46ef-b55f-5936f1f88296.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23dbdbdb&id=NmJlM&originHeight=649&originWidth=1503&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351473018-8f573c49-78b3-4ddb-876d-1fa1ee3474e4.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e8e8e8&id=KwwiF&originHeight=633&originWidth=1228&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351473418-45436a57-f1c3-43e6-a092-4f61e51b38a6.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e5e5e5&id=wPeQC&originHeight=719&originWidth=1266&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351473916-4e11d694-10a1-4497-a3cd-2ee2e80e5d09.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e2e2e2&id=My9IN&originHeight=624&originWidth=1466&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351474284-7ed3ff21-ead3-4120-a2da-4cae4ccfe2ef.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e8e8e8&id=YbS0J&originHeight=603&originWidth=1425&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351474643-b1516a7e-e99c-427e-b458-518aa4b6a0ba.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23dfdfdf&id=qvT68&originHeight=514&originWidth=1323&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351475027-aa7332f4-ea3e-4772-bcea-5e3ae358cbaa.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%231d1e1c&id=zMz22&originHeight=33&originWidth=426&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351475279-9dc77980-b29e-47c8-9438-df7371e0f80c.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%231d1f1e&id=fOez4&originHeight=28&originWidth=176&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351475578-1ffa3345-9d94-4be7-9630-f3298cd7f45a.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23d6d6d6&id=TsUCZ&originHeight=278&originWidth=1478&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351476052-5e2004ca-b3d3-4aa7-967d-10c04513ea29.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23dde0e0&id=ZI8Mm&originHeight=557&originWidth=1551&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351476417-dd3cae29-f165-432e-be31-5c29ee49acf3.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e8e8e8&id=DEQFm&originHeight=350&originWidth=815&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351476693-fb5d0bac-1c77-4525-bedb-4a02f14ea103.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e2e2e2&id=v8yjY&originHeight=577&originWidth=1402&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351477144-56a47bc2-041c-45a0-89ce-f605f63bd9d5.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23ededed&id=V4e4y&originHeight=445&originWidth=987&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351477620-3614094c-1fad-4cfe-b54e-26953b76e804.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e7e7e7&id=BWNRe&originHeight=433&originWidth=1466&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351478062-eca27010-1d43-4308-8f7f-aa9d8816ffdc.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e3e3e3&id=ENjNu&originHeight=809&originWidth=1644&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351478520-c590b23c-2188-44e5-94f4-0db7bec527fd.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e3e3e3&id=q6zWj&originHeight=447&originWidth=1306&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351478915-95624197-65fe-4963-8023-e9eaccdb2684.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e8e8e8&id=KdclF&originHeight=743&originWidth=1339&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351479439-0c4726a0-0ff5-4c83-80ef-71bf6c0f4138.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e7e7e7&id=fNcei&originHeight=753&originWidth=800&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351479839-1fca7cee-5f42-4f44-9b86-a2c1e3217fa0.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e8e8e8&id=VNcEo&originHeight=393&originWidth=978&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351480211-9373648d-b30a-4d6e-891b-6ce80a76e54e.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e8e8e8&id=ECpHa&originHeight=444&originWidth=1393&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351480661-64f47755-4f68-4a94-b5d4-ad9a8ddef22f.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e0e3e1&id=qWmd2&originHeight=649&originWidth=1421&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351481054-d945d5f1-ad6c-4082-950d-f417194f4ac1.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e6e6e6&id=b7ghr&originHeight=694&originWidth=1335&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351481451-47612f1b-7aa8-4110-9451-283b87805611.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23dbdbdb&id=mO30M&originHeight=327&originWidth=1252&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351481903-7f16ae45-4d82-491e-911c-3eddc04f109b.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23d8d8d8&id=oCQjI&originHeight=403&originWidth=1495&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351482380-7b5be1cb-81a2-4e26-a95e-62f2e5f474a3.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23f3f2f2&id=YVn0T&originHeight=824&originWidth=1427&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351482808-b89448b4-e1aa-44e2-ae93-2a3807ee0070.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e1e1e1&id=ItiHx&originHeight=298&originWidth=1123&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351483161-3c31f79d-384a-4026-854a-5e243a46525f.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e5e5e5&id=W7Rnx&originHeight=370&originWidth=1278&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351483612-c51be168-617d-418b-9dd3-d2a5241db9e9.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e3e3e3&id=MaX0f&originHeight=630&originWidth=1322&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351484073-edd03d92-8a2d-4c69-9675-d2d0a6912699.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e2e2e2&id=FA44A&originHeight=633&originWidth=1582&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351484567-a5efe908-9752-424e-9b23-257c8ba6028e.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e7e6e6&id=So54g&originHeight=549&originWidth=1208&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351486000-8af0fff7-8632-41ce-a90f-2cbc0078c7e4.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e6e6e6&id=kju4c&originHeight=335&originWidth=1089&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351486401-785e5201-c9db-4789-9bce-2cd75448f8e7.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23efefef&id=f7IDN&originHeight=779&originWidth=1410&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351486874-6460c35c-4442-4cd8-993f-5687a1b57a72.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23f6f6f6&id=KloTw&originHeight=814&originWidth=1410&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351487292-4bcab537-0184-4566-9b9f-0ae848182042.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e7e7e7&id=mMnof&originHeight=419&originWidth=1556&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351487685-40a3e9db-dcf9-4b4e-94d5-6fedb7954f2b.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e7e7e7&id=pR2bd&originHeight=460&originWidth=1490&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351488174-0ee9ab27-9556-41f0-8ec8-759293b1730c.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e8e8e8&id=ZYY0y&originHeight=645&originWidth=1227&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351488735-518572fe-51be-4143-8481-cffa13895f10.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e8e8e8&id=PpRoO&originHeight=694&originWidth=1176&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351489210-19344c65-d112-4b76-9bed-d32b197f05cd.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23ececec&id=r5xOi&originHeight=456&originWidth=1054&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351489632-15b25ff8-07fb-481c-821d-8e26580d583c.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e9e8e8&id=Mx6Cj&originHeight=494&originWidth=923&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351490038-6f5824d4-a567-476b-a424-c85eeb029d72.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23ebebeb&id=iUL6L&originHeight=626&originWidth=1126&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351490487-63e7335f-d20d-4061-9bc3-345447a0e617.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23f4f4f4&id=U458M&originHeight=216&originWidth=483&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351490780-1438de58-7db0-4b56-a1fc-8e3f1a248136.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23292929&id=aTkRN&originHeight=32&originWidth=819&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351491087-058d22c6-84a1-4f65-98f1-ddf93e35e4a0.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e9e9e9&id=yRS7s&originHeight=428&originWidth=1222&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="article:published_time" content="2024-07-30T12:50:07.600Z">
+<meta property="article:modified_time" content="2024-07-30T12:50:07.895Z">
+<meta property="article:author" content="Boy">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351437786-815f6cde-b4fd-4c65-a8de-d3521a7c9ec3.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_37,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e8e8e8&id=SERjm&originHeight=688&originWidth=1313&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=">
+  
+    <link rel="alternate" href="/atom.xml" title="Morthos" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/images/favicon.ico">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<link rel="stylesheet" href="https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.css">
+
+  
+  
+  
+  
+<script src="https://npm.webcache.cn/pace-js@1.2.4/pace.min.js"></script>
+
+  
+    
+<link rel="stylesheet" href="https://npm.webcache.cn/wowjs@1.1.3/css/libs/animate.css">
+
+    
+<script src="https://npm.webcache.cn/wowjs@1.1.3/dist/wow.min.js"></script>
+
+    <script>
+      new WOW({
+        offset: 0,
+        mobile: true,
+        live: false
+      }).init();
+    </script>
+  
+  
+    <script src="/sw.js"></script>
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+  <body>
+    
+  <div id='loader'>
+    <div class="loading-left-bg loading-bg"></div>
+    <div class="loading-right-bg loading-bg"></div>
+    <div class="spinner-box">
+      <div class="loading-taichi">
+        <svg width="150" height="150" viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="https://www.w3.org/2000/svg" shape-rendering="geometricPrecision">
+          <path d="M303.5 432A80 80 0 0 1 291.5 592A80 80 0 0 1 303.5 432z" fill="#ff6e6b" />
+          <path d="M512 65A447 447 0 0 1 512 959L512 929A417 417 0 0 0 512 95A417 417 0 0 0 512 929L512 959A447 447 0 0 1 512 65z" fill="#fd0d00" />
+          <path d="M512 95A417 417 0 0 1 929 512A208.5 208.5 0 0 1 720.5 720.5L720.5 592A80 80 0 0 0 720.5 432A80 80 0 0 0 720.5 592L720.5 720.5A208.5 208.5 0 0 1 512 512A208.5 208.5 0 0 0 303.5 303.5A208.5 208.5 0 0 0 95 512A417 417 0 0 1 512 95" fill="#fd0d00" />
+        </svg>
+      </div>
+      <div class="loading-word">少女祈祷中...</div>
+    </div>
+  </div>
+  </div>
+  <script>
+    var time = null;
+    var startLoading = () => {
+      time = Date.now();
+      document.getElementById('loader').classList.remove("loading");
+    }
+    var endLoading = () => {
+      if (!time) {
+        document.body.style.overflow = 'auto';
+        document.getElementById('loader').classList.add("loading");
+      } else {
+        if (Date.now() - time > 500) {
+          time = null;
+          document.body.style.overflow = 'auto';
+          document.getElementById('loader').classList.add("loading");
+        } else {
+          setTimeout(endLoading, 500 - (Date.now() - time));
+          time = null;
+        }
+      }
+    }
+    window.addEventListener('DOMContentLoaded', endLoading);
+    document.getElementById('loader').addEventListener('click', endLoading);
+  </script>
+
+<div id="copy-tooltip" style="pointer-events: none; opacity: 0; transition: all 0.2s ease; position: fixed;top: 50%;left: 50%;z-index: 999;transform: translate(-50%, -50%);color: white;background: rgba(0, 0, 0, 0.5);padding: 10px 15px;border-radius: 10px;">
+</div>
+
+    <div id="container">
+      <div id="wrap">
+        <div id="header-nav">
+  <nav id="main-nav">
+    
+      <span class="main-nav-link-wrap">
+        <span class="main-nav-icon"></span>
+        <a class="main-nav-link" href="/">首页</a>
+      </span>
+    
+      <span class="main-nav-link-wrap">
+        <span class="main-nav-icon"></span>
+        <a class="main-nav-link" href="/archives">归档</a>
+      </span>
+    
+      <span class="main-nav-link-wrap">
+        <span class="main-nav-icon"></span>
+        <a class="main-nav-link" href="/about">关于</a>
+      </span>
+    
+      <span class="main-nav-link-wrap">
+        <span class="main-nav-icon"></span>
+        <a class="main-nav-link" href="/friend">友链</a>
+      </span>
+    
+    <a id="main-nav-toggle" class="nav-icon"></a>
+  </nav>
+  <nav id="sub-nav">
+    
+      <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS 订阅"></a>
+    
+    
+    
+  </nav>
+</div>
+<header id="header">
+  
+    
+      <img fetchpriority="high" src="/images/banner.webp" alt="">
+    
+  
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <div id="logo-wrap">
+        
+          
+          
+            <a href="/" id="logo">
+              <h1>Morthos</h1>
+            </a>
+          
+        
+      </div>
+      
+        
+        <h2 id="subtitle-wrap">
+          
+        </h2>
+      
+    </div>
+  </div>
+</header>
+
+        <div id="content" class="outer">
+          
+          <section id="main"><article id="post-速成mysql" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-inner">
+    <div class="article-meta">
+      <div class="article-date wow slideInLeft">
+  <a href="/2024/07/30/%E9%80%9F%E6%88%90mysql/" class="article-date-link">
+    <time datetime="2024-07-30T12:50:07.600Z" itemprop="datePublished">2024-07-30</time>
+  </a>
+</div>
+
+      
+
+    </div>
+    <div class="hr-line"></div>
+    
+
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>table_name表名<br>col_name字段名<br>db_name    库名<br>table_reference参照表<br>function_name函数名<br>show create table corse查看建表语句<br>展示表结构 show create table + 表名<br>创建表    create table  表名（<br>                  字段名  数据类型   多种多个字段约束（主键约束&#x2F;唯一约束）<br>                  id  int unsigned    auto  increment primary key<br>                 ）<br><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351437786-815f6cde-b4fd-4c65-a8de-d3521a7c9ec3.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_37,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e8e8e8&id=SERjm&originHeight=688&originWidth=1313&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="><br>mysql -h localhost -u root -p<br><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351438221-a81f9b53-b6de-4942-81ef-7c624ef21633.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_35,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e4e4e4&id=L11NR&originHeight=292&originWidth=1223&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351438689-b58146e9-532b-4693-ac6c-8ca23a1a65bd.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_44,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23eeeee5&id=xTk7p&originHeight=866&originWidth=1547&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="><br>登陆后   prompt +改成的名字<br><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351439321-f7c78aad-7a07-45af-a6f9-0e3d7f9a5d7f.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_42,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e7e7e7&id=QxulG&originHeight=804&originWidth=1487&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351439819-da9ed769-8829-45be-96f4-bffe6a2d0cf6.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_44,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e3e3e3&id=oy54U&originHeight=752&originWidth=1531&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351440404-a64b5577-ecef-442a-a177-f8eba65a1cb0.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_42,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e4e4e4&id=OVSsD&originHeight=797&originWidth=1466&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="><br>show warnings   查看上一次报错<br><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351440947-0cb426e8-b334-49b7-9a5f-3138fa56e1a0.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_55,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23c8c8c8&id=f40C6&originHeight=1030&originWidth=1920&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351441536-828d14ba-920f-449b-a83e-d742f6d1b382.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_42,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23dbdbdb&id=XFpWU&originHeight=545&originWidth=1484&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351442066-eeba53f5-84fd-42df-90a3-282d64f35832.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_55,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23dadad5&id=hAACE&originHeight=1030&originWidth=1920&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351442551-02fdf99d-83dd-4d07-8307-e6d36f0406f9.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_40,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e8e8e8&id=fbrfo&originHeight=742&originWidth=1404&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351442969-20e4fa58-ecb6-425f-b221-8ef1a1dc7fdf.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_12,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%2398967b&id=Xdwap&originHeight=120&originWidth=432&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351443288-387e6033-d54e-4b0e-ae30-8b9ba25118e8.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_19,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23dfdfdf&id=bobIW&originHeight=108&originWidth=683&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351443628-46f3f7c5-0039-493a-a2d3-cbb818de65e1.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_23,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e9e9e9&id=vOTYz&originHeight=212&originWidth=821&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351443909-aba80296-e94c-4eb9-84d3-d8119c4ae7ab.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_32,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23ededed&id=N8HQS&originHeight=425&originWidth=1123&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351444251-03fd3f82-76c1-4702-8445-970108a1f56c.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_26,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e9e9e9&id=t0vNO&originHeight=369&originWidth=905&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="><br>16<br><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351444646-c7218497-efe7-4c48-a0a0-d3a2d2dcb292.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_48,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23d8d8d8&id=yE5Vt&originHeight=829&originWidth=1670&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="><br>ALTER TABLE Persons AUTO_INCREMENT&#x3D;100    每次自增100<br><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351445131-95284aec-fe64-499d-ba54-0848c4b8ad74.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_38,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e7e7e7&id=h6EzT&originHeight=509&originWidth=1316&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="><br>sql sever      P_Id int PRIMARY KEY IDENTITY   主键标识<br>          或id int(12) auto increment primary key   自增1<br><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351445485-1f222c0b-0819-479c-96a7-cb5565362b94.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_25,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e7e7e7&id=vAjd6&originHeight=531&originWidth=894&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351445914-04d7b574-ebec-4f86-b7ae-7ef4a754e8b2.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_13,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23090909&id=zJtFG&originHeight=263&originWidth=470&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="><br>枚举0 1 2            后期利用编程语言将0 1 2转化为男 女 保密输出性别<br><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351446248-c330e489-e9b4-4fc8-8391-7f7947b08462.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_34,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e7e6e6&id=xbvaT&originHeight=753&originWidth=1194&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351446821-948c3337-c6c3-40b3-8226-f8e4bc80b391.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_40,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e3e3e3&id=xV3QW&originHeight=558&originWidth=1406&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="><br>查看索引&#x2F;G     方便查看<br>二、外键的添加方式<br>　　1、方式一<br>　　　　create table 表名 (<br>　　　　　　字段名1 数据类型  约束，<br>　　　　　　字段名2 数据类型 约束，<br>　　　　　　。。。<br>　　　　　　constraint  外键名　　foreign key（字段名）　　references 　　主表名（字段名）　　级联操作）；<br>　　　方式2:表创建完成后添加外键<br>　　　alter table　表名 add constraint  外键名  foreign key (字段1） references  表名2（字段名2）级联操作；<br><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351447433-bddd3f1c-c465-4b48-8747-38c2c4a2c3ad.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_22,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23f3f2f2&id=QjMPF&originHeight=273&originWidth=771&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="><br>在数据表中创建外键使用 FOREIGN KEY 关键字，具体的语法规则如下：<br>[CONSTRAINT &lt;外键名&gt;] FOREIGN KEY 字段名 [，字段名2，…]<br>REFERENCES &lt;主表名&gt; 主键列1 [，主键列2，…]<br>其中：外键名为定义的外键约束的名称，一个表中不能有相同名称的外键；字段名表示子表需要添加外健约束的字段列；主表名即被子表外键所依赖的表的名称；主键列表示主表中定义的主键列或者列组合。<br><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351447697-b20281c4-5657-480d-b034-4cb3f5e6eb3a.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_40,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e3e3e3&id=g00o0&originHeight=549&originWidth=1412&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351448064-c4d87cd4-02b9-432c-b769-58f6c34cd1d1.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_16,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23282927&id=hXPff&originHeight=21&originWidth=568&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351448324-b0572b5a-fc85-4f43-8153-da4df986d917.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_16,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%230c0c0c&id=mTnu9&originHeight=48&originWidth=544&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351448610-e60f3445-8401-4623-acbd-5d43fc89b237.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_48,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e7e7e7&id=lWNJ3&originHeight=690&originWidth=1675&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351449035-eaae6bd7-2d37-4cd2-b88d-56f0c3ace303.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_47,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e5e5e5&id=HsAaq&originHeight=667&originWidth=1636&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="><br>column_definition列定义<br>【first | after col_name】所处位置信息<br><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351449525-145fc845-9b17-4406-b542-c02c966e3649.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_41,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e5e5e5&id=qr3Vq&originHeight=371&originWidth=1438&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="><br>low_priority 低优先级                                                                      更新条件<br>ignore忽视<br><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351449852-2df10c60-2411-4f6e-aacc-6003b6811e95.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_26,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%231d1d1b&id=Ucsnt&originHeight=307&originWidth=921&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351450225-73c77c3e-b463-402b-87a1-871ce8077c2a.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_29,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e6e6e6&id=nfP17&originHeight=312&originWidth=1026&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="><br>删除一个字段及值<br><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351450639-1a8594a3-638b-43f8-ae98-443427b96489.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_39,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e5e5e5&id=eYz3b&originHeight=638&originWidth=1374&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="><br>select_expr选择表达式<br>group by分组依据</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351451050-d62bb436-9b73-48e7-81c7-4aaf10c82fe7.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_39,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e0e0e0&id=yBclS&originHeight=438&originWidth=1377&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351451452-a007b025-f753-42af-b379-1d6e1da0a1c4.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_14,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23252523&id=sLYdy&originHeight=40&originWidth=486&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="><br>24<br><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351451745-a97a53e6-e9e8-4367-8193-5d0747aed13e.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_40,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e6e6e6&id=PZH4A&originHeight=406&originWidth=1388&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351452083-f218f37c-5235-4256-92c1-684948a45901.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_12,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%230f0f0f&id=fM0vT&originHeight=35&originWidth=427&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351452369-b2766090-f07b-47fa-8574-f3d34180428c.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_35,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e6e6e6&id=ztiR1&originHeight=356&originWidth=1234&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="><br>                                                               列名  | 位置                                ASC正序    DESC倒序<br><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351452729-0cdcb49b-0551-4ef4-b2b2-ef2d5a8eabbe.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_29,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e7e7e7&id=A1MFz&originHeight=324&originWidth=1008&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="><br>                                                   having  函数<br><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351453249-96663906-a61a-4af0-a859-00a4e1e16a29.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_44,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e6e6e6&id=LEGQh&originHeight=415&originWidth=1548&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="><br>                                                   字段|出口|位置<br><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351453654-08374799-da7d-41a2-ad14-ffea90f19257.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_13,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23ab978a&id=jEO8x&originHeight=31&originWidth=448&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="><br>age从小到大排序，age相同的id倒叙排列<br><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351453918-75d5be4e-e2b7-4465-9141-f1985bcca6f7.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_40,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e7e7e7&id=sTCpX&originHeight=421&originWidth=1388&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351454316-70fc99ab-53f6-43ef-809b-a63b9e63c1da.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_10,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23191918&id=gbpda&originHeight=33&originWidth=353&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="><br>越过三排取之后的四排数据  3,4<br><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351454599-b6556db6-d583-4201-9a65-1e4c9d996fae.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_35,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e6e6e6&id=nQfRJ&originHeight=701&originWidth=1224&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351455014-af4be898-83d3-41f4-b938-642cd193483d.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_21,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23272726&id=SiSuF&originHeight=33&originWidth=752&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351455293-d73c78e6-e395-4962-8377-babcf5258e15.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_17,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23131513&id=JcIt3&originHeight=85&originWidth=610&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="><br>字段不匹配报错<br><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351455615-562dffc6-fc91-4025-8da2-c9ab9d50ba05.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_43,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e0e0e0&id=O50IL&originHeight=506&originWidth=1511&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="><br>                     外查询                                         内查询<br><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351456101-be9cce59-cbe9-48c1-bb14-ece6649e9a58.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_42,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23dfdfdf&id=WWyv1&originHeight=749&originWidth=1472&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="><br>30<br><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351456524-19a84ec9-4ddd-4a50-8ad4-1116eb6188c3.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_36,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e2e2e2&id=KPL5w&originHeight=782&originWidth=1274&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351457072-19114665-fa02-4b40-8e60-5f53baa28f59.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_38,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23d7dad8&id=XfFvs&originHeight=552&originWidth=1327&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351457490-1cd8a047-2035-4043-be57-ca2064233800.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_28,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23070707&id=NKd0S&originHeight=335&originWidth=987&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="><br>在表最后插入一个字段         整形两位小数<br><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351457891-eb5f95e9-9a7a-47ae-a7f9-357b45bfa22c.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_28,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23272625&id=zhKK1&originHeight=408&originWidth=981&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="><br>插入信息<br><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351458221-ffbd9ee3-ee8b-4e2f-bc0b-19a7fe0333bb.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_17,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%231f1f1e&id=czIU0&originHeight=37&originWidth=598&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351458491-03d662a5-9f24-492f-baba-f4893a880477.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_19,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23020202&id=HbYdj&originHeight=180&originWidth=658&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="><br>                      round（）四舍五入函数<br>                       avg平均值函数          .2 保留两位小数<br><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351458829-977f2c58-076a-4600-b312-101d2d125354.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_41,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e6e6e6&id=qSmXg&originHeight=646&originWidth=1423&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="><br>         操作数  运算符   关键字  子查询<br><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351459243-3f5bc630-f020-421e-8189-9e3c4adb27f8.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_35,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23eaeaea&id=RP3YV&originHeight=401&originWidth=1241&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351459625-f6b23a28-e68a-4cd1-aa2b-a0de8ed05298.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_34,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e3e3e3&id=G8Wu0&originHeight=462&originWidth=1182&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351460179-d034210b-b787-4c1d-b825-5f82a2bccab5.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_42,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e4e4e4&id=RC7MR&originHeight=606&originWidth=1484&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351460571-3709026f-9a4d-4ee1-822e-d87a524822a2.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_27,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23121212&id=SDyPp&originHeight=36&originWidth=952&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="><br>33<br><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351460771-b70257a7-9e09-4305-bcfb-8a6d25641b47.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_24,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%231b1b19&id=ZktgD&originHeight=22&originWidth=844&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351461088-d7d81a45-b38e-453b-850d-00d71871787a.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_45,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e4e4e4&id=PPFfx&originHeight=695&originWidth=1563&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351461659-c4e8c965-28c4-4f48-a684-52f5d0d1b7a4.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_36,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23ebebeb&id=Twpop&originHeight=606&originWidth=1248&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351462056-a8c7e834-c358-4e14-92ff-f5b522cf9ac5.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_39,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e3e3e3&id=vpDLn&originHeight=497&originWidth=1358&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351462478-74262e00-0386-43ff-bc61-2e0389a599ae.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_38,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23eae5e4&id=duq2y&originHeight=858&originWidth=1339&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351462879-1d28c4f0-a9ee-47d5-97db-1da58e006381.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_40,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e3dbd9&id=tgpNa&originHeight=853&originWidth=1402&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351463310-fe02d01a-8812-4034-a9ca-6add8794866f.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_29,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%230d0d0d&id=tLJrW&originHeight=351&originWidth=1000&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="><br>主表为主，副表匹配，没匹配到null<br><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351463671-20652370-cb3b-4386-a42e-d5327693b518.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_42,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e3dbd9&id=lp5fm&originHeight=846&originWidth=1487&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351464082-23acf92a-911d-49af-8f2b-f2b2a7684ffa.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_43,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e4e4e4&id=DRsrx&originHeight=642&originWidth=1511&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351464484-8eee9021-3825-46bb-b929-b06cfbb2aef2.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_46,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23dcdcdc&id=gqyou&originHeight=443&originWidth=1598&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351464890-e12ac350-323c-414e-a818-09c81a8ad341.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_40,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e0e3e4&id=YkdT4&originHeight=697&originWidth=1405&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351465342-82ffebe5-4e3a-49eb-a3aa-2ea9a5a3fbdc.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_39,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e7eaea&id=TaMjK&originHeight=757&originWidth=1384&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351465787-7b4bd1c3-b0a9-4e0d-acaf-5462329d14bb.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_40,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23d7d9d1&id=hsQ9I&originHeight=551&originWidth=1400&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351466191-ebb17b6f-25df-45cb-9171-586bb458ab55.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_17,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%232e2e2c&id=nvHYU&originHeight=31&originWidth=587&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351466446-be12f13a-0f0d-4d61-a776-203a48c07701.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_46,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23dbdedc&id=FuRr6&originHeight=622&originWidth=1599&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351466893-d18bbeea-5dce-4f06-a6af-65f1f24bf30b.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_10,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%231e1e1d&id=MGmdf&originHeight=37&originWidth=226&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351467121-e2aa0af3-6959-4913-9676-cba6e4a591f9.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%231d1d1c&id=J96gN&originHeight=30&originWidth=469&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351467379-ef7d9e59-160a-4dcb-bfd8-988dd5b1b376.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%231f1f1d&id=afYPI&originHeight=32&originWidth=562&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351467656-29293d7d-a543-4b5e-b445-379a9a9bc71a.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23edf0f0&id=mjJGd&originHeight=617&originWidth=1403&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351468056-126857d1-650a-4d16-a7f1-be47d8bdd847.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23d5d8d6&id=RfVac&originHeight=594&originWidth=1431&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351468389-3ef297a0-7136-45c2-b379-a0736f9c099f.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%2332312f&id=RFAGT&originHeight=35&originWidth=393&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351468729-51e7d19a-88da-4daa-b6ff-71795dfff2c5.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e1e0de&id=GVKRD&originHeight=553&originWidth=1511&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351469029-4cee87ce-0323-49b3-a411-08e045c5a0aa.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%231a1b1a&id=oObk9&originHeight=29&originWidth=248&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351469356-dc3f52e2-e933-42a4-a31f-02ab749eeed4.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e5e5e5&id=gk1Cu&originHeight=443&originWidth=1622&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351469787-d95486b0-cd29-4487-8ac0-1fe65a9b874b.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e8e8e8&id=UUyk1&originHeight=693&originWidth=1472&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351470166-63051eec-df25-40c1-b3c7-0f96079f6204.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e6e6e6&id=POQMD&originHeight=518&originWidth=958&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351470533-7b045ecd-c803-4cd7-9756-3099b1a6830e.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e0e0e0&id=FP1Gn&originHeight=535&originWidth=1347&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351470870-8e8a3fdf-eb0b-48ff-8cf9-26169f7d69fb.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23ececec&id=hedGW&originHeight=331&originWidth=1130&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351471208-dd4362ab-e796-4998-b95e-3b15c868298f.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%2331302a&id=UBhgB&originHeight=307&originWidth=914&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="><br>不带参数<br><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351471644-304a518a-bfe8-4f09-8350-8828ac0aec2c.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23090808&id=Dn4UQ&originHeight=257&originWidth=894&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351472042-db6d5be6-d739-4aea-a047-3b0ae9c04229.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23edede9&id=eA7Qp&originHeight=776&originWidth=1508&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351472528-bd660ab7-58c2-46ef-b55f-5936f1f88296.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23dbdbdb&id=NmJlM&originHeight=649&originWidth=1503&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351473018-8f573c49-78b3-4ddb-876d-1fa1ee3474e4.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e8e8e8&id=KwwiF&originHeight=633&originWidth=1228&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351473418-45436a57-f1c3-43e6-a092-4f61e51b38a6.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e5e5e5&id=wPeQC&originHeight=719&originWidth=1266&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351473916-4e11d694-10a1-4497-a3cd-2ee2e80e5d09.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e2e2e2&id=My9IN&originHeight=624&originWidth=1466&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351474284-7ed3ff21-ead3-4120-a2da-4cae4ccfe2ef.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e8e8e8&id=YbS0J&originHeight=603&originWidth=1425&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351474643-b1516a7e-e99c-427e-b458-518aa4b6a0ba.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23dfdfdf&id=qvT68&originHeight=514&originWidth=1323&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="><br>不带参数的存储过程<br><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351475027-aa7332f4-ea3e-4772-bcea-5e3ae358cbaa.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%231d1e1c&id=zMz22&originHeight=33&originWidth=426&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="><br>执行<br><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351475279-9dc77980-b29e-47c8-9438-df7371e0f80c.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%231d1f1e&id=fOez4&originHeight=28&originWidth=176&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351475578-1ffa3345-9d94-4be7-9630-f3298cd7f45a.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23d6d6d6&id=TsUCZ&originHeight=278&originWidth=1478&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351476052-5e2004ca-b3d3-4aa7-967d-10c04513ea29.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23dde0e0&id=ZI8Mm&originHeight=557&originWidth=1551&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351476417-dd3cae29-f165-432e-be31-5c29ee49acf3.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e8e8e8&id=DEQFm&originHeight=350&originWidth=815&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351476693-fb5d0bac-1c77-4525-bedb-4a02f14ea103.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e2e2e2&id=v8yjY&originHeight=577&originWidth=1402&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351477144-56a47bc2-041c-45a0-89ce-f605f63bd9d5.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23ededed&id=V4e4y&originHeight=445&originWidth=987&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351477620-3614094c-1fad-4cfe-b54e-26953b76e804.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e7e7e7&id=BWNRe&originHeight=433&originWidth=1466&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351478062-eca27010-1d43-4308-8f7f-aa9d8816ffdc.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e3e3e3&id=ENjNu&originHeight=809&originWidth=1644&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351478520-c590b23c-2188-44e5-94f4-0db7bec527fd.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e3e3e3&id=q6zWj&originHeight=447&originWidth=1306&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351478915-95624197-65fe-4963-8023-e9eaccdb2684.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e8e8e8&id=KdclF&originHeight=743&originWidth=1339&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351479439-0c4726a0-0ff5-4c83-80ef-71bf6c0f4138.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e7e7e7&id=fNcei&originHeight=753&originWidth=800&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351479839-1fca7cee-5f42-4f44-9b86-a2c1e3217fa0.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e8e8e8&id=VNcEo&originHeight=393&originWidth=978&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351480211-9373648d-b30a-4d6e-891b-6ce80a76e54e.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e8e8e8&id=ECpHa&originHeight=444&originWidth=1393&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351480661-64f47755-4f68-4a94-b5d4-ad9a8ddef22f.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e0e3e1&id=qWmd2&originHeight=649&originWidth=1421&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351481054-d945d5f1-ad6c-4082-950d-f417194f4ac1.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e6e6e6&id=b7ghr&originHeight=694&originWidth=1335&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351481451-47612f1b-7aa8-4110-9451-283b87805611.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23dbdbdb&id=mO30M&originHeight=327&originWidth=1252&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351481903-7f16ae45-4d82-491e-911c-3eddc04f109b.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23d8d8d8&id=oCQjI&originHeight=403&originWidth=1495&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351482380-7b5be1cb-81a2-4e26-a95e-62f2e5f474a3.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23f3f2f2&id=YVn0T&originHeight=824&originWidth=1427&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351482808-b89448b4-e1aa-44e2-ae93-2a3807ee0070.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e1e1e1&id=ItiHx&originHeight=298&originWidth=1123&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351483161-3c31f79d-384a-4026-854a-5e243a46525f.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e5e5e5&id=W7Rnx&originHeight=370&originWidth=1278&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351483612-c51be168-617d-418b-9dd3-d2a5241db9e9.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e3e3e3&id=MaX0f&originHeight=630&originWidth=1322&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351484073-edd03d92-8a2d-4c69-9675-d2d0a6912699.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e2e2e2&id=FA44A&originHeight=633&originWidth=1582&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351484567-a5efe908-9752-424e-9b23-257c8ba6028e.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e7e6e6&id=So54g&originHeight=549&originWidth=1208&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351486000-8af0fff7-8632-41ce-a90f-2cbc0078c7e4.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e6e6e6&id=kju4c&originHeight=335&originWidth=1089&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351486401-785e5201-c9db-4789-9bce-2cd75448f8e7.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23efefef&id=f7IDN&originHeight=779&originWidth=1410&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351486874-6460c35c-4442-4cd8-993f-5687a1b57a72.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23f6f6f6&id=KloTw&originHeight=814&originWidth=1410&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351487292-4bcab537-0184-4566-9b9f-0ae848182042.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e7e7e7&id=mMnof&originHeight=419&originWidth=1556&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351487685-40a3e9db-dcf9-4b4e-94d5-6fedb7954f2b.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e7e7e7&id=pR2bd&originHeight=460&originWidth=1490&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351488174-0ee9ab27-9556-41f0-8ec8-759293b1730c.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e8e8e8&id=ZYY0y&originHeight=645&originWidth=1227&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351488735-518572fe-51be-4143-8481-cffa13895f10.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e8e8e8&id=PpRoO&originHeight=694&originWidth=1176&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351489210-19344c65-d112-4b76-9bed-d32b197f05cd.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23ececec&id=r5xOi&originHeight=456&originWidth=1054&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351489632-15b25ff8-07fb-481c-821d-8e26580d583c.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e9e8e8&id=Mx6Cj&originHeight=494&originWidth=923&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351490038-6f5824d4-a567-476b-a424-c85eeb029d72.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23ebebeb&id=iUL6L&originHeight=626&originWidth=1126&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351490487-63e7335f-d20d-4061-9bc3-345447a0e617.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23f4f4f4&id=U458M&originHeight=216&originWidth=483&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351490780-1438de58-7db0-4b56-a1fc-8e3f1a248136.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23292929&id=aTkRN&originHeight=32&originWidth=819&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1708351491087-058d22c6-84a1-4f65-98f1-ddf93e35e4a0.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_9,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10#averageHue=%23e9e9e9&id=yRS7s&originHeight=428&originWidth=1222&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title="></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+    
+  <nav id="article-nav" class="wow fadeInUp">
+    
+      <div class="article-nav-link-wrap article-nav-link-left">
+        
+          
+          
+            <img data-src="https://d-sketon.top/img/backimg/bg4.jpg" data-sizes="auto" alt="" class="lazyload">
+          
+        
+        <a href="/2024/07/30/0709%20%E6%B0%B8%E6%81%92%E4%B9%8B%E9%BB%91%E6%BC%8F%E6%B4%9E%20-%20%E5%89%AF%E6%9C%AC/"></a>
+        <div class="article-nav-caption">前一篇</div>
+        <h3 class="article-nav-title">
+          
+            (no title)
+          
+        </h3>
+      </div>
+    
+    
+    <div class="article-nav-link-wrap article-nav-link-right">
+      
+        
+        
+          <img data-src="https://d-sketon.top/img/backimg/bg6.jpg" data-sizes="auto" alt="" class="lazyload">
+        
+      
+      <a href="/2024/07/30/php%E5%9F%BA%E7%A1%80/"></a>
+      <div class="article-nav-caption">后一篇</div>
+      <h3 class="article-nav-title">
+        
+          (no title)
+        
+      </h3>
+    </div>
+    
+  </nav>
+
+
+  
+</article>
+
+
+
+
+
+
+</section>
+          
+            <aside id="sidebar">
+  <div class="sidebar-wrap wow fadeInRight wrap-sticky">
+    
+      <div class="sidebar-toc-sidebar"><div class="sidebar-toc">
+  <h3 class="toc-title">文章目录</h3>
+  <div class="sidebar-toc-wrapper toc-div-class" >
+      
+        
+      
+  </div>
+</div>
+</div>
+      <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img data-src="/avatar/avatar.jpg" data-sizes="auto" alt="Boy" class="lazyload">
+  <div class="sidebar-author-name">Boy</div>
+  <div class="sidebar-description"></div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>文章</div>
+    <div class="sidebar-state-number">23</div>
+  </div>
+  <div class="sidebar-state-category">
+    <div>分类</div>
+    <div class="sidebar-state-number">0</div>
+  </div>
+  <div class="sidebar-state-tag">
+    <div>标签</div>
+    <div class="sidebar-state-number">0</div>
+  </div>
+</div>
+<div class="sidebar-social">
+  
+</div>
+<div class="sidebar-menu">
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/" aria-label="首页"></a>
+      <span class="sidebar-menu-icon"></span>
+      <div class="sidebar-menu-link">首页</div>
+    </div>
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/archives" aria-label="归档"></a>
+      <span class="sidebar-menu-icon"></span>
+      <div class="sidebar-menu-link">归档</div>
+    </div>
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/about" aria-label="关于"></a>
+      <span class="sidebar-menu-icon"></span>
+      <div class="sidebar-menu-link">关于</div>
+    </div>
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/friend" aria-label="友链"></a>
+      <span class="sidebar-menu-icon"></span>
+      <div class="sidebar-menu-link">友链</div>
+    </div>
+  
+</div>
+</div>
+    
+    
+      <div class="sidebar-btn-wrapper" style="position:static">
+        <div class="sidebar-toc-btn current"></div>
+        <div class="sidebar-common-btn"></div>
+      </div>
+    
+  </div>
+
+  
+</aside>
+
+          
+        </div>
+        <footer id="footer" class="wow fadeInUp">
+  <div style="width: 100%; overflow: hidden">
+    <div class="footer-line"></div>
+  </div>
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      <div>
+        <span class="icon-copyright"></span>
+        2020-2024
+        <span class="footer-info-sep"></span>
+        Boy
+      </div>
+      
+        <div>
+          基于&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>&nbsp;
+          Theme.<a href="https://github.com/D-Sketon/hexo-theme-reimu" target="_blank">Reimu</a>
+        </div>
+      
+      
+        <div>
+          <span class="icon-brush"></span>
+          47.1k
+          &nbsp;|&nbsp;
+          <span class="icon-coffee"></span>
+          03:36
+        </div>
+      
+      
+        <div>
+          <span class="icon-eye"></span>
+          <span id="busuanzi_container_site_pv">总访问量&nbsp;<span id="busuanzi_value_site_pv"></span></span>
+          &nbsp;|&nbsp;
+          <span class="icon-user"></span>
+          <span id="busuanzi_container_site_uv">总访客量&nbsp;<span id="busuanzi_value_site_uv"></span></span>
+        </div>
+      
+    </div>
+  </div>
+</footer>
+
+        <div class="sidebar-top">
+          <img src="/images/taichi.png" height="50" width="50" alt="backtop" />
+          <div class="arrow-up"></div>
+        </div>
+        <div id="mask"></div>
+      </div>
+      <nav id="mobile-nav">
+  <div class="sidebar-wrap">
+    
+      <div class="sidebar-toc-sidebar"><div class="sidebar-toc">
+  <h3 class="toc-title">文章目录</h3>
+  <div class="sidebar-toc-wrapper toc-div-class" >
+      
+        
+      
+  </div>
+</div>
+</div>
+      <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img data-src="/avatar/avatar.jpg" data-sizes="auto" alt="Boy" class="lazyload">
+  <div class="sidebar-author-name">Boy</div>
+  <div class="sidebar-description"></div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>文章</div>
+    <div class="sidebar-state-number">23</div>
+  </div>
+  <div class="sidebar-state-category">
+    <div>分类</div>
+    <div class="sidebar-state-number">0</div>
+  </div>
+  <div class="sidebar-state-tag">
+    <div>标签</div>
+    <div class="sidebar-state-number">0</div>
+  </div>
+</div>
+<div class="sidebar-social">
+  
+</div>
+<div class="sidebar-menu">
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/" aria-label="首页"></a>
+      <span class="sidebar-menu-icon"></span>
+      <div class="sidebar-menu-link">首页</div>
+    </div>
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/archives" aria-label="归档"></a>
+      <span class="sidebar-menu-icon"></span>
+      <div class="sidebar-menu-link">归档</div>
+    </div>
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/about" aria-label="关于"></a>
+      <span class="sidebar-menu-icon"></span>
+      <div class="sidebar-menu-link">关于</div>
+    </div>
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/friend" aria-label="友链"></a>
+      <span class="sidebar-menu-icon"></span>
+      <div class="sidebar-menu-link">友链</div>
+    </div>
+  
+</div>
+</div>
+    
+  </div>
+  
+    <div class="sidebar-btn-wrapper">
+      <div class="sidebar-toc-btn current"></div>
+      <div class="sidebar-common-btn"></div>
+    </div>
+  
+</nav>
+
+    </div>
+    <div class="site-search">
+      <div class="reimu-popup popup">
+        <div class="reimu-search">
+          <span class="reimu-search-input-icon"></span>
+          <div class="reimu-search-input" id="reimu-search-input"></div>
+        </div>
+        <div class="reimu-results">
+          <div id="reimu-stats"></div>
+          <div id="reimu-hits"></div>
+          <div id="reimu-pagination" class="reimu-pagination"></div>
+        </div>
+        <span class="popup-btn-close"></span>
+      </div>
+    </div>
+    
+<script src="https://npm.webcache.cn/lazysizes@5.3.2/lazysizes.min.js"></script>
+
+
+<script src="https://npm.webcache.cn/clipboard@2.0.11/dist/clipboard.min.js"></script>
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+<script src="/js/pjax_script.js" data-pjax></script>
+
+
+<script type="module" data-pjax>
+  import PhotoSwipeLightbox from "https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe-lightbox.esm.js";
+  
+  const pswp = () => {
+    if (_$$('.article-entry a.article-gallery-item').length > 0) {
+      new PhotoSwipeLightbox({
+        gallery: '.article-entry',
+        children: 'a.article-gallery-item',
+        pswpModule: () => import("https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.esm.js")
+      }).init();
+    }
+    if(_$$('.article-gallery a.article-gallery-item').length > 0) {
+      new PhotoSwipeLightbox({
+        gallery: '.article-gallery',
+        children: 'a.article-gallery-item',
+        pswpModule: () => import("https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.esm.js")
+      }).init();
+    }
+    window.lightboxStatus = 'done';
+    window.removeEventListener('lightbox:ready', pswp);
+  }
+  if(window.lightboxStatus === 'ready') {
+    pswp()
+  } else {
+    window.addEventListener('lightbox:ready', pswp);
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<script src="https://npm.webcache.cn/mouse-firework@0.0.4/dist/index.umd.js"></script>
+
+  <script>
+    firework(JSON.parse('{"excludeElements":["a","button"],"particles":[{"shape":"circle","move":["emit"],"easing":"easeOutExpo","colors":["#ff5252","#ff7c7c","#ffafaf","#ffd0d0"],"number":20,"duration":[1200,1800],"shapeOptions":{"radius":[16,32],"alpha":[0.3,0.5]}},{"shape":"circle","move":["diffuse"],"easing":"easeOutExpo","colors":["#ff0000"],"number":1,"duration":[1200,1800],"shapeOptions":{"radius":20,"alpha":[0.2,0.5],"lineWidth":6}}]}'))
+  </script>
+
+
+
+
+
+
+<div id="lazy-script">
+  <div>
+    
+  </div>
+</div>
+
+
+  <script>
+    console.log(String.raw`%c 
+ ______     ______     __     __    __     __  __    
+/\  == \   /\  ___\   /\ \   /\ "-./  \   /\ \/\ \   
+\ \  __<   \ \  __\   \ \ \  \ \ \-./\ \  \ \ \_\ \  
+ \ \_\ \_\  \ \_____\  \ \_\  \ \_\ \ \_\  \ \_____\ 
+  \/_/ /_/   \/_____/   \/_/   \/_/  \/_/   \/_____/ 
+                                                  
+`,'color: #ff5252;')
+    console.log('%c Theme.Reimu v' + '0.2.0' + ' %c https://github.com/D-Sketon/hexo-theme-reimu ', 'color: white; background: #ff5252; padding:5px 0;', 'padding:4px;border:1px solid #ff5252;')
+  </script>
+  
+
+
+  
+<script src="https://npm.webcache.cn/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+  <!-- hexo injector body_end start -->
+<script src="/js/insert_highlight.js" data-pjax></script>
+<!-- hexo injector body_end end --></body>
+  </html>
+

@@ -1,0 +1,675 @@
+
+  <!DOCTYPE html>
+  <html lang="zh-CN"  >
+  <head>
+  <meta name="referrer"content="no-referrer"/>
+  <meta charset="utf-8">
+  
+
+  
+
+  
+
+  
+  <script>window.icon_font = '4552607_09mhdxci6yrk';window.clipboard_tips = {"success":"复制成功(*^▽^*)","fail":"复制失败 (ﾟ⊿ﾟ)ﾂ"};</script>
+  
+  
+  <title>
+    
+    Morthos
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7CNoto%20Serif%20SC:400,400italic,700,700italic%7CUbuntu%20Mono:400,400italic,700,700italic&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7CNoto%20Serif%20SC:400,400italic,700,700italic%7CUbuntu%20Mono:400,400italic,700,700italic&display=swap" media="print" onload="this.media&#x3D;&#39;all&#39;">
+  
+    <link rel="preload" href="//at.alicdn.com/t/c/font_4552607_09mhdxci6yrk.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  
+  
+<link rel="stylesheet" href="/css/loader.css">
+
+  <meta name="description" content="准备前提 提前安装好(node.js)[https:&#x2F;&#x2F;nodejs.org&#x2F;en]  提前安装好(GIt)[https:&#x2F;&#x2F;git-scm.com&#x2F;downloads] 提前注册好一个github账号. 如果文章图片没有显示，请自行挂代理.  操作步骤 在本地找个目录放博客源文件，路径不要有中文  在选定的目录中，右键Git Bash Here  使用npm命令安装Hexo，输入： 1npm">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Morthos">
+<meta property="og:url" content="http://example.com/2024/07/30/0711%20github%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/index.html">
+<meta property="og:site_name" content="Morthos">
+<meta property="og:description" content="准备前提 提前安装好(node.js)[https:&#x2F;&#x2F;nodejs.org&#x2F;en]  提前安装好(GIt)[https:&#x2F;&#x2F;git-scm.com&#x2F;downloads] 提前注册好一个github账号. 如果文章图片没有显示，请自行挂代理.  操作步骤 在本地找个目录放博客源文件，路径不要有中文  在选定的目录中，右键Git Bash Here  使用npm命令安装Hexo，输入： 1npm">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/46222800/1720699598023-6b5566f8-5a67-4bc6-a9d1-ba69c6a4b247.png#averageHue=%23fbfaf9&clientId=u80cab5e8-9f45-4&from=paste&height=274&id=u686fc4bd&originHeight=411&originWidth=785&originalType=binary&ratio=1.5&rotation=0&showTitle=false&size=38724&status=done&style=none&taskId=u3ca3aee3-f0a0-4882-b177-64362f8f948&title=&width=523.3333333333334">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/46222800/1721645331854-880a33e0-10f0-4a6a-9736-1fc5985951d3.png#averageHue=%23fefcfc&clientId=u3f1627aa-0c52-4&from=paste&height=330&id=u99d36efb&originHeight=330&originWidth=694&originalType=binary&ratio=1&rotation=0&showTitle=false&size=46169&status=done&style=none&taskId=u10189d59-ca1a-4ac2-b5ca-5e4e833930b&title=&width=694">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/46222800/1720700250992-863d9327-a41b-4e04-8ff9-a1a4bc4aa4cb.png#averageHue=%23fefefd&clientId=u80cab5e8-9f45-4&from=paste&height=165&id=u699b6cc5&originHeight=248&originWidth=1231&originalType=binary&ratio=1.5&rotation=0&showTitle=false&size=23684&status=done&style=none&taskId=u1481b1a1-4ab0-4472-90b2-af4dec84fc7&title=&width=820.6666666666666">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1720595849698-166317e8-381d-4e54-88b5-d0a2a7ec7d5c.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_15,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10/format,webp#averageHue=%23100605&from=url&id=y3C8r&originHeight=298&originWidth=543&originalType=binary&ratio=1.5&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/46222800/1721645432051-664558f4-b8d0-4c07-a637-9ad59a9c24de.png#averageHue=%232b2a2a&clientId=u3f1627aa-0c52-4&from=paste&height=263&id=ueeac5059&originHeight=263&originWidth=637&originalType=binary&ratio=1&rotation=0&showTitle=false&size=17342&status=done&style=none&taskId=uc694830f-9f8e-4dbf-aa08-a4ea2d1a333&title=&width=637">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/46222800/1721645471517-46bce18c-58aa-411e-bb82-e5b9f9f05597.png#averageHue=%23181715&clientId=u3f1627aa-0c52-4&from=paste&height=476&id=ub81f6fdf&originHeight=476&originWidth=736&originalType=binary&ratio=1&rotation=0&showTitle=false&size=129886&status=done&style=none&taskId=u8ea914bb-e4d5-4e3e-ac4f-59bb9a82d2f&title=&width=736">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/46222800/1721645488944-b63f65e0-52b5-465c-8420-0fe2563e8f30.png#averageHue=%23fefcfc&clientId=u3f1627aa-0c52-4&from=paste&height=309&id=u21e46fc0&originHeight=309&originWidth=701&originalType=binary&ratio=1&rotation=0&showTitle=false&size=54549&status=done&style=none&taskId=ueb77d746-8d9c-470e-97fd-dfbfbd50915&title=&width=701">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/46222800/1720781139801-a90d8d62-9846-4192-be60-382f9294d6af.png#averageHue=%23aa8d6c&clientId=u2a165145-92e9-4&from=paste&height=680&id=u30e86112&originHeight=765&originWidth=1066&originalType=binary&ratio=1.125&rotation=0&showTitle=false&size=117103&status=done&style=none&taskId=uec530204-efb3-49b6-8370-65a825aa241&title=&width=947.5555555555555">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/46222800/1720780055529-6a09211f-858b-44b7-9cb3-d92c475f7519.png#averageHue=%23fbfaf9&clientId=ud3a9c15e-e89f-4&from=paste&height=654&id=u98893360&originHeight=736&originWidth=962&originalType=binary&ratio=1.125&rotation=0&showTitle=false&size=75535&status=done&style=none&taskId=u94f10d5e-f599-49e1-bae3-b2ae5556530&title=&width=855.1111111111111">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/46222800/1720780210318-dad271a0-e7d2-44ba-bbe1-a8379143cf3a.png#averageHue=%2320201f&clientId=ud3a9c15e-e89f-4&from=paste&height=102&id=u3fcc7d03&originHeight=115&originWidth=467&originalType=binary&ratio=1.125&rotation=0&showTitle=false&size=11915&status=done&style=none&taskId=ua4091b44-8a83-43c0-9fdf-51450b88add&title=&width=415.1111111111111">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/46222800/1721643624579-04c02d85-b29c-4fc1-987c-b46b5141cd25.png#averageHue=%23222221&clientId=uc3d31830-1d0c-4&from=paste&height=774&id=u5bb05619&originHeight=774&originWidth=1569&originalType=binary&ratio=1&rotation=0&showTitle=false&size=123160&status=done&style=none&taskId=u620d0cb0-7c5c-4041-8f9d-385fc611217&title=&width=1569">
+<meta property="article:published_time" content="2024-07-30T12:42:24.270Z">
+<meta property="article:modified_time" content="2024-07-30T12:42:24.453Z">
+<meta property="article:author" content="Boy">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.nlark.com/yuque/0/2024/png/46222800/1720699598023-6b5566f8-5a67-4bc6-a9d1-ba69c6a4b247.png#averageHue=%23fbfaf9&clientId=u80cab5e8-9f45-4&from=paste&height=274&id=u686fc4bd&originHeight=411&originWidth=785&originalType=binary&ratio=1.5&rotation=0&showTitle=false&size=38724&status=done&style=none&taskId=u3ca3aee3-f0a0-4882-b177-64362f8f948&title=&width=523.3333333333334">
+  
+    <link rel="alternate" href="/atom.xml" title="Morthos" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/images/favicon.ico">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<link rel="stylesheet" href="https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.css">
+
+  
+  
+  
+  
+<script src="https://npm.webcache.cn/pace-js@1.2.4/pace.min.js"></script>
+
+  
+    
+<link rel="stylesheet" href="https://npm.webcache.cn/wowjs@1.1.3/css/libs/animate.css">
+
+    
+<script src="https://npm.webcache.cn/wowjs@1.1.3/dist/wow.min.js"></script>
+
+    <script>
+      new WOW({
+        offset: 0,
+        mobile: true,
+        live: false
+      }).init();
+    </script>
+  
+  
+    <script src="/sw.js"></script>
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+  <body>
+    
+  <div id='loader'>
+    <div class="loading-left-bg loading-bg"></div>
+    <div class="loading-right-bg loading-bg"></div>
+    <div class="spinner-box">
+      <div class="loading-taichi">
+        <svg width="150" height="150" viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="https://www.w3.org/2000/svg" shape-rendering="geometricPrecision">
+          <path d="M303.5 432A80 80 0 0 1 291.5 592A80 80 0 0 1 303.5 432z" fill="#ff6e6b" />
+          <path d="M512 65A447 447 0 0 1 512 959L512 929A417 417 0 0 0 512 95A417 417 0 0 0 512 929L512 959A447 447 0 0 1 512 65z" fill="#fd0d00" />
+          <path d="M512 95A417 417 0 0 1 929 512A208.5 208.5 0 0 1 720.5 720.5L720.5 592A80 80 0 0 0 720.5 432A80 80 0 0 0 720.5 592L720.5 720.5A208.5 208.5 0 0 1 512 512A208.5 208.5 0 0 0 303.5 303.5A208.5 208.5 0 0 0 95 512A417 417 0 0 1 512 95" fill="#fd0d00" />
+        </svg>
+      </div>
+      <div class="loading-word">少女祈祷中...</div>
+    </div>
+  </div>
+  </div>
+  <script>
+    var time = null;
+    var startLoading = () => {
+      time = Date.now();
+      document.getElementById('loader').classList.remove("loading");
+    }
+    var endLoading = () => {
+      if (!time) {
+        document.body.style.overflow = 'auto';
+        document.getElementById('loader').classList.add("loading");
+      } else {
+        if (Date.now() - time > 500) {
+          time = null;
+          document.body.style.overflow = 'auto';
+          document.getElementById('loader').classList.add("loading");
+        } else {
+          setTimeout(endLoading, 500 - (Date.now() - time));
+          time = null;
+        }
+      }
+    }
+    window.addEventListener('DOMContentLoaded', endLoading);
+    document.getElementById('loader').addEventListener('click', endLoading);
+  </script>
+
+<div id="copy-tooltip" style="pointer-events: none; opacity: 0; transition: all 0.2s ease; position: fixed;top: 50%;left: 50%;z-index: 999;transform: translate(-50%, -50%);color: white;background: rgba(0, 0, 0, 0.5);padding: 10px 15px;border-radius: 10px;">
+</div>
+
+    <div id="container">
+      <div id="wrap">
+        <div id="header-nav">
+  <nav id="main-nav">
+    
+      <span class="main-nav-link-wrap">
+        <span class="main-nav-icon"></span>
+        <a class="main-nav-link" href="/">首页</a>
+      </span>
+    
+      <span class="main-nav-link-wrap">
+        <span class="main-nav-icon"></span>
+        <a class="main-nav-link" href="/archives">归档</a>
+      </span>
+    
+      <span class="main-nav-link-wrap">
+        <span class="main-nav-icon"></span>
+        <a class="main-nav-link" href="/about">关于</a>
+      </span>
+    
+      <span class="main-nav-link-wrap">
+        <span class="main-nav-icon"></span>
+        <a class="main-nav-link" href="/friend">友链</a>
+      </span>
+    
+    <a id="main-nav-toggle" class="nav-icon"></a>
+  </nav>
+  <nav id="sub-nav">
+    
+      <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS 订阅"></a>
+    
+    
+    
+  </nav>
+</div>
+<header id="header">
+  
+    
+      <img fetchpriority="high" src="/images/banner.webp" alt="">
+    
+  
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <div id="logo-wrap">
+        
+          
+          
+            <a href="/" id="logo">
+              <h1>Morthos</h1>
+            </a>
+          
+        
+      </div>
+      
+        
+        <h2 id="subtitle-wrap">
+          
+        </h2>
+      
+    </div>
+  </div>
+</header>
+
+        <div id="content" class="outer">
+          
+          <section id="main"><article id="post-0711 github搭建hexo博客" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-inner">
+    <div class="article-meta">
+      <div class="article-date wow slideInLeft">
+  <a href="/2024/07/30/0711%20github%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2/" class="article-date-link">
+    <time datetime="2024-07-30T12:42:24.270Z" itemprop="datePublished">2024-07-30</time>
+  </a>
+</div>
+
+      
+
+    </div>
+    <div class="hr-line"></div>
+    
+
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><a name="e069a00d"></a></p>
+<h1 id="准备前提"><a href="#准备前提" class="headerlink" title="准备前提"></a>准备前提</h1><ol>
+<li>提前安装好(node.js)[<a target="_blank" rel="noopener" href="https://nodejs.org/en">https://nodejs.org/en</a>] </li>
+<li>提前安装好(GIt)[<a target="_blank" rel="noopener" href="https://git-scm.com/downloads">https://git-scm.com/downloads</a>]</li>
+<li>提前注册好一个github账号.</li>
+<li>如果文章图片没有显示，请自行挂代理.<br><a name="1c53b310"></a></li>
+</ol>
+<h1 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h1><ol>
+<li><p>在本地找个目录放博客源文件，路径不要有中文</p>
+</li>
+<li><p>在选定的目录中，右键<code>Git Bash Here</code></p>
+</li>
+<li><p>使用npm命令安装Hexo，输入：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli  </span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">hexo init blog  </span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">cd blog    </span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g   </span><br></pre></td></tr></table></figure>
+<p>构建好的效果:<br><img src="https://cdn.nlark.com/yuque/0/2024/png/46222800/1720699598023-6b5566f8-5a67-4bc6-a9d1-ba69c6a4b247.png#averageHue=%23fbfaf9&clientId=u80cab5e8-9f45-4&from=paste&height=274&id=u686fc4bd&originHeight=411&originWidth=785&originalType=binary&ratio=1.5&rotation=0&showTitle=false&size=38724&status=done&style=none&taskId=u3ca3aee3-f0a0-4882-b177-64362f8f948&title=&width=523.3333333333334" alt="image.png"></p>
+</li>
+<li><p>cd进入themes，为了检测我们的网站雏形，输入：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new test </span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g  </span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s </span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:4000</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>配置ssh.</p>
+</li>
+</ol>
+<blockquote>
+<p>cd ~&#x2F;.ssh<br>#检查本机已存在的ssh密钥</p>
+</blockquote>
+<ul>
+<li>如果提示：No such file or directory 说明你是第一次使用git.</li>
+</ul>
+<blockquote>
+<p>ssh-keygen -t rsa -C “邮件地址”</p>
+</blockquote>
+<ul>
+<li>然后连续3次回车，最终会生成一个文件在用户目录下，打开用户目录，找到.ssh\id_rsa.pub文件，记事本打开并复制里面的内容，打开你的github主页，进入个人设置 -&gt; SSH and GPG keys -&gt; New SSH key：</li>
+</ul>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/46222800/1721645331854-880a33e0-10f0-4a6a-9736-1fc5985951d3.png#averageHue=%23fefcfc&clientId=u3f1627aa-0c52-4&from=paste&height=330&id=u99d36efb&originHeight=330&originWidth=694&originalType=binary&ratio=1&rotation=0&showTitle=false&size=46169&status=done&style=none&taskId=u10189d59-ca1a-4ac2-b5ca-5e4e833930b&title=&width=694" alt="image.png"></p>
+<blockquote>
+<p>点击new ssh key</p>
+</blockquote>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/46222800/1720700250992-863d9327-a41b-4e04-8ff9-a1a4bc4aa4cb.png#averageHue=%23fefefd&clientId=u80cab5e8-9f45-4&from=paste&height=165&id=u699b6cc5&originHeight=248&originWidth=1231&originalType=binary&ratio=1.5&rotation=0&showTitle=false&size=23684&status=done&style=none&taskId=u1481b1a1-4ab0-4472-90b2-af4dec84fc7&title=&width=820.6666666666666" alt="image.png"><br>key填写C:\Users\Administrator.ssh\id_rsa.pub中的内容 <br>● 尝试ssh连接,测试是否成功 </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+<p><br>●如果提示Are you sure you want to continue connecting (yes&#x2F;no)?，输入yes，然后会看到下面这个，就算成功：<br>:::info<br>Hi liuxianan! You’ve successfully authenticated, but GitHub does not provide shell access.<br>:::<br><br>●在选中的位置(blog目录下)打开cmd(以管理员身份)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1720595849698-166317e8-381d-4e54-88b5-d0a2a7ec7d5c.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_15,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10/format,webp#averageHue=%23100605&from=url&id=y3C8r&originHeight=298&originWidth=543&originalType=binary&ratio=1.5&rotation=0&showTitle=false&status=done&style=none&title="><br>●在上一个Git Bash Here还需要继续配置</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;xiaoming&quot;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.email  &quot;xxx@qq.com&quot;</span><br></pre></td></tr></table></figure>
+<p><br>6.准备上传代码.</p>
+<p>● 在github上新建一个存储库</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">用户名.github.io</span><br></pre></td></tr></table></figure>
+<p>● 编辑_config.yml文件，在最后改成这样 :</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repository: git@github.com:xiaoming/xiaoming.github.io.git</span><br><span class="line">  branch: main</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/46222800/1721645432051-664558f4-b8d0-4c07-a637-9ad59a9c24de.png#averageHue=%232b2a2a&clientId=u3f1627aa-0c52-4&from=paste&height=263&id=ueeac5059&originHeight=263&originWidth=637&originalType=binary&ratio=1&rotation=0&showTitle=false&size=17342&status=done&style=none&taskId=uc694830f-9f8e-4dbf-aa08-a4ea2d1a333&title=&width=637" alt="image.png"><br>● 注意保持格式，缩进不对，会导致一会儿，上传不成功 <br>● 最后上传 </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+<p>每次上传成功之后，需要等待1-3分钟，用来刷新页面<br><img src="https://cdn.nlark.com/yuque/0/2024/png/46222800/1721645471517-46bce18c-58aa-411e-bb82-e5b9f9f05597.png#averageHue=%23181715&clientId=u3f1627aa-0c52-4&from=paste&height=476&id=ub81f6fdf&originHeight=476&originWidth=736&originalType=binary&ratio=1&rotation=0&showTitle=false&size=129886&status=done&style=none&taskId=u8ea914bb-e4d5-4e3e-ac4f-59bb9a82d2f&title=&width=736" alt="image.png"><br>●在创建的存储库的设置中-pages-如图设置 <br><img src="https://cdn.nlark.com/yuque/0/2024/png/46222800/1721645488944-b63f65e0-52b5-465c-8420-0fe2563e8f30.png#averageHue=%23fefcfc&clientId=u3f1627aa-0c52-4&from=paste&height=309&id=u21e46fc0&originHeight=309&originWidth=701&originalType=binary&ratio=1&rotation=0&showTitle=false&size=54549&status=done&style=none&taskId=ueb77d746-8d9c-470e-97fd-dfbfbd50915&title=&width=701" alt="image.png"><br>:::success<br>在文章的最后，教换主题.<br>:::<br><br>7.hexo命令介绍.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">hexo n &quot;我的博客&quot; == hexo new &quot;我的博客&quot; #新建文章</span><br><span class="line">hexo new page &quot;pageName&quot; #新建页面</span><br><span class="line">hexo g == hexo generate #生成</span><br><span class="line">hexo s == hexo server #启动服务预览</span><br><span class="line">hexo d == hexo deploy #部署</span><br><span class="line"></span><br><span class="line">hexo server #Hexo会监视文件变动并自动更新，无须重启服务器</span><br><span class="line">hexo server -s #静态模式</span><br><span class="line">hexo server -p 5000 #更改端口</span><br><span class="line">hexo server -i 192.168.1.1 #自定义 IP</span><br><span class="line">hexo clean #清除缓存，若是网页正常情况下可以忽略这条命令</span><br><span class="line">hexo version  #查看Hexo的版本</span><br><span class="line">hexo generate #生成静态页面至public目录</span><br><span class="line"></span><br><span class="line">hexo s -g #生成并本地预览</span><br><span class="line">hexo d -g #生成并上传</span><br></pre></td></tr></table></figure>
+<p>8.hexo目录结构.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">+-- .deploy      #hexo deploy生成的文件</span><br><span class="line">+-- node_modules  #npm组件</span><br><span class="line">+-- public        #生成的静态网页文件</span><br><span class="line">+--scaffolds      #模板</span><br><span class="line">+-- source        #博客正文和其他源文件</span><br><span class="line">|  +-- _posts    #我们自己写的文章以md结尾</span><br><span class="line">+-- themes        #主题</span><br><span class="line">+-- _config.yml  #全局配置文件</span><br><span class="line">-- package.json  #定义了hexo所需要的各种模块</span><br></pre></td></tr></table></figure>
+
+<p><a name="Agfh5"></a></p>
+<h1 id="换主题"><a href="#换主题" class="headerlink" title="换主题"></a>换主题</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://hexo.io/themes/</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/46222800/1720781139801-a90d8d62-9846-4192-be60-382f9294d6af.png#averageHue=%23aa8d6c&clientId=u2a165145-92e9-4&from=paste&height=680&id=u30e86112&originHeight=765&originWidth=1066&originalType=binary&ratio=1.125&rotation=0&showTitle=false&size=117103&status=done&style=none&taskId=uec530204-efb3-49b6-8370-65a825aa241&title=&width=947.5555555555555" alt="image.png"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># Extensions</span><br><span class="line">## Plugins: https://hexo.io/plugins/</span><br><span class="line">## Themes: https://hexo.io/themes/</span><br><span class="line">theme: 主题名</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>将主题文件放入blog&#x2F;themes里面,并将文件名改为主题名.</p>
+</blockquote>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/46222800/1720780055529-6a09211f-858b-44b7-9cb3-d92c475f7519.png#averageHue=%23fbfaf9&clientId=ud3a9c15e-e89f-4&from=paste&height=654&id=u98893360&originHeight=736&originWidth=962&originalType=binary&ratio=1.125&rotation=0&showTitle=false&size=75535&status=done&style=none&taskId=u94f10d5e-f599-49e1-bae3-b2ae5556530&title=&width=855.1111111111111" alt="image.png"><img src="https://cdn.nlark.com/yuque/0/2024/png/46222800/1720780210318-dad271a0-e7d2-44ba-bbe1-a8379143cf3a.png#averageHue=%2320201f&clientId=ud3a9c15e-e89f-4&from=paste&height=102&id=u3fcc7d03&originHeight=115&originWidth=467&originalType=binary&ratio=1.125&rotation=0&showTitle=false&size=11915&status=done&style=none&taskId=ua4091b44-8a83-43c0-9fdf-51450b88add&title=&width=415.1111111111111" alt="image.png"><br><a name="fGG4U"></a></p>
+<h1 id="语雀-hexo"><a href="#语雀-hexo" class="headerlink" title="语雀+hexo"></a>语雀+hexo</h1><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo\blog\node_modules\hexo-theme-landscape\layout\_partial\head.ejs</span><br></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo\blog\themes\reimu\layout\_partial\head.ejs</span><br></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta name=<span class="string">&quot;referrer&quot;</span> content=<span class="string">&quot;no-referrer&quot;</span> /&gt;</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/46222800/1721643624579-04c02d85-b29c-4fc1-987c-b46b5141cd25.png#averageHue=%23222221&clientId=uc3d31830-1d0c-4&from=paste&height=774&id=u5bb05619&originHeight=774&originWidth=1569&originalType=binary&ratio=1&rotation=0&showTitle=false&size=123160&status=done&style=none&taskId=u620d0cb0-7c5c-4041-8f9d-385fc611217&title=&width=1569" alt="image.png"></p>
+<blockquote>
+<p>个别不同主题会采用.pug后缀文件</p>
+</blockquote>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo\blog\node_modules\hexo-theme-butterfly\layout\includes\head.pug</span><br></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_ invoke__">meta</span>(name=<span class="string">&quot;referrer&quot;</span>, content=<span class="string">&quot;no-referrer&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p>更新</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm i -g yuque-hexo</span><br><span class="line">yuque-hexo sync </span><br></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yuque-hexo sync </span><br><span class="line">hexo g &amp;&amp; hexo s</span><br><span class="line">hexo d -g</span><br></pre></td></tr></table></figure>
+<p>hexo主题,<a target="_blank" rel="noopener" href="http://yelog.org/2017/03/23/3-hexo-instruction/">3-hexo使用说明 | 叶落阁 (yelog.org)</a><br>9.关于如何写笔记看下一篇<a target="_blank" rel="noopener" href="https://sunwu57.github.io/2023/03/23/typora+PicGo+LskyPro+Obsidian%E5%AE%9E%E7%8E%B0%E6%96%87%E7%AB%A0%E7%AE%A1%E7%90%86/">typora+PicGo+LskyPro+Obsidian实现文章管理</a><br>10.<a target="_blank" rel="noopener" href="http://sunwu.world/2023/03/25/markdown%e7%9a%84%e4%bd%bf%e7%94%a8%e8%af%b4%e6%98%8e/">markdown语法实例</a></p>
+<p>1</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+    
+  <nav id="article-nav" class="wow fadeInUp">
+    
+      <div class="article-nav-link-wrap article-nav-link-left">
+        
+          
+          
+            <img data-src="/covers/bg12.jpg" data-sizes="auto" alt="" class="lazyload">
+          
+        
+        <a href="/2024/07/30/0712%20Mysql%E5%9F%BA%E7%A1%80/"></a>
+        <div class="article-nav-caption">前一篇</div>
+        <h3 class="article-nav-title">
+          
+            (no title)
+          
+        </h3>
+      </div>
+    
+    
+    <div class="article-nav-link-wrap article-nav-link-right">
+      
+        
+        
+          <img data-src="/covers/bg28.jpg" data-sizes="auto" alt="" class="lazyload">
+        
+      
+      <a href="/2024/07/30/0710%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/"></a>
+      <div class="article-nav-caption">后一篇</div>
+      <h3 class="article-nav-title">
+        
+          (no title)
+        
+      </h3>
+    </div>
+    
+  </nav>
+
+
+  
+</article>
+
+
+
+
+
+
+</section>
+          
+            <aside id="sidebar">
+  <div class="sidebar-wrap wow fadeInRight wrap-sticky">
+    
+      <div class="sidebar-toc-sidebar"><div class="sidebar-toc">
+  <h3 class="toc-title">文章目录</h3>
+  <div class="sidebar-toc-wrapper toc-div-class" >
+      
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%87%86%E5%A4%87%E5%89%8D%E6%8F%90"><span class="toc-number">1.</span> <span class="toc-text">准备前提</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E6%AD%A5%E9%AA%A4"><span class="toc-number">2.</span> <span class="toc-text">操作步骤</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%8D%A2%E4%B8%BB%E9%A2%98"><span class="toc-number">3.</span> <span class="toc-text">换主题</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AF%AD%E9%9B%80-hexo"><span class="toc-number">4.</span> <span class="toc-text">语雀+hexo</span></a></li></ol>
+      
+  </div>
+</div>
+</div>
+      <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img data-src="/avatar/avatar.jpg" data-sizes="auto" alt="Boy" class="lazyload">
+  <div class="sidebar-author-name">Boy</div>
+  <div class="sidebar-description"></div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>文章</div>
+    <div class="sidebar-state-number">23</div>
+  </div>
+  <div class="sidebar-state-category">
+    <div>分类</div>
+    <div class="sidebar-state-number">0</div>
+  </div>
+  <div class="sidebar-state-tag">
+    <div>标签</div>
+    <div class="sidebar-state-number">0</div>
+  </div>
+</div>
+<div class="sidebar-social">
+  
+</div>
+<div class="sidebar-menu">
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/" aria-label="首页"></a>
+      <span class="sidebar-menu-icon"></span>
+      <div class="sidebar-menu-link">首页</div>
+    </div>
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/archives" aria-label="归档"></a>
+      <span class="sidebar-menu-icon"></span>
+      <div class="sidebar-menu-link">归档</div>
+    </div>
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/about" aria-label="关于"></a>
+      <span class="sidebar-menu-icon"></span>
+      <div class="sidebar-menu-link">关于</div>
+    </div>
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/friend" aria-label="友链"></a>
+      <span class="sidebar-menu-icon"></span>
+      <div class="sidebar-menu-link">友链</div>
+    </div>
+  
+</div>
+</div>
+    
+    
+      <div class="sidebar-btn-wrapper" style="position:static">
+        <div class="sidebar-toc-btn current"></div>
+        <div class="sidebar-common-btn"></div>
+      </div>
+    
+  </div>
+
+  
+</aside>
+
+          
+        </div>
+        <footer id="footer" class="wow fadeInUp">
+  <div style="width: 100%; overflow: hidden">
+    <div class="footer-line"></div>
+  </div>
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      <div>
+        <span class="icon-copyright"></span>
+        2020-2024
+        <span class="footer-info-sep"></span>
+        Boy
+      </div>
+      
+        <div>
+          基于&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>&nbsp;
+          Theme.<a href="https://github.com/D-Sketon/hexo-theme-reimu" target="_blank">Reimu</a>
+        </div>
+      
+      
+        <div>
+          <span class="icon-brush"></span>
+          47.1k
+          &nbsp;|&nbsp;
+          <span class="icon-coffee"></span>
+          03:36
+        </div>
+      
+      
+        <div>
+          <span class="icon-eye"></span>
+          <span id="busuanzi_container_site_pv">总访问量&nbsp;<span id="busuanzi_value_site_pv"></span></span>
+          &nbsp;|&nbsp;
+          <span class="icon-user"></span>
+          <span id="busuanzi_container_site_uv">总访客量&nbsp;<span id="busuanzi_value_site_uv"></span></span>
+        </div>
+      
+    </div>
+  </div>
+</footer>
+
+        <div class="sidebar-top">
+          <img src="/images/taichi.png" height="50" width="50" alt="backtop" />
+          <div class="arrow-up"></div>
+        </div>
+        <div id="mask"></div>
+      </div>
+      <nav id="mobile-nav">
+  <div class="sidebar-wrap">
+    
+      <div class="sidebar-toc-sidebar"><div class="sidebar-toc">
+  <h3 class="toc-title">文章目录</h3>
+  <div class="sidebar-toc-wrapper toc-div-class" >
+      
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%87%86%E5%A4%87%E5%89%8D%E6%8F%90"><span class="toc-number">1.</span> <span class="toc-text">准备前提</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E6%AD%A5%E9%AA%A4"><span class="toc-number">2.</span> <span class="toc-text">操作步骤</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%8D%A2%E4%B8%BB%E9%A2%98"><span class="toc-number">3.</span> <span class="toc-text">换主题</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AF%AD%E9%9B%80-hexo"><span class="toc-number">4.</span> <span class="toc-text">语雀+hexo</span></a></li></ol>
+      
+  </div>
+</div>
+</div>
+      <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img data-src="/avatar/avatar.jpg" data-sizes="auto" alt="Boy" class="lazyload">
+  <div class="sidebar-author-name">Boy</div>
+  <div class="sidebar-description"></div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>文章</div>
+    <div class="sidebar-state-number">23</div>
+  </div>
+  <div class="sidebar-state-category">
+    <div>分类</div>
+    <div class="sidebar-state-number">0</div>
+  </div>
+  <div class="sidebar-state-tag">
+    <div>标签</div>
+    <div class="sidebar-state-number">0</div>
+  </div>
+</div>
+<div class="sidebar-social">
+  
+</div>
+<div class="sidebar-menu">
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/" aria-label="首页"></a>
+      <span class="sidebar-menu-icon"></span>
+      <div class="sidebar-menu-link">首页</div>
+    </div>
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/archives" aria-label="归档"></a>
+      <span class="sidebar-menu-icon"></span>
+      <div class="sidebar-menu-link">归档</div>
+    </div>
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/about" aria-label="关于"></a>
+      <span class="sidebar-menu-icon"></span>
+      <div class="sidebar-menu-link">关于</div>
+    </div>
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/friend" aria-label="友链"></a>
+      <span class="sidebar-menu-icon"></span>
+      <div class="sidebar-menu-link">友链</div>
+    </div>
+  
+</div>
+</div>
+    
+  </div>
+  
+    <div class="sidebar-btn-wrapper">
+      <div class="sidebar-toc-btn current"></div>
+      <div class="sidebar-common-btn"></div>
+    </div>
+  
+</nav>
+
+    </div>
+    <div class="site-search">
+      <div class="reimu-popup popup">
+        <div class="reimu-search">
+          <span class="reimu-search-input-icon"></span>
+          <div class="reimu-search-input" id="reimu-search-input"></div>
+        </div>
+        <div class="reimu-results">
+          <div id="reimu-stats"></div>
+          <div id="reimu-hits"></div>
+          <div id="reimu-pagination" class="reimu-pagination"></div>
+        </div>
+        <span class="popup-btn-close"></span>
+      </div>
+    </div>
+    
+<script src="https://npm.webcache.cn/lazysizes@5.3.2/lazysizes.min.js"></script>
+
+
+<script src="https://npm.webcache.cn/clipboard@2.0.11/dist/clipboard.min.js"></script>
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+<script src="/js/pjax_script.js" data-pjax></script>
+
+
+<script type="module" data-pjax>
+  import PhotoSwipeLightbox from "https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe-lightbox.esm.js";
+  
+  const pswp = () => {
+    if (_$$('.article-entry a.article-gallery-item').length > 0) {
+      new PhotoSwipeLightbox({
+        gallery: '.article-entry',
+        children: 'a.article-gallery-item',
+        pswpModule: () => import("https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.esm.js")
+      }).init();
+    }
+    if(_$$('.article-gallery a.article-gallery-item').length > 0) {
+      new PhotoSwipeLightbox({
+        gallery: '.article-gallery',
+        children: 'a.article-gallery-item',
+        pswpModule: () => import("https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.esm.js")
+      }).init();
+    }
+    window.lightboxStatus = 'done';
+    window.removeEventListener('lightbox:ready', pswp);
+  }
+  if(window.lightboxStatus === 'ready') {
+    pswp()
+  } else {
+    window.addEventListener('lightbox:ready', pswp);
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<script src="https://npm.webcache.cn/mouse-firework@0.0.4/dist/index.umd.js"></script>
+
+  <script>
+    firework(JSON.parse('{"excludeElements":["a","button"],"particles":[{"shape":"circle","move":["emit"],"easing":"easeOutExpo","colors":["#ff5252","#ff7c7c","#ffafaf","#ffd0d0"],"number":20,"duration":[1200,1800],"shapeOptions":{"radius":[16,32],"alpha":[0.3,0.5]}},{"shape":"circle","move":["diffuse"],"easing":"easeOutExpo","colors":["#ff0000"],"number":1,"duration":[1200,1800],"shapeOptions":{"radius":20,"alpha":[0.2,0.5],"lineWidth":6}}]}'))
+  </script>
+
+
+
+
+
+
+<div id="lazy-script">
+  <div>
+    
+  </div>
+</div>
+
+
+  <script>
+    console.log(String.raw`%c 
+ ______     ______     __     __    __     __  __    
+/\  == \   /\  ___\   /\ \   /\ "-./  \   /\ \/\ \   
+\ \  __<   \ \  __\   \ \ \  \ \ \-./\ \  \ \ \_\ \  
+ \ \_\ \_\  \ \_____\  \ \_\  \ \_\ \ \_\  \ \_____\ 
+  \/_/ /_/   \/_____/   \/_/   \/_/  \/_/   \/_____/ 
+                                                  
+`,'color: #ff5252;')
+    console.log('%c Theme.Reimu v' + '0.2.0' + ' %c https://github.com/D-Sketon/hexo-theme-reimu ', 'color: white; background: #ff5252; padding:5px 0;', 'padding:4px;border:1px solid #ff5252;')
+  </script>
+  
+
+
+  
+<script src="https://npm.webcache.cn/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+  <!-- hexo injector body_end start -->
+<script src="/js/insert_highlight.js" data-pjax></script>
+<!-- hexo injector body_end end --></body>
+  </html>
+
